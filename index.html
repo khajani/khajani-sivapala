@@ -6,7 +6,7 @@
 <title>Khajani Sivapala — Engineering Portfolio</title>
 
 <!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
 
 <!-- FontAwesome for icons -->
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -22,11 +22,11 @@
     background-color: #FFF5E1;
     color: #3a3a3a;
     scroll-behavior: smooth;
-    transition: background-color 0.4s, color 0.4s;
   }
   h1, h2, h3 {
-    font-family: 'Merriweather', serif;
+    font-weight: 700;
     margin-bottom: 0.4rem;
+    color: #800020;
   }
   a {
     color: #800020;
@@ -34,7 +34,7 @@
     transition: color 0.3s ease;
   }
   a:hover, a:focus {
-    color: #FFD700;
+    color: #B22222;
   }
 
   /* Sticky navbar */
@@ -51,7 +51,6 @@
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   }
   nav .logo {
-    font-family: 'Merriweather', serif;
     font-weight: 700;
     font-size: 1.5rem;
   }
@@ -60,9 +59,6 @@
     display: flex;
     gap: 1.4rem;
     margin: 0;
-  }
-  nav ul li {
-    position: relative;
   }
   nav ul li a {
     color: #FFF5E1;
@@ -73,12 +69,6 @@
   nav ul li a:hover {
     color: #FFD700;
     border-bottom: 2px solid #FFD700;
-  }
-
-  /* Dark mode toggle */
-  .toggle-switch {
-    cursor: pointer;
-    font-size: 1.4rem;
   }
 
   /* Container */
@@ -130,16 +120,17 @@
   #experience .timeline {
     position: relative;
     margin-left: 40px;
+    padding-left: 20px;
   }
   #experience .timeline::before {
     content: "";
     position: absolute;
-    left: 20px;
+    left: 10px;
     top: 0;
-    width: 4px;
+    width: 2px;
     height: 100%;
-    background-color: #800020;
-    border-radius: 2px;
+    background-color: #800020; /* burgundy */
+    border-radius: 1px;
   }
   .experience-card {
     position: relative;
@@ -156,18 +147,21 @@
   .experience-card::before {
     content: "";
     position: absolute;
-    left: -38px;
-    top: 30px;
-    width: 14px;
-    height: 14px;
-    background-color: #fff;
-    border: 4px solid #800020;
-    border-radius: 50%;
-    box-shadow: 0 0 0 4px #f4e3e3;
+    left: -25px;
+    top: 32px;
+    width: 10px;
+    height: 10px;
+    background-color: #800020;
+    border-radius: 2px;
+    box-shadow: 0 0 6px rgba(128, 0, 32, 0.4);
+    transition: background-color 0.3s ease;
+  }
+  .experience-card:hover::before {
+    background-color: #B22222;
+    box-shadow: 0 0 10px rgba(178, 34, 34, 0.7);
   }
   .experience-card h3 {
     margin-top: 0;
-    color: #800020;
   }
   .experience-card h4 {
     margin: 0.2rem 0 0.7rem;
@@ -202,9 +196,7 @@
     box-shadow: 0 16px 30px rgb(128 0 32 / 0.2);
   }
   .project-card h3 {
-    color: #800020;
     margin-top: 0;
-    font-family: 'Merriweather', serif;
   }
   .project-card p {
     font-size: 0.95rem;
@@ -217,24 +209,7 @@
     color: #800020;
   }
   .project-card a:hover {
-    color: #FFD700;
-  }
-
-  /* Skills graph container */
-  #skills {
-    padding: 2rem 3rem;
-    background-color: #f4e3e3;
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgb(128 0 32 / 0.1);
-    margin-bottom: 4rem;
-  }
-  #skills h2 {
-    color: #800020;
-  }
-  #skillsCanvas {
-    max-width: 600px;
-    margin: 2rem auto 0;
-    display: block;
+    color: #B22222;
   }
 
   /* Social icons */
@@ -249,7 +224,7 @@
     transition: color 0.3s ease;
   }
   #social a:hover {
-    color: #FFD700;
+    color: #B22222;
   }
 
   /* Footer */
@@ -274,13 +249,14 @@
     }
     #experience .timeline {
       margin-left: 20px;
+      padding-left: 10px;
     }
     .experience-card::before {
-      left: -30px;
-      top: 20px;
-      width: 12px;
-      height: 12px;
-      border-width: 3px;
+      left: -20px;
+      top: 24px;
+      width: 8px;
+      height: 8px;
+      border-radius: 1.5px;
     }
   }
 </style>
@@ -293,10 +269,8 @@
     <li><a href="#about" class="active">About</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
-    <li><a href="#skills">Skills</a></li>
     <li><a href="#social">Contact</a></li>
   </ul>
-  <div class="toggle-switch" title="Toggle dark mode" aria-label="Toggle dark mode" role="button" tabindex="0">&#9790;</div>
 </nav>
 
 <main>
@@ -365,11 +339,6 @@
   </div>
 </section>
 
-<section id="skills" aria-label="Skills">
-  <h2>Skills</h2>
-  <canvas id="skillsCanvas" width="600" height="400" aria-label="Skills radar chart"></canvas>
-</section>
-
 <section id="social" aria-label="Contact & Social Media">
   <h2>Get in Touch</h2>
   <p>Feel free to reach out on LinkedIn, GitHub, or email.</p>
@@ -393,7 +362,6 @@
   <a href="mailto:ksivapal@uwaterloo.ca">ksivapal@uwaterloo.ca</a>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
   // Smooth scroll nav active highlight
   const navLinks = document.querySelectorAll('nav ul li a');
@@ -409,73 +377,6 @@
   }
   window.addEventListener('scroll', onScroll);
   onScroll();
-
-  // Dark mode toggle
-  const toggle = document.querySelector('.toggle-switch');
-  toggle.addEventListener('click', () => {
-    if(document.body.style.backgroundColor === 'rgb(26, 26, 26)') {
-      // Light mode
-      document.body.style.backgroundColor = '#FFF5E1';
-      document.body.style.color = '#3a3a3a';
-      toggle.textContent = '🌙';
-    } else {
-      // Dark mode
-      document.body.style.backgroundColor = '#1a1a1a';
-      document.body.style.color = '#ddd';
-      toggle.textContent = '☀️';
-    }
-  });
-
-  // Skills Radar chart with Chart.js
-  const ctx = document.getElementById('skillsCanvas').getContext('2d');
-  const skillsChart = new Chart(ctx, {
-    type: 'radar',
-    data: {
-      labels: ['Mechanical Design', 'Prototyping', 'Automation', 'CAD/SOLIDWORKS', 'Programming', 'Testing & Validation', 'Project Management'],
-      datasets: [{
-        label: 'Skill Level',
-        data: [85, 80, 75, 90, 70, 80, 65],
-        backgroundColor: 'rgba(128, 0, 32, 0.3)',
-        borderColor: '#800020',
-        pointBackgroundColor: '#800020',
-        pointBorderColor: '#fff',
-        pointHoverBackgroundColor: '#FFD700',
-        pointHoverBorderColor: '#800020',
-        borderWidth: 2,
-        fill: true,
-        tension: 0.3
-      }]
-    },
-    options: {
-      scales: {
-        r: {
-          angleLines: {
-            color: '#800020'
-          },
-          grid: {
-            color: '#800020',
-            borderColor: '#800020'
-          },
-          pointLabels: {
-            color: '#800020',
-            font: { family: 'Merriweather', size: 14, weight: '600' }
-          },
-          ticks: {
-            color: '#800020',
-            stepSize: 20,
-            beginAtZero: true,
-            max: 100,
-            showLabelBackdrop: false
-          }
-        }
-      },
-      plugins: {
-        legend: { labels: { color: '#800020', font: { family: 'Open Sans', size: 14 } } }
-      },
-      responsive: true,
-      maintainAspectRatio: false
-    }
-  });
 </script>
 
 </body>
