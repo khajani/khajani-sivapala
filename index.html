@@ -4,6 +4,13 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Khajani Sivapala - Portfolio</title>
+
+<!-- Google Fonts: Lato -->
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+<!-- FontAwesome for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
 <style>
   /* Reset */
   * {
@@ -11,10 +18,10 @@
     margin: 0; padding: 0;
   }
   body {
-    font-family: 'Open Sans', sans-serif;
-    background: #F9F9F9;
-    color: #222222;
-    line-height: 1.6;
+    font-family: 'Lato', sans-serif;
+    background: #FAFBFB;
+    color: #222;
+    line-height: 1.58;
     min-height: 100vh;
     scroll-behavior: smooth;
   }
@@ -23,26 +30,28 @@
     text-decoration: none;
   }
   a:hover {
-    color: #A64B4B;
+    color: #9F2B35; /* dark burgundy */
   }
 
   /* Navbar */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
-    background: #7B2433;
+    background: #7B2433; /* burgundy */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.9rem 2rem;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    padding: 1rem 2rem;
+    box-shadow: 0 3px 7px rgba(0,0,0,0.15);
     z-index: 1000;
   }
   nav .logo {
     font-weight: 700;
-    font-size: 1.5rem;
-    color: #F9F9F9;
+    font-size: 1.6rem;
+    color: #FDF6F5;
     user-select: none;
+    letter-spacing: 0.05em;
+    font-style: italic;
   }
   nav ul {
     display: flex;
@@ -50,221 +59,301 @@
     list-style: none;
   }
   nav ul li a {
-    color: #F9F9F9;
+    color: #FDF6F5;
     font-weight: 600;
     font-size: 1rem;
-    padding: 0.3rem 0;
+    padding-bottom: 3px;
     border-bottom: 2px solid transparent;
     transition: border-color 0.3s ease;
   }
   nav ul li a:hover,
   nav ul li a.active {
-    border-bottom: 2px solid #FADBD8;
-    color: #FADBD8;
+    border-bottom: 2px solid #F1D0C4;
+    color: #F1D0C4;
   }
 
-  /* Container */
+  /* Main container */
   main {
-    max-width: 900px;
-    margin: 100px auto 40px; /* leave space for fixed nav */
+    max-width: 960px;
+    margin: 110px auto 50px;
     padding: 0 1.5rem;
   }
 
-  h2 {
-    border-bottom: 2px solid #7B2433;
-    padding-bottom: 0.3rem;
-    margin-bottom: 1.2rem;
-    font-weight: 700;
-    font-size: 2rem;
+  /* Section background blocks */
+  .section-bg {
+    border-radius: 14px;
+    padding: 2.5rem 3rem;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+  #about-bg {
+    background: #F9F4F2; /* very light beige */
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+  }
+  #experience-bg {
+    background: #F2D4D2; /* subtle soft burgundy tint */
+    padding-left: 6rem;
   }
 
-  /* Boxed Sections */
-  section {
-    background: white;
-    border: 1.5px solid #D3D3D3;
+  /* About Section */
+  #about-bg #photo-placeholder {
+    width: 190px;
+    height: 190px;
+    background: #ccc;
     border-radius: 10px;
-    padding: 1.8rem 2rem 2.4rem;
-    margin-bottom: 2.8rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-    transition: box-shadow 0.3s ease;
+    flex-shrink: 0;
+    box-shadow: 0 0 15px rgba(123,36,51,0.2);
+    /* Replace background with your photo by uncommenting below */
+    /* background-image: url('your-photo.jpg'); */
+    /* background-size: cover; background-position: center; */
   }
-  section:hover {
-    box-shadow: 0 6px 15px rgba(123,36,51,0.15);
+  #about-bg #about-text {
+    max-width: 600px;
   }
-
-  /* About */
-  #about p {
-    max-width: 650px;
-    font-size: 1.05rem;
+  #about-bg h2 {
+    font-weight: 700;
+    font-size: 2.4rem;
     margin-bottom: 1rem;
+    color: #7B2433;
   }
-  #about .skills {
+  #about-bg p {
+    font-size: 1.1rem;
+    margin-bottom: 1.4rem;
+    color: #3C3C3C;
+  }
+  #about-bg .skills {
     display: flex;
     flex-wrap: wrap;
     gap: 0.6rem;
-    margin-top: 1rem;
-    max-width: 650px;
   }
   .skill {
-    background: #FADBD8;
-    color: #7B2433;
-    padding: 0.4rem 0.8rem;
-    border-radius: 20px;
+    background: #7B2433;
+    color: #F9F4F2;
+    padding: 0.45rem 1.2rem;
+    border-radius: 25px;
     font-weight: 600;
     font-size: 0.9rem;
     user-select: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   }
 
-  /* Timeline container */
-  #experience {
-    position: relative;
-    padding-left: 25px;
+  /* Experience Section */
+  #experience-bg h2 {
+    font-weight: 700;
+    font-size: 2.3rem;
+    margin-bottom: 2rem;
+    color: #7B2433;
   }
-  #experience::before {
-    content: '';
+
+  /* Timeline vertical line */
+  #experience-bg::before {
+    content: "";
     position: absolute;
-    left: 12px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
+    left: 3.3rem;
+    top: 3.3rem;
+    bottom: 3rem;
+    width: 3px;
     background: #7B2433;
-    border-radius: 2px;
+    border-radius: 4px;
   }
+
   .experience-item {
     position: relative;
-    margin-bottom: 2.6rem;
-    padding-left: 20px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    background: white;
+    border-radius: 10px;
+    padding: 1.8rem 2rem;
+    margin-bottom: 2.8rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    max-width: 750px;
+    transition: box-shadow 0.3s ease;
   }
-  .experience-item.visible {
-    opacity: 1;
-    transform: translateY(0);
+  .experience-item:hover {
+    box-shadow: 0 6px 20px rgba(123,36,51,0.25);
   }
+  /* Dot on timeline */
   .experience-item::before {
-    content: '';
+    content: "";
     position: absolute;
-    left: -18px;
-    top: 8px;
-    width: 10px;
-    height: 10px;
-    background: #7B2433;
+    left: -5.6rem;
+    top: 1.9rem;
+    width: 14px;
+    height: 14px;
+    background: #F9F4F2;
+    border: 4px solid #7B2433;
     border-radius: 50%;
-    border: 2px solid #F9F9F9;
-    box-sizing: content-box;
+    box-shadow: 0 0 5px rgba(123,36,51,0.3);
   }
   .experience-item h4 {
+    color: #4A1E24;
     font-weight: 700;
-    color: #222222;
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
   }
-  .company {
+  .experience-item .company {
     font-style: italic;
-    color: #555555;
-    margin: 0.1rem 0 0.3rem 0;
+    color: #6B4A4B;
+    margin-bottom: 0.15rem;
   }
-  .dates-location {
+  .experience-item .dates-location {
     font-size: 0.9rem;
-    color: #666666;
+    color: #8A6E6F;
     margin-bottom: 0.7rem;
   }
   .experience-item ul {
     list-style-type: disc;
-    margin-left: 1.2rem;
-    color: #333333;
+    margin-left: 1.3rem;
+    color: #4A4A4A;
+    font-size: 1rem;
+  }
+  .experience-item ul li {
+    margin-bottom: 0.55rem;
   }
 
-  /* Projects */
-  #projects .project-card {
-    background: #FAF8F8;
-    border: 1px solid #D3D3D3;
-    border-radius: 10px;
-    padding: 1.4rem 1.8rem;
+  /* Projects Section */
+  #projects {
+    margin-bottom: 3rem;
+  }
+  #projects h2 {
+    color: #7B2433;
+    font-weight: 700;
+    font-size: 2.3rem;
     margin-bottom: 1.8rem;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+    gap: 1.8rem 2.4rem;
+  }
+  .project-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.8rem 2.3rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
     transition: box-shadow 0.3s ease;
   }
-  #projects .project-card:hover {
-    box-shadow: 0 4px 12px rgba(123,36,51,0.2);
+  .project-card:hover {
+    box-shadow: 0 8px 25px rgba(123,36,51,0.22);
   }
-  #projects .project-card h4 {
-    margin-bottom: 0.4rem;
+  .project-card h4 {
     color: #7B2433;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 0.7rem;
   }
-  #projects .project-card a {
+  .project-card p {
+    font-size: 1rem;
+    color: #444444;
+    margin-bottom: 1rem;
+    line-height: 1.42;
+  }
+  .project-card a {
     font-weight: 600;
-    color: #222222;
+    color: #7B2433;
     text-decoration: none;
   }
-  #projects .project-card a:hover {
-    color: #7B2433;
+  .project-card a:hover {
+    color: #9F2B35;
     text-decoration: underline;
   }
 
-  /* Social */
-  #social div {
-    margin-top: 1rem;
-    display: flex;
-    gap: 1.4rem;
-    font-size: 1.8rem;
+  /* Social / Connect Section */
+  #social {
+    padding-bottom: 2rem;
   }
-  #social a {
+  #social h2 {
     color: #7B2433;
-    transition: color 0.3s ease;
+    font-weight: 700;
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+  }
+  #social .icons {
+    font-size: 2.2rem;
+    color: #7B2433;
+    display: flex;
+    gap: 2.2rem;
+    margin-top: 0.8rem;
   }
   #social a:hover {
-    color: #A64B4B;
+    color: #9F2B35;
   }
 
   /* Footer */
   footer {
     text-align: center;
     font-size: 0.85rem;
-    color: #777777;
-    margin: 2rem 0 1rem;
+    color: #7B2433;
+    margin: 3rem 0 1rem;
   }
   footer a {
     color: #7B2433;
     text-decoration: none;
+    font-weight: 600;
   }
   footer a:hover {
     text-decoration: underline;
   }
 
   /* Responsive */
-  @media (max-width: 650px) {
-    nav {
+  @media (max-width: 840px) {
+    #about-bg {
       flex-direction: column;
-      gap: 0.6rem;
-      padding: 1rem 1.5rem;
+      padding: 2rem 2rem 2rem 2rem;
     }
-    nav ul {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.2rem;
+    #about-bg #photo-placeholder {
+      margin-bottom: 1.5rem;
+      width: 160px;
+      height: 160px;
+      box-shadow: 0 0 12px rgba(123,36,51,0.22);
     }
-    main {
-      margin: 130px 1rem 40px;
-      padding: 0;
+    #experience-bg {
+      padding-left: 3rem;
     }
-    #about p,
-    #about .skills {
-      max-width: 100%;
+    #experience-bg::before {
+      left: 2.2rem;
+    }
+    .experience-item::before {
+      left: -4.3rem;
+      width: 12px;
+      height: 12px;
+      border-width: 3px;
     }
   }
+  @media (max-width: 500px) {
+    nav ul {
+      gap: 1rem;
+    }
+    main {
+      margin: 120px 1rem 50px;
+      padding: 0 1rem;
+    }
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Unique UI accent - angled shape behind navbar left */
+  nav::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0;
+    width: 120px;
+    height: 100%;
+    background: #9F2B35;
+    clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%);
+    opacity: 0.15;
+    z-index: 999;
+  }
 </style>
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
-<!-- FontAwesome CDN for icons -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
 <nav>
   <div class="logo">Khajani Sivapala</div>
   <ul>
-    <li><a href="#about" class="active">About Me</a></li>
-    <li><a href="#experience">Experience</a></li>
+    <li><a href="#about-bg" class="active">About Me</a></li>
+    <li><a href="#experience-bg">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#social">Connect</a></li>
   </ul>
@@ -272,25 +361,29 @@
 
 <main>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Focused on advancing automotive systems through mechanical design and hands-on prototyping. Built and validated aerodynamic and chassis systems for a high-performance electric race car. Applied electromechanical systems and automation in AGV and braille printer projects. Seeking Winter 2026 Co-ops in automotive design, testing, electromechanical systems, or R&D.</p>
-
-    <div class="skills">
-      <div class="skill">Mechanical Design</div>
-      <div class="skill">Prototyping</div>
-      <div class="skill">Aerodynamics</div>
-      <div class="skill">SOLIDWORKS</div>
-      <div class="skill">Electromechanical Systems</div>
-      <div class="skill">Automation</div>
-      <div class="skill">PLC & Motors</div>
-      <div class="skill">GD&T</div>
-      <div class="skill">Lean Manufacturing</div>
-      <div class="skill">Excel VBA</div>
+  <!-- ABOUT -->
+  <section id="about-bg" class="section-bg">
+    <div id="photo-placeholder" aria-label="Photo placeholder"></div>
+    <div id="about-text">
+      <h2>About Me</h2>
+      <p>Focused on advancing automotive systems through mechanical design and hands-on prototyping. Built and validated aerodynamic and chassis systems for a high-performance electric race car. Applied electromechanical systems and automation in AGV and braille printer projects. Seeking Winter 2026 Co-ops in automotive design, testing, electromechanical systems, or R&D.</p>
+      <div class="skills">
+        <div class="skill">Mechanical Design</div>
+        <div class="skill">Prototyping</div>
+        <div class="skill">Aerodynamics</div>
+        <div class="skill">SOLIDWORKS</div>
+        <div class="skill">Electromechanical Systems</div>
+        <div class="skill">Automation</div>
+        <div class="skill">PLC & Motors</div>
+        <div class="skill">GD&T</div>
+        <div class="skill">Lean Manufacturing</div>
+        <div class="skill">Excel VBA</div>
+      </div>
     </div>
   </section>
 
-  <section id="experience">
+  <!-- EXPERIENCE -->
+  <section id="experience-bg" class="section-bg">
     <h2>Experience</h2>
 
     <article class="experience-item">
@@ -339,45 +432,48 @@
     </article>
   </section>
 
+  <!-- PROJECTS -->
   <section id="projects">
     <h2>Projects</h2>
+    <div class="projects-grid">
+      <article class="project-card">
+        <h4>Toyota Mechanical Innovation Challenge: Automated Guided Vehicle (AGV) Design</h4>
+        <p>Designed an AGV to transport car doors and boxes with dual-mode lifting and safe warehouse navigation.</p>
+        <p>Modeled custom grippers in SOLIDWORKS and 3D printed within a strict 27 cm³ volume limit.</p>
+        <p>Built lift system using Tetrix hardware, DC motors, servos, and an 8-screw frame constraint.</p>
+        <p>Integrated PS4 controller and ultrasonic sensor for manual control and obstacle detection.</p>
+        <a href="https://github.com/khajani/Toyota-Mechanical-Innovation-Challenge-2025" target="_blank" rel="noopener noreferrer">Project Link</a>
+      </article>
 
-    <article class="project-card">
-      <h4>Toyota Mechanical Innovation Challenge: Automated Guided Vehicle (AGV) Design</h4>
-      <p>Designed an AGV to transport car doors and boxes with dual-mode lifting and safe warehouse navigation.</p>
-      <p>Modeled custom grippers in SOLIDWORKS and 3D printed within a strict 27 cm³ volume limit.</p>
-      <p>Built lift system using Tetrix hardware, DC motors, servos, and an 8-screw frame constraint.</p>
-      <p>Integrated PS4 controller and ultrasonic sensor for manual control and obstacle detection.</p>
-      <a href="https://github.com/khajani/Toyota-Mechanical-Innovation-Challenge-2025" target="_blank" rel="noopener noreferrer">Project Link</a>
-    </article>
+      <article class="project-card">
+        <h4>DotMatic: The Braille Printing Robot</h4>
+        <p>Created a low-cost, portable braille printer using LEGO EV3, servo motors, laser-cut wooden racks, and foam paper.</p>
+        <p>Designed crank and cart system to convert rotational motion into linear braille dot punching.</p>
+        <p>Programmed in Robot C to translate text files into braille using 1D arrays and motor encoders.</p>
+        <a href="#" target="_blank" rel="noopener noreferrer">More Details</a>
+      </article>
 
-    <article class="project-card">
-      <h4>DotMatic: The Braille Printing Robot</h4>
-      <p>Created a low-cost, portable braille printer using LEGO EV3, servo motors, laser-cut wooden racks, and foam paper.</p>
-      <p>Designed crank and cart system to convert rotational motion into linear braille dot punching.</p>
-      <p>Programmed in Robot C to translate text files into braille using 1D arrays and motor encoders.</p>
-      <a href="#" target="_blank" rel="noopener noreferrer">More Details</a>
-    </article>
-
-    <article class="project-card">
-      <h4>Cat-Themed Speaker</h4>
-      <p>Built a fully functional cardboard speaker with Seeeduino Nano, breadboard, push button, and amplifier components.</p>
-      <p>Designed conical face and octagonal rear chamber to maximize volume and direct sound output.</p>
-      <p>Integrated cat-themed aesthetics; recognized for creativity and acoustic performance.</p>
-      <a href="https://khajani.wixsite.com/khajani-sivapala/cat-speaker" target="_blank" rel="noopener noreferrer">Project Link</a>
-    </article>
+      <article class="project-card">
+        <h4>Cat-Themed Speaker</h4>
+        <p>Built a fully functional cardboard speaker with Seeeduino Nano, breadboard, push button, and amplifier components.</p>
+        <p>Designed conical face and octagonal rear chamber to maximize volume and direct sound output.</p>
+        <p>Integrated cat-themed aesthetics; recognized for creativity and acoustic performance.</p>
+        <a href="https://khajani.wixsite.com/khajani-sivapala/cat-speaker" target="_blank" rel="noopener noreferrer">Project Link</a>
+      </article>
+    </div>
   </section>
 
+  <!-- SOCIAL -->
   <section id="social">
     <h2>Connect with Me</h2>
-    <div>
-      <a href="https://www.linkedin.com/in/khajani-sivapala" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer" style="margin-right:1.5rem; font-size: 1.8rem; color: #7B2433;">
+    <div class="icons">
+      <a href="https://www.linkedin.com/in/khajani-sivapala" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer">
         <i class="fab fa-linkedin"></i>
       </a>
-      <a href="https://github.com/khajani" target="_blank" aria-label="GitHub" rel="noopener noreferrer" style="margin-right:1.5rem; font-size: 1.8rem; color: #7B2433;">
+      <a href="https://github.com/khajani" target="_blank" aria-label="GitHub" rel="noopener noreferrer">
         <i class="fab fa-github"></i>
       </a>
-      <a href="mailto:ksivapal@uwaterloo.ca" aria-label="Email" style="font-size: 1.8rem; color: #7B2433;">
+      <a href="mailto:ksivapal@uwaterloo.ca" aria-label="Email">
         <i class="fas fa-envelope"></i>
       </a>
     </div>
@@ -396,7 +492,7 @@
   const sections = [...navLinks].map(link => document.querySelector(link.getAttribute('href')));
 
   function onScroll() {
-    const scrollPos = window.scrollY + 120; // adjust for navbar height
+    const scrollPos = window.scrollY + 140; // adjust for navbar height
     sections.forEach((section, i) => {
       if (section.offsetTop <= scrollPos && section.offsetTop + section.offsetHeight > scrollPos) {
         navLinks.forEach(link => link.classList.remove('active'));
@@ -407,14 +503,16 @@
   window.addEventListener('scroll', onScroll);
   onScroll();
 
-  // Experience fade-in on scroll
+  // Fade-in animation for experience items
   const experienceItems = document.querySelectorAll('.experience-item');
   function checkVisibility() {
     const triggerBottom = window.innerHeight * 0.85;
     experienceItems.forEach(item => {
       const top = item.getBoundingClientRect().top;
       if (top < triggerBottom) {
-        item.classList.add('visible');
+        item.style.opacity = 1;
+        item.style.transform = 'translateY(0)';
+        item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
       }
     });
   }
