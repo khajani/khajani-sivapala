@@ -3,347 +3,285 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Khajani Sivapala - Portfolio</title>
+<title>Khajani Sivapala — Engineering Portfolio</title>
 
-<!-- Google Fonts: Lato -->
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans&display=swap" rel="stylesheet" />
 
 <!-- FontAwesome for icons -->
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 <style>
-  /* Reset */
+  /* Reset and base */
   * {
     box-sizing: border-box;
-    margin: 0; padding: 0;
   }
   body {
-    font-family: 'Lato', sans-serif;
-    background: #FAFBFB;
-    color: #222;
-    line-height: 1.58;
-    min-height: 100vh;
+    margin: 0; 
+    font-family: 'Open Sans', sans-serif;
+    background-color: #FFF5E1;
+    color: #3a3a3a;
     scroll-behavior: smooth;
+    transition: background-color 0.4s, color 0.4s;
+  }
+  h1, h2, h3 {
+    font-family: 'Merriweather', serif;
+    margin-bottom: 0.4rem;
   }
   a {
-    color: inherit;
+    color: #800020;
     text-decoration: none;
+    transition: color 0.3s ease;
   }
-  a:hover {
-    color: #9F2B35; /* dark burgundy */
+  a:hover, a:focus {
+    color: #FFD700;
   }
 
-  /* Navbar */
+  /* Sticky navbar */
   nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    background: #7B2433; /* burgundy */
+    position: sticky;
+    top: 0;
+    background: #800020;
+    color: #FFF5E1;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    box-shadow: 0 3px 7px rgba(0,0,0,0.15);
+    padding: 0.8rem 2rem;
     z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   }
   nav .logo {
+    font-family: 'Merriweather', serif;
     font-weight: 700;
-    font-size: 1.6rem;
-    color: #FDF6F5;
-    user-select: none;
-    letter-spacing: 0.05em;
-    font-style: italic;
+    font-size: 1.5rem;
   }
   nav ul {
-    display: flex;
-    gap: 2rem;
     list-style: none;
+    display: flex;
+    gap: 1.4rem;
+    margin: 0;
+  }
+  nav ul li {
+    position: relative;
   }
   nav ul li a {
-    color: #FDF6F5;
+    color: #FFF5E1;
     font-weight: 600;
     font-size: 1rem;
-    padding-bottom: 3px;
-    border-bottom: 2px solid transparent;
-    transition: border-color 0.3s ease;
   }
-  nav ul li a:hover,
-  nav ul li a.active {
-    border-bottom: 2px solid #F1D0C4;
-    color: #F1D0C4;
+  nav ul li a.active,
+  nav ul li a:hover {
+    color: #FFD700;
+    border-bottom: 2px solid #FFD700;
   }
 
-  /* Main container */
+  /* Dark mode toggle */
+  .toggle-switch {
+    cursor: pointer;
+    font-size: 1.4rem;
+  }
+
+  /* Container */
   main {
-    max-width: 960px;
-    margin: 110px auto 50px;
+    max-width: 1100px;
+    margin: 2rem auto 4rem;
     padding: 0 1.5rem;
   }
 
-  /* Section background blocks */
-  .section-bg {
-    border-radius: 14px;
+  /* Section backgrounds */
+  section {
+    margin-bottom: 4rem;
+    border-radius: 12px;
     padding: 2.5rem 3rem;
-    margin-bottom: 3rem;
+    background-color: #fff; /* default */
+    box-shadow: 0 4px 15px rgb(0 0 0 / 0.07);
     position: relative;
   }
-  #about-bg {
-    background: #F9F4F2; /* very light beige */
-    display: flex;
-    gap: 2.5rem;
-    align-items: center;
+  #about {
+    background: #f7ede9; /* subtle cream */
   }
-  #experience-bg {
-    background: #F2D4D2; /* subtle soft burgundy tint */
-    padding-left: 6rem;
+  #experience {
+    background: #f4e3e3; /* lighter burgundy tone */
   }
 
   /* About Section */
-  #about-bg #photo-placeholder {
-    width: 190px;
-    height: 190px;
-    background: #ccc;
-    border-radius: 10px;
-    flex-shrink: 0;
-    box-shadow: 0 0 15px rgba(123,36,51,0.2);
-    /* Replace background with your photo by uncommenting below */
-    /* background-image: url('your-photo.jpg'); */
-    /* background-size: cover; background-position: center; */
-  }
-  #about-bg #about-text {
-    max-width: 600px;
-  }
-  #about-bg h2 {
-    font-weight: 700;
-    font-size: 2.4rem;
-    margin-bottom: 1rem;
-    color: #7B2433;
-  }
-  #about-bg p {
-    font-size: 1.1rem;
-    margin-bottom: 1.4rem;
-    color: #3C3C3C;
-  }
-  #about-bg .skills {
+  #about {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
+    align-items: center;
+    gap: 2.5rem;
   }
-  .skill {
-    background: #7B2433;
-    color: #F9F4F2;
-    padding: 0.45rem 1.2rem;
-    border-radius: 25px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    user-select: none;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  #about .photo {
+    flex-shrink: 0;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: url('https://i.pravatar.cc/180') no-repeat center/cover;
+    box-shadow: 0 6px 12px rgba(128, 0, 32, 0.3);
   }
-
-  /* Experience Section */
-  #experience-bg h2 {
-    font-weight: 700;
-    font-size: 2.3rem;
-    margin-bottom: 2rem;
-    color: #7B2433;
+  #about .intro {
+    flex-grow: 1;
+  }
+  #about .intro p {
+    line-height: 1.6;
+    font-size: 1.1rem;
   }
 
-  /* Timeline vertical line */
-  #experience-bg::before {
+  /* Timeline for experience */
+  #experience .timeline {
+    position: relative;
+    margin-left: 40px;
+  }
+  #experience .timeline::before {
     content: "";
     position: absolute;
-    left: 3.3rem;
-    top: 3.3rem;
-    bottom: 3rem;
-    width: 3px;
-    background: #7B2433;
-    border-radius: 4px;
+    left: 20px;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #800020;
+    border-radius: 2px;
   }
-
-  .experience-item {
+  .experience-card {
     position: relative;
-    background: white;
+    background: #fff;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
     border-radius: 10px;
-    padding: 1.8rem 2rem;
-    margin-bottom: 2.8rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    max-width: 750px;
+    box-shadow: 0 6px 12px rgb(128 0 32 / 0.1);
     transition: box-shadow 0.3s ease;
   }
-  .experience-item:hover {
-    box-shadow: 0 6px 20px rgba(123,36,51,0.25);
+  .experience-card:hover {
+    box-shadow: 0 12px 24px rgb(128 0 32 / 0.25);
   }
-  /* Dot on timeline */
-  .experience-item::before {
+  .experience-card::before {
     content: "";
     position: absolute;
-    left: -5.6rem;
-    top: 1.9rem;
+    left: -38px;
+    top: 30px;
     width: 14px;
     height: 14px;
-    background: #F9F4F2;
-    border: 4px solid #7B2433;
+    background-color: #fff;
+    border: 4px solid #800020;
     border-radius: 50%;
-    box-shadow: 0 0 5px rgba(123,36,51,0.3);
+    box-shadow: 0 0 0 4px #f4e3e3;
   }
-  .experience-item h4 {
-    color: #4A1E24;
-    font-weight: 700;
-    font-size: 1.3rem;
-    margin-bottom: 0.3rem;
+  .experience-card h3 {
+    margin-top: 0;
+    color: #800020;
   }
-  .experience-item .company {
+  .experience-card h4 {
+    margin: 0.2rem 0 0.7rem;
+    font-weight: 600;
     font-style: italic;
-    color: #6B4A4B;
-    margin-bottom: 0.15rem;
+    color: #555;
   }
-  .experience-item .dates-location {
-    font-size: 0.9rem;
-    color: #8A6E6F;
+  .experience-card p {
     margin-bottom: 0.7rem;
+    line-height: 1.5;
   }
-  .experience-item ul {
-    list-style-type: disc;
-    margin-left: 1.3rem;
-    color: #4A4A4A;
-    font-size: 1rem;
-  }
-  .experience-item ul li {
-    margin-bottom: 0.55rem;
+  .experience-card ul {
+    margin: 0;
+    padding-left: 1.2rem;
   }
 
-  /* Projects Section */
+  /* Projects grid */
   #projects {
-    margin-bottom: 3rem;
-  }
-  #projects h2 {
-    color: #7B2433;
-    font-weight: 700;
-    font-size: 2.3rem;
-    margin-bottom: 1.8rem;
-  }
-  .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
-    gap: 1.8rem 2.4rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.8rem;
   }
   .project-card {
-    background: white;
-    border-radius: 12px;
-    padding: 1.8rem 2.3rem;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
-    transition: box-shadow 0.3s ease;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgb(128 0 32 / 0.08);
+    padding: 1.8rem 1.6rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   .project-card:hover {
-    box-shadow: 0 8px 25px rgba(123,36,51,0.22);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 30px rgb(128 0 32 / 0.2);
   }
-  .project-card h4 {
-    color: #7B2433;
-    font-weight: 700;
-    font-size: 1.25rem;
-    margin-bottom: 0.7rem;
+  .project-card h3 {
+    color: #800020;
+    margin-top: 0;
+    font-family: 'Merriweather', serif;
   }
   .project-card p {
-    font-size: 1rem;
-    color: #444444;
-    margin-bottom: 1rem;
-    line-height: 1.42;
+    font-size: 0.95rem;
+    line-height: 1.4;
   }
   .project-card a {
+    display: inline-block;
+    margin-top: 0.8rem;
     font-weight: 600;
-    color: #7B2433;
-    text-decoration: none;
+    color: #800020;
   }
   .project-card a:hover {
-    color: #9F2B35;
-    text-decoration: underline;
+    color: #FFD700;
   }
 
-  /* Social / Connect Section */
+  /* Skills graph container */
+  #skills {
+    padding: 2rem 3rem;
+    background-color: #f4e3e3;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgb(128 0 32 / 0.1);
+    margin-bottom: 4rem;
+  }
+  #skills h2 {
+    color: #800020;
+  }
+  #skillsCanvas {
+    max-width: 600px;
+    margin: 2rem auto 0;
+    display: block;
+  }
+
+  /* Social icons */
   #social {
-    padding-bottom: 2rem;
+    text-align: center;
+    margin-bottom: 4rem;
   }
-  #social h2 {
-    color: #7B2433;
-    font-weight: 700;
-    font-size: 2.3rem;
-    margin-bottom: 1rem;
-  }
-  #social .icons {
-    font-size: 2.2rem;
-    color: #7B2433;
-    display: flex;
-    gap: 2.2rem;
-    margin-top: 0.8rem;
+  #social a {
+    font-size: 1.8rem;
+    margin: 0 1.1rem;
+    color: #800020;
+    transition: color 0.3s ease;
   }
   #social a:hover {
-    color: #9F2B35;
+    color: #FFD700;
   }
 
   /* Footer */
   footer {
     text-align: center;
-    font-size: 0.85rem;
-    color: #7B2433;
-    margin: 3rem 0 1rem;
-  }
-  footer a {
-    color: #7B2433;
-    text-decoration: none;
-    font-weight: 600;
-  }
-  footer a:hover {
-    text-decoration: underline;
+    font-size: 0.9rem;
+    padding: 1rem;
+    color: #666;
+    border-top: 1px solid #ddd;
   }
 
   /* Responsive */
-  @media (max-width: 840px) {
-    #about-bg {
+  @media (max-width: 768px) {
+    #about {
       flex-direction: column;
-      padding: 2rem 2rem 2rem 2rem;
+      text-align: center;
     }
-    #about-bg #photo-placeholder {
-      margin-bottom: 1.5rem;
-      width: 160px;
-      height: 160px;
-      box-shadow: 0 0 12px rgba(123,36,51,0.22);
+    #about .photo {
+      margin-bottom: 1.6rem;
+      margin-left: auto;
+      margin-right: auto;
     }
-    #experience-bg {
-      padding-left: 3rem;
+    #experience .timeline {
+      margin-left: 20px;
     }
-    #experience-bg::before {
-      left: 2.2rem;
-    }
-    .experience-item::before {
-      left: -4.3rem;
+    .experience-card::before {
+      left: -30px;
+      top: 20px;
       width: 12px;
       height: 12px;
       border-width: 3px;
     }
-  }
-  @media (max-width: 500px) {
-    nav ul {
-      gap: 1rem;
-    }
-    main {
-      margin: 120px 1rem 50px;
-      padding: 0 1rem;
-    }
-    .projects-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  /* Unique UI accent - angled shape behind navbar left */
-  nav::before {
-    content: "";
-    position: absolute;
-    left: 0; top: 0;
-    width: 120px;
-    height: 100%;
-    background: #9F2B35;
-    clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%);
-    opacity: 0.15;
-    z-index: 999;
   }
 </style>
 </head>
@@ -352,132 +290,101 @@
 <nav>
   <div class="logo">Khajani Sivapala</div>
   <ul>
-    <li><a href="#about-bg" class="active">About Me</a></li>
-    <li><a href="#experience-bg">Experience</a></li>
+    <li><a href="#about" class="active">About</a></li>
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
-    <li><a href="#social">Connect</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#social">Contact</a></li>
   </ul>
+  <div class="toggle-switch" title="Toggle dark mode" aria-label="Toggle dark mode" role="button" tabindex="0">&#9790;</div>
 </nav>
 
 <main>
 
-  <!-- ABOUT -->
-  <section id="about-bg" class="section-bg">
-    <div id="photo-placeholder" aria-label="Photo placeholder"></div>
-    <div id="about-text">
-      <h2>About Me</h2>
-      <p>Focused on advancing automotive systems through mechanical design and hands-on prototyping. Built and validated aerodynamic and chassis systems for a high-performance electric race car. Applied electromechanical systems and automation in AGV and braille printer projects. Seeking Winter 2026 Co-ops in automotive design, testing, electromechanical systems, or R&D.</p>
-      <div class="skills">
-        <div class="skill">Mechanical Design</div>
-        <div class="skill">Prototyping</div>
-        <div class="skill">Aerodynamics</div>
-        <div class="skill">SOLIDWORKS</div>
-        <div class="skill">Electromechanical Systems</div>
-        <div class="skill">Automation</div>
-        <div class="skill">PLC & Motors</div>
-        <div class="skill">GD&T</div>
-        <div class="skill">Lean Manufacturing</div>
-        <div class="skill">Excel VBA</div>
-      </div>
+<section id="about" aria-label="About Me">
+  <div class="photo" role="img" aria-label="Khajani Sivapala photo"></div>
+  <div class="intro">
+    <h1>Hi, I’m Khajani Sivapala</h1>
+    <p>Focused on advancing automotive systems through mechanical design and hands-on prototyping. Built and validated aerodynamic and chassis systems for a high-performance electric race car. Applied electromechanical systems and automation in AGV and braille printer projects. Seeking Winter 2026 Co-ops in automotive design, testing, electromechanical systems, or R&D.</p>
+    <p>📧 <a href="mailto:ksivapal@uwaterloo.ca">ksivapal@uwaterloo.ca</a></p>
+  </div>
+</section>
+
+<section id="experience" aria-label="Experience">
+  <h2>Experience</h2>
+  <div class="timeline">
+    <article class="experience-card" tabindex="0">
+      <h3>Maintenance Engineering Intern</h3>
+      <h4>Cérélia North America &mdash; Jun 2025 to Present</h4>
+      <p>Shadowed technicians working with PLCs, motors, and safety modules, gaining insight into industrial automation systems.</p>
+      <p>Implemented structured inventory management for 2,650+ components by creating a grid-based labeling system and improving parts traceability.</p>
+      <p>Maintained and updated CMMS data for efficient preventative maintenance planning. Analyzed equipment energy usage and operational data to support improvements. Created and refined Excel tools with dynamic features.</p>
+    </article>
+
+    <article class="experience-card" tabindex="0">
+      <h3>Aerodynamics General Member</h3>
+      <h4>University of Waterloo Formula Electric &mdash; Jan 2025 to Present</h4>
+      <p>Developed carbon fiber undertray layup by adhesive spraying epoxy resin-infused foam and carbon fiber onto structural cores.</p>
+      <p>Fabricated a vacuum bag for consistent curing. Contributed to aerodynamic component testing and manufacturing prep.</p>
+    </article>
+
+    <article class="experience-card" tabindex="0">
+      <h3>Chassis General Member</h3>
+      <h4>University of Waterloo Formula Electric &mdash; Sep 2024 to Present</h4>
+      <p>Machined inserts and top hats to spec using GD&T and manufacturing drawings.</p>
+      <p>Operated lathe, bandsaw, and sanding tools; processed 20+ tubes for chassis assembly.</p>
+      <p>Conducted adhesive coupon testing to determine optimal bonding methods for chassis components.</p>
+    </article>
+
+    <article class="experience-card" tabindex="0">
+      <h3>First Year Representative (Mechatronics Engineering)</h3>
+      <h4>Waterloo Engineering Society &mdash; Sep 2024 to Present</h4>
+      <p>Advocated for Mechatronics students by communicating feedback to instructors.</p>
+      <p>Analyzed survey data to help resolve academic concerns and improve class performance by ~30%.</p>
+    </article>
+  </div>
+</section>
+
+<section id="projects" aria-label="Projects">
+  <h2>Projects</h2>
+  <div>
+    <div class="project-card" tabindex="0">
+      <h3>Toyota Mechanical Innovation Challenge: AGV Design</h3>
+      <p>Designed an AGV to transport car doors and boxes with dual-mode lifting and safe warehouse navigation. Modeled custom grippers in SOLIDWORKS and 3D printed them within strict size limits. Built lift system using Tetrix hardware, DC motors, servos, and integrated PS4 controller and sensors.</p>
+      <a href="https://github.com/khajani/Toyota-Mechanical-Innovation-Challenge-2025" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
     </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience-bg" class="section-bg">
-    <h2>Experience</h2>
-
-    <article class="experience-item">
-      <h4>Maintenance Engineering Intern</h4>
-      <div class="company">Cérélia North America</div>
-      <div class="dates-location">Jun 2025 – Present · Mississauga, ON</div>
-      <ul>
-        <li>Shadowed technicians working with PLCs, motors, and safety modules, gaining insight into industrial automation systems.</li>
-        <li>Implemented structured inventory management for 2,650+ components by creating a grid-based labeling system.</li>
-        <li>Maintained and updated CMMS data to align physical inventory and digital records for maintenance planning.</li>
-        <li>Analyzed equipment energy usage and operational data to support process improvements.</li>
-        <li>Created and refined Excel tools with dynamic search and auto-updating features.</li>
-      </ul>
-    </article>
-
-    <article class="experience-item">
-      <h4>Aerodynamics General Member</h4>
-      <div class="company">University of Waterloo Formula Electric</div>
-      <div class="dates-location">Jan 2025 – Present · Waterloo, ON</div>
-      <ul>
-        <li>Developed carbon fiber undertray layup by adhesive spraying epoxy resin-infused foam and carbon fiber onto structural cores.</li>
-        <li>Fabricated a 260" × 180" vacuum bag for consistent curing.</li>
-        <li>Contributed to aerodynamic component testing and manufacturing prep.</li>
-      </ul>
-    </article>
-
-    <article class="experience-item">
-      <h4>Chassis General Member</h4>
-      <div class="company">University of Waterloo Formula Electric</div>
-      <div class="dates-location">Sep 2024 – Present · Waterloo, ON</div>
-      <ul>
-        <li>Machined inserts and top hats to spec using GD&T and manufacturing drawings.</li>
-        <li>Operated lathe, bandsaw, and sanding tools; processed 20+ tubes for chassis assembly.</li>
-        <li>Conducted adhesive coupon testing to determine optimal bonding methods for chassis components.</li>
-      </ul>
-    </article>
-
-    <article class="experience-item">
-      <h4>First Year Representative (Mechatronics Engineering)</h4>
-      <div class="company">Waterloo Engineering Society</div>
-      <div class="dates-location">Sep 2024 – Present · Waterloo, ON</div>
-      <ul>
-        <li>Advocated for Mechatronics students by communicating feedback to instructors.</li>
-        <li>Analyzed survey data to help resolve academic concerns and improve class performance by ~30%.</li>
-      </ul>
-    </article>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-      <article class="project-card">
-        <h4>Toyota Mechanical Innovation Challenge: Automated Guided Vehicle (AGV) Design</h4>
-        <p>Designed an AGV to transport car doors and boxes with dual-mode lifting and safe warehouse navigation.</p>
-        <p>Modeled custom grippers in SOLIDWORKS and 3D printed within a strict 27 cm³ volume limit.</p>
-        <p>Built lift system using Tetrix hardware, DC motors, servos, and an 8-screw frame constraint.</p>
-        <p>Integrated PS4 controller and ultrasonic sensor for manual control and obstacle detection.</p>
-        <a href="https://github.com/khajani/Toyota-Mechanical-Innovation-Challenge-2025" target="_blank" rel="noopener noreferrer">Project Link</a>
-      </article>
-
-      <article class="project-card">
-        <h4>DotMatic: The Braille Printing Robot</h4>
-        <p>Created a low-cost, portable braille printer using LEGO EV3, servo motors, laser-cut wooden racks, and foam paper.</p>
-        <p>Designed crank and cart system to convert rotational motion into linear braille dot punching.</p>
-        <p>Programmed in Robot C to translate text files into braille using 1D arrays and motor encoders.</p>
-        <a href="#" target="_blank" rel="noopener noreferrer">More Details</a>
-      </article>
-
-      <article class="project-card">
-        <h4>Cat-Themed Speaker</h4>
-        <p>Built a fully functional cardboard speaker with Seeeduino Nano, breadboard, push button, and amplifier components.</p>
-        <p>Designed conical face and octagonal rear chamber to maximize volume and direct sound output.</p>
-        <p>Integrated cat-themed aesthetics; recognized for creativity and acoustic performance.</p>
-        <a href="https://khajani.wixsite.com/khajani-sivapala/cat-speaker" target="_blank" rel="noopener noreferrer">Project Link</a>
-      </article>
+    <div class="project-card" tabindex="0">
+      <h3>DotMatic: The Braille Printing Robot</h3>
+      <p>Created a low-cost, portable CNC-style braille printer to teach braille in public schools. Built using LEGO EV3, servo motors, laser-cut wooden racks, and foam paper. Programmed in Robot C to translate text files into braille.</p>
     </div>
-  </section>
-
-  <!-- SOCIAL -->
-  <section id="social">
-    <h2>Connect with Me</h2>
-    <div class="icons">
-      <a href="https://www.linkedin.com/in/khajani-sivapala" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://github.com/khajani" target="_blank" aria-label="GitHub" rel="noopener noreferrer">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="mailto:ksivapal@uwaterloo.ca" aria-label="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
+    <div class="project-card" tabindex="0">
+      <h3>Cat-Themed Speaker</h3>
+      <p>Built a fully functional cardboard speaker with Seeeduino Nano, amplifier components, and push button. Designed conical face and octagonal rear chamber for max volume and sound directivity. Integrated cat-themed aesthetics; recognized for creativity and performance.</p>
+      <a href="https://khajani.wixsite.com/khajani-sivapala/cat-speaker" target="_blank" rel="noopener noreferrer">Project Link</a>
     </div>
-  </section>
+  </div>
+</section>
+
+<section id="skills" aria-label="Skills">
+  <h2>Skills</h2>
+  <canvas id="skillsCanvas" width="600" height="400" aria-label="Skills radar chart"></canvas>
+</section>
+
+<section id="social" aria-label="Contact & Social Media">
+  <h2>Get in Touch</h2>
+  <p>Feel free to reach out on LinkedIn, GitHub, or email.</p>
+  <div>
+    <a href="https://www.linkedin.com/in/khajani-sivapala" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer">
+      <i class="fab fa-linkedin fa-2x"></i>
+    </a>
+    <a href="https://github.com/khajani" target="_blank" aria-label="GitHub" rel="noopener noreferrer">
+      <i class="fab fa-github fa-2x"></i>
+    </a>
+    <a href="mailto:ksivapal@uwaterloo.ca" aria-label="Email">
+      <i class="fas fa-envelope fa-2x"></i>
+    </a>
+  </div>
+</section>
 
 </main>
 
@@ -486,16 +393,16 @@
   <a href="mailto:ksivapal@uwaterloo.ca">ksivapal@uwaterloo.ca</a>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-  // Smooth scroll + active nav link highlight
+  // Smooth scroll nav active highlight
   const navLinks = document.querySelectorAll('nav ul li a');
   const sections = [...navLinks].map(link => document.querySelector(link.getAttribute('href')));
-
   function onScroll() {
-    const scrollPos = window.scrollY + 140; // adjust for navbar height
+    const scrollPos = window.scrollY + 120;
     sections.forEach((section, i) => {
-      if (section.offsetTop <= scrollPos && section.offsetTop + section.offsetHeight > scrollPos) {
-        navLinks.forEach(link => link.classList.remove('active'));
+      if (section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
+        navLinks.forEach(l => l.classList.remove('active'));
         navLinks[i].classList.add('active');
       }
     });
@@ -503,21 +410,72 @@
   window.addEventListener('scroll', onScroll);
   onScroll();
 
-  // Fade-in animation for experience items
-  const experienceItems = document.querySelectorAll('.experience-item');
-  function checkVisibility() {
-    const triggerBottom = window.innerHeight * 0.85;
-    experienceItems.forEach(item => {
-      const top = item.getBoundingClientRect().top;
-      if (top < triggerBottom) {
-        item.style.opacity = 1;
-        item.style.transform = 'translateY(0)';
-        item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      }
-    });
-  }
-  window.addEventListener('scroll', checkVisibility);
-  window.addEventListener('load', checkVisibility);
+  // Dark mode toggle
+  const toggle = document.querySelector('.toggle-switch');
+  toggle.addEventListener('click', () => {
+    if(document.body.style.backgroundColor === 'rgb(26, 26, 26)') {
+      // Light mode
+      document.body.style.backgroundColor = '#FFF5E1';
+      document.body.style.color = '#3a3a3a';
+      toggle.textContent = '🌙';
+    } else {
+      // Dark mode
+      document.body.style.backgroundColor = '#1a1a1a';
+      document.body.style.color = '#ddd';
+      toggle.textContent = '☀️';
+    }
+  });
+
+  // Skills Radar chart with Chart.js
+  const ctx = document.getElementById('skillsCanvas').getContext('2d');
+  const skillsChart = new Chart(ctx, {
+    type: 'radar',
+    data: {
+      labels: ['Mechanical Design', 'Prototyping', 'Automation', 'CAD/SOLIDWORKS', 'Programming', 'Testing & Validation', 'Project Management'],
+      datasets: [{
+        label: 'Skill Level',
+        data: [85, 80, 75, 90, 70, 80, 65],
+        backgroundColor: 'rgba(128, 0, 32, 0.3)',
+        borderColor: '#800020',
+        pointBackgroundColor: '#800020',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#FFD700',
+        pointHoverBorderColor: '#800020',
+        borderWidth: 2,
+        fill: true,
+        tension: 0.3
+      }]
+    },
+    options: {
+      scales: {
+        r: {
+          angleLines: {
+            color: '#800020'
+          },
+          grid: {
+            color: '#800020',
+            borderColor: '#800020'
+          },
+          pointLabels: {
+            color: '#800020',
+            font: { family: 'Merriweather', size: 14, weight: '600' }
+          },
+          ticks: {
+            color: '#800020',
+            stepSize: 20,
+            beginAtZero: true,
+            max: 100,
+            showLabelBackdrop: false
+          }
+        }
+      },
+      plugins: {
+        legend: { labels: { color: '#800020', font: { family: 'Open Sans', size: 14 } } }
+      },
+      responsive: true,
+      maintainAspectRatio: false
+    }
+  });
 </script>
 
 </body>
