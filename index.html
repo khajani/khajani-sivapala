@@ -62,7 +62,7 @@
   }
   aside nav ul li a:hover,
   aside nav ul li a.active {
-    background: #b22222; /* brighter burgundy */
+    background: #003366; /* navy blue */
   }
   aside .contact {
     margin-top: auto;
@@ -175,16 +175,23 @@
   .experience-card h3 {
     margin-top: 0;
     color: #800020;
+    font-weight: 700;
+    font-size: 1.25rem;
   }
   .experience-card h4 {
     margin: 0.3rem 0 1rem;
     font-weight: 600;
-    font-style: italic;
-    color: #6b1a1a;
+    font-style: normal;
+    color: #003366;
   }
-  .experience-card p {
-    margin-bottom: 0.8rem;
+  .experience-card ul {
+    padding-left: 1.3rem;
+    margin-top: 0.3rem;
     line-height: 1.5;
+  }
+  .experience-card ul li {
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
   }
 
   /* Projects section */
@@ -197,8 +204,9 @@
   }
   #projects-section .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 1.8rem;
+    margin-top: 1rem;
   }
   .project-card {
     background: #fff;
@@ -214,6 +222,8 @@
   .project-card h3 {
     margin-top: 0;
     color: #800020;
+    font-weight: 700;
+    font-size: 1.2rem;
   }
   .project-card p {
     font-size: 1rem;
@@ -302,7 +312,10 @@
   <div class="photo" role="img" aria-label="Photo of Khajani Sivapala"></div>
   <div class="intro">
     <h1>Hi, I’m Khajani Sivapala</h1>
-    <p>Focused on advancing automotive systems through mechanical design and hands-on prototyping. Built and validated aerodynamic and chassis systems for a high-performance electric race car. Applied electromechanical systems and automation in AGV and braille printer projects. Seeking Winter 2026 Co-ops in automotive design, testing, electromechanical systems, or R&D.</p>
+    <p>🔩 Focused on advancing automotive systems through mechanical design and hands-on prototyping.</p>
+    <p>🏎️ Built and validated aerodynamic and chassis systems for a high-performance electric race car.</p>
+    <p>🤖 Applied electromechanical systems and automation in AGV and braille printer projects.</p>
+    <p>🎯 Seeking Winter 2026 Co-ops in automotive design, testing, electromechanical systems, or R&D.</p>
     <p>📧 <a href="mailto:ksivapal@uwaterloo.ca">ksivapal@uwaterloo.ca</a></p>
   </div>
 </section>
@@ -321,33 +334,44 @@
   <h2>Experience</h2>
 
   <article class="experience-card" tabindex="0">
-    <h3>Maintenance Engineering Intern</h3>
-    <h4>Cérélia North America &mdash; Jun 2025 to Present</h4>
-    <p>Shadowed technicians working with PLCs, motors, and safety modules, gaining insight into industrial automation systems.</p>
-    <p>Implemented structured inventory management for 2,650+ components by creating a grid-based labeling system and improving parts traceability.</p>
-    <p>Maintained and updated CMMS data for efficient preventative maintenance planning. Analyzed equipment energy usage and operational data to support improvements. Created and refined Excel tools with dynamic features.</p>
+    <h3>🔩 Maintenance Engineering Intern – Cérélia North America</h3>
+    <h4>📍 Jun 2025 – Present</h4>
+    <ul>
+      <li>🤖 Shadowed technicians working with PLCs, motors, and safety modules, gaining insight into industrial automation systems</li>
+      <li>📦 Implemented structured inventory management for 2,650+ components by creating a grid-based labeling system and improving parts traceability</li>
+      <li>⚙️ Maintained and updated CMMS data for efficient preventative maintenance planning</li>
+      <li>📈 Analyzed equipment energy usage and operational data to support process improvements</li>
+      <li>💻 Created and refined Excel tools with dynamic search and auto-updating features</li>
+    </ul>
   </article>
 
   <article class="experience-card" tabindex="0">
-    <h3>Aerodynamics General Member</h3>
-    <h4>University of Waterloo Formula Electric &mdash; Jan 2025 to Present</h4>
-    <p>Developed carbon fiber undertray layup by adhesive spraying epoxy resin-infused foam and carbon fiber onto structural cores.</p>
-    <p>Fabricated a vacuum bag for consistent curing. Contributed to aerodynamic component testing and manufacturing prep.</p>
+    <h3>🔩 Aerodynamics General Member – UW Formula Electric</h3>
+    <h4>📍 Jan 2025 – Present</h4>
+    <ul>
+      <li>🛠️ Developed carbon fiber undertray layup by adhesive spraying epoxy resin-infused foam and carbon fiber onto structural cores</li>
+      <li>📏 Fabricated a 260" × 180" vacuum bag to enable consistent curing</li>
+      <li>👥 Contributed to aerodynamic component testing and manufacturing prep</li>
+    </ul>
   </article>
 
   <article class="experience-card" tabindex="0">
-    <h3>Chassis General Member</h3>
-    <h4>University of Waterloo Formula Electric &mdash; Sep 2024 to Present</h4>
-    <p>Machined inserts and top hats to spec using GD&T and manufacturing drawings.</p>
-    <p>Operated lathe, bandsaw, and sanding tools; processed 20+ tubes for chassis assembly.</p>
-    <p>Conducted adhesive coupon testing to determine optimal bonding methods for chassis components.</p>
+    <h3>🔩 Chassis General Member – UW Formula Electric</h3>
+    <h4>📍 Sep 2024 – Present</h4>
+    <ul>
+      <li>🧪 Ran structural adhesive tests to find the strongest bonding method for steel chassis parts</li>
+      <li>📐 Machined top hats + inserts to spec using GD&T principles</li>
+      <li>🧰 Lathe, bandsaw, sanding — processed 20+ steel tubes for our chassis frame</li>
+    </ul>
   </article>
 
   <article class="experience-card" tabindex="0">
-    <h3>First Year Representative (Mechatronics Engineering)</h3>
-    <h4>Waterloo Engineering Society &mdash; Sep 2024 to Present</h4>
-    <p>Advocated for Mechatronics students by communicating feedback to instructors.</p>
-    <p>Analyzed survey data to help resolve academic concerns and improve class performance by ~30%.</p>
+    <h3>🔩 First Year Representative (Mechatronics Engineering) – Waterloo Engineering Society</h3>
+    <h4>📍 Sep 2024 – Present</h4>
+    <ul>
+      <li>👥 Advocated for Mechatronics students by communicating feedback to instructors</li>
+      <li>📊 Analyzed survey data to help resolve academic concerns and improve class performance by ~30%</li>
+    </ul>
   </article>
 
 </section>
