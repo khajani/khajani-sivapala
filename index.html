@@ -78,6 +78,20 @@
     font-size: 2rem;
   }
 
+  /* Boxed Sections */
+  section {
+    background: white;
+    border: 1.5px solid #D3D3D3;
+    border-radius: 10px;
+    padding: 1.8rem 2rem 2.4rem;
+    margin-bottom: 2.8rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    transition: box-shadow 0.3s ease;
+  }
+  section:hover {
+    box-shadow: 0 6px 15px rgba(123,36,51,0.15);
+  }
+
   /* About */
   #about p {
     max-width: 650px;
@@ -105,7 +119,6 @@
   #experience {
     position: relative;
     padding-left: 25px;
-    margin-bottom: 3rem;
   }
   #experience::before {
     content: '';
@@ -163,7 +176,7 @@
 
   /* Projects */
   #projects .project-card {
-    background: white;
+    background: #FAF8F8;
     border: 1px solid #D3D3D3;
     border-radius: 10px;
     padding: 1.4rem 1.8rem;
@@ -189,7 +202,7 @@
   }
 
   /* Social */
-  #social {
+  #social div {
     margin-top: 1rem;
     display: flex;
     gap: 1.4rem;
