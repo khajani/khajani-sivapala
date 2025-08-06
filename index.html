@@ -8,117 +8,89 @@
   /* Reset */
   * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    margin: 0; padding: 0;
   }
-
   body {
     font-family: 'Open Sans', sans-serif;
-    background: #F9F9F9; /* Soft White */
-    color: #222222; /* Deep Charcoal */
+    background: #F9F9F9;
+    color: #222222;
     line-height: 1.6;
     min-height: 100vh;
-    display: flex;
-    flex-direction: row;
+    scroll-behavior: smooth;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #A64B4B;
   }
 
-  /* Sidebar */
-  aside {
-    background: #7B2433; /* Rich Burgundy */
-    color: #F9F9F9;
-    width: 260px;
-    min-height: 100vh;
-    padding: 2rem 1.5rem;
+  /* Navbar */
+  nav {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 0; left: 0; right: 0;
+    background: #7B2433;
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
+    padding: 0.9rem 2rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    z-index: 1000;
   }
-
-  aside h1 {
+  nav .logo {
     font-weight: 700;
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    letter-spacing: 1.2px;
+    font-size: 1.5rem;
+    color: #F9F9F9;
+    user-select: none;
   }
-
-  aside nav ul {
+  nav ul {
+    display: flex;
+    gap: 2rem;
     list-style: none;
   }
-
-  aside nav ul li {
-    margin: 1.1rem 0;
-  }
-
-  aside nav ul li a {
+  nav ul li a {
     color: #F9F9F9;
-    text-decoration: none;
     font-weight: 600;
     font-size: 1rem;
-    transition: color 0.3s ease;
-    display: inline-block;
-    padding: 0.3rem 0.2rem;
-    border-left: 4px solid transparent;
+    padding: 0.3rem 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
   }
-
-  aside nav ul li a:hover,
-  aside nav ul li a.active {
-    color: #FADBD8; /* lighter burgundy */
-    border-left: 4px solid #FADBD8;
-  }
-
-  aside footer {
-    font-size: 0.85rem;
+  nav ul li a:hover,
+  nav ul li a.active {
+    border-bottom: 2px solid #FADBD8;
     color: #FADBD8;
-    text-align: center;
-    margin-top: 2rem;
   }
 
-  /* Main content */
+  /* Container */
   main {
-    margin-left: 260px;
-    padding: 3rem 4rem;
     max-width: 900px;
-    width: 100%;
+    margin: 100px auto 40px; /* leave space for fixed nav */
+    padding: 0 1.5rem;
   }
 
-  main h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+  h2 {
     border-bottom: 2px solid #7B2433;
     padding-bottom: 0.3rem;
+    margin-bottom: 1.2rem;
     font-weight: 700;
+    font-size: 2rem;
   }
 
-  /* Section styling */
-  section {
-    margin-bottom: 3.5rem;
-  }
-
-  /* About section */
+  /* About */
   #about p {
-    margin-top: 0.7rem;
-    font-size: 1.05rem;
     max-width: 650px;
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
   }
-
-  #about h3 {
-    margin-top: 1.8rem;
-    margin-bottom: 0.8rem;
-    font-weight: 700;
-    font-size: 1.3rem;
-    color: #7B2433;
-  }
-
-  .skills {
+  #about .skills {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.7rem;
+    gap: 0.6rem;
+    margin-top: 1rem;
     max-width: 650px;
   }
-
   .skill {
     background: #FADBD8;
     color: #7B2433;
@@ -126,165 +98,145 @@
     border-radius: 20px;
     font-weight: 600;
     font-size: 0.9rem;
+    user-select: none;
   }
 
-  /* Experience timeline */
+  /* Timeline container */
   #experience {
     position: relative;
-    padding-left: 20px;
-    border-left: 3px solid #7B2433;
+    padding-left: 25px;
+    margin-bottom: 3rem;
   }
-
+  #experience::before {
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #7B2433;
+    border-radius: 2px;
+  }
   .experience-item {
     position: relative;
-    margin-bottom: 2.8rem;
-    padding-left: 1.2rem;
+    margin-bottom: 2.6rem;
+    padding-left: 20px;
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
     transition: opacity 0.6s ease, transform 0.6s ease;
   }
-
   .experience-item.visible {
     opacity: 1;
     transform: translateY(0);
   }
-
   .experience-item::before {
     content: '';
     position: absolute;
-    left: -11px;
+    left: -18px;
     top: 8px;
-    width: 16px;
-    height: 16px;
+    width: 10px;
+    height: 10px;
     background: #7B2433;
     border-radius: 50%;
-    border: 3px solid #F9F9F9;
+    border: 2px solid #F9F9F9;
     box-sizing: content-box;
   }
-
   .experience-item h4 {
     font-weight: 700;
     color: #222222;
   }
-
-  .experience-item .company {
+  .company {
     font-style: italic;
     color: #555555;
-    margin: 0.15rem 0 0.3rem 0;
+    margin: 0.1rem 0 0.3rem 0;
   }
-
-  .experience-item .dates-location {
+  .dates-location {
     font-size: 0.9rem;
     color: #666666;
     margin-bottom: 0.7rem;
   }
-
   .experience-item ul {
     list-style-type: disc;
     margin-left: 1.2rem;
     color: #333333;
   }
 
-  /* Projects section */
+  /* Projects */
   #projects .project-card {
-    background: #FFFFFF;
+    background: white;
     border: 1px solid #D3D3D3;
     border-radius: 10px;
-    padding: 1.5rem 1.8rem;
+    padding: 1.4rem 1.8rem;
     margin-bottom: 1.8rem;
     box-shadow: 0 2px 6px rgba(0,0,0,0.06);
     transition: box-shadow 0.3s ease;
   }
-
   #projects .project-card:hover {
-    box-shadow: 0 4px 12px rgba(123,36,51,0.25);
+    box-shadow: 0 4px 12px rgba(123,36,51,0.2);
   }
-
   #projects .project-card h4 {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
     color: #7B2433;
   }
-
   #projects .project-card a {
-    text-decoration: none;
-    color: #222222;
     font-weight: 600;
+    color: #222222;
+    text-decoration: none;
   }
-
   #projects .project-card a:hover {
     color: #7B2433;
     text-decoration: underline;
   }
 
-  /* Social links */
+  /* Social */
   #social {
+    margin-top: 1rem;
     display: flex;
-    gap: 1.5rem;
-    font-size: 1.6rem;
-    margin-top: 0.3rem;
+    gap: 1.4rem;
+    font-size: 1.8rem;
   }
-
   #social a {
     color: #7B2433;
     transition: color 0.3s ease;
   }
-
   #social a:hover {
     color: #A64B4B;
   }
 
   /* Footer */
   footer {
-    margin-left: 260px;
-    padding: 1.3rem 4rem;
-    font-size: 0.85rem;
     text-align: center;
+    font-size: 0.85rem;
     color: #777777;
-    border-top: 1px solid #D3D3D3;
+    margin: 2rem 0 1rem;
   }
-
   footer a {
     color: #7B2433;
     text-decoration: none;
   }
-
   footer a:hover {
     text-decoration: underline;
   }
 
   /* Responsive */
-  @media (max-width: 900px) {
-    body {
+  @media (max-width: 650px) {
+    nav {
       flex-direction: column;
+      gap: 0.6rem;
+      padding: 1rem 1.5rem;
     }
-    aside {
-      width: 100%;
-      height: auto;
-      position: relative;
-      padding: 1rem 2rem;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
-    aside h1 {
-      font-size: 1.4rem;
-    }
-    aside nav ul {
-      display: flex;
-      gap: 1.5rem;
-    }
-    aside nav ul li {
-      margin: 0;
+    nav ul {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem;
     }
     main {
-      margin-left: 0;
-      padding: 2rem 1.5rem 3rem 1.5rem;
-      max-width: 100%;
+      margin: 130px 1rem 40px;
+      padding: 0;
     }
-    footer {
-      margin-left: 0;
-      padding: 1rem 1.5rem;
+    #about p,
+    #about .skills {
+      max-width: 100%;
     }
   }
 </style>
@@ -295,28 +247,22 @@
 </head>
 <body>
 
-<aside>
-  <h1>Khajani Sivapala</h1>
-  <nav>
-    <ul>
-      <li><a href="#about" class="active">About Me</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#social">Connect</a></li>
-    </ul>
-  </nav>
-  <footer>
-    &copy; 2025 Khajani Sivapala<br />
-    <a href="mailto:ksivapal@uwaterloo.ca">ksivapal@uwaterloo.ca</a>
-  </footer>
-</aside>
+<nav>
+  <div class="logo">Khajani Sivapala</div>
+  <ul>
+    <li><a href="#about" class="active">About Me</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#social">Connect</a></li>
+  </ul>
+</nav>
 
 <main>
+
   <section id="about">
     <h2>About Me</h2>
     <p>Focused on advancing automotive systems through mechanical design and hands-on prototyping. Built and validated aerodynamic and chassis systems for a high-performance electric race car. Applied electromechanical systems and automation in AGV and braille printer projects. Seeking Winter 2026 Co-ops in automotive design, testing, electromechanical systems, or R&D.</p>
 
-    <h3>Skills & Background</h3>
     <div class="skills">
       <div class="skill">Mechanical Design</div>
       <div class="skill">Prototyping</div>
@@ -378,7 +324,6 @@
         <li>Analyzed survey data to help resolve academic concerns and improve class performance by ~30%.</li>
       </ul>
     </article>
-
   </section>
 
   <section id="projects">
@@ -412,16 +357,19 @@
 
   <section id="social">
     <h2>Connect with Me</h2>
-    <a href="https://www.linkedin.com/in/khajani-sivapala" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer" style="margin-right:1.2rem; font-size: 2rem; color: #7B2433;">
-      <i class="fab fa-linkedin"></i>
-    </a>
-    <a href="https://github.com/khajani" target="_blank" aria-label="GitHub" rel="noopener noreferrer" style="margin-right:1.2rem; font-size: 2rem; color: #7B2433;">
-      <i class="fab fa-github"></i>
-    </a>
-    <a href="mailto:ksivapal@uwaterloo.ca" aria-label="Email" style="font-size: 2rem; color: #7B2433;">
-      <i class="fas fa-envelope"></i>
-    </a>
+    <div>
+      <a href="https://www.linkedin.com/in/khajani-sivapala" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer" style="margin-right:1.5rem; font-size: 1.8rem; color: #7B2433;">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/khajani" target="_blank" aria-label="GitHub" rel="noopener noreferrer" style="margin-right:1.5rem; font-size: 1.8rem; color: #7B2433;">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="mailto:ksivapal@uwaterloo.ca" aria-label="Email" style="font-size: 1.8rem; color: #7B2433;">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
   </section>
+
 </main>
 
 <footer>
@@ -430,20 +378,24 @@
 </footer>
 
 <script>
-  // Smooth scroll for nav links
-  document.querySelectorAll('aside nav a').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      document.querySelectorAll('aside nav a').forEach(a => a.classList.remove('active'));
-      link.classList.add('active');
-      const target = document.querySelector(link.getAttribute('href'));
-      target.scrollIntoView({ behavior: 'smooth' });
+  // Smooth scroll + active nav link highlight
+  const navLinks = document.querySelectorAll('nav ul li a');
+  const sections = [...navLinks].map(link => document.querySelector(link.getAttribute('href')));
+
+  function onScroll() {
+    const scrollPos = window.scrollY + 120; // adjust for navbar height
+    sections.forEach((section, i) => {
+      if (section.offsetTop <= scrollPos && section.offsetTop + section.offsetHeight > scrollPos) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        navLinks[i].classList.add('active');
+      }
     });
-  });
+  }
+  window.addEventListener('scroll', onScroll);
+  onScroll();
 
-  // Animate experience items on scroll
+  // Experience fade-in on scroll
   const experienceItems = document.querySelectorAll('.experience-item');
-
   function checkVisibility() {
     const triggerBottom = window.innerHeight * 0.85;
     experienceItems.forEach(item => {
@@ -453,7 +405,6 @@
       }
     });
   }
-
   window.addEventListener('scroll', checkVisibility);
   window.addEventListener('load', checkVisibility);
 </script>
