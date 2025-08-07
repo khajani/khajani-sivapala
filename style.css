@@ -434,3 +434,8 @@
   font-size: 1rem;
   line-height: 1.5;
 }
+
+#interests-section h2 {
+  color: #800020 !important;
+}
+
