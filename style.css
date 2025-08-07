@@ -426,6 +426,72 @@
   background: #fff7f5;
   padding: 1.6rem;
   border-radius: 10px;
+
+ #education-section {
+  background: #fff7f5;
+  padding: 2rem 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgb(178 34 34 / 0.15);
+}
+
+#education-section h2 {
+  color: #800020;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Education article and hover effect */
+#education-section article {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 1.8rem;
+  background: #fff7f5;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(178, 34, 34, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#education-section article:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(178, 34, 34, 0.35);
+}
+
+#education-section .edu-logo {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#education-section .edu-logo img {
+  width: 60px !important;
+  height: 60px !important;
+  object-fit: contain;
+  display: block;
+}
+
+#education-section article .degree-info {
+  flex-grow: 1;
+}
+
+#education-section h3 {
+  margin: 0;
+  font-weight: 700;
+  color: #6b1a1a;
+}
+
+#education-section p {
+  margin: 0.3rem 0 0 0;
+  font-style: italic;
+}
+
   box-shadow: 0 6px 16px rgba(178, 34, 34, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -475,3 +541,27 @@
   color: #800020 !important;
 }
 
+#certifications-section {
+  background: #fff7f5;
+  padding: 2rem 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgb(178 34 34 / 0.15);
+}
+
+#certifications-section h2 {
+  color: #800020;
+  margin-bottom: 1.5rem;
+}
+
+.cert-card {
+  background: #fff7f5;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(178, 34, 34, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(178, 34, 34, 0.35);
+}
