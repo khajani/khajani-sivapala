@@ -103,7 +103,6 @@
     width: 180px;
     height: 180px;
     border-radius: 50%;
-    background: url('') center/cover no-repeat;
     background: url('https://media.licdn.com/dms/image/v2/D4E03AQEQC5JdhcAM2g/profile-displayphoto-shrink_400_400/B4EZXRcoqJHUAg-/0/1742975699954?e=1757548800&v=beta&t=TXNtMYuIsPdgZM7v-lTKw1dgxJgduIXWC0BO3uE3BP8') center/cover no-repeat;
     box-shadow: 0 8px 15px rgb(178 34 34 / 0.35);
     flex-shrink: 0;
@@ -137,6 +136,14 @@
   #education-section h2 {
     color: #800020;
     margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+  }
+  #education-section h2 img {
+    height: 28px;
+    width: auto;
   }
   #education-section article {
     margin-bottom: 1.8rem;
@@ -149,6 +156,35 @@
   #education-section p {
     margin: 0.3rem 0 0 0;
     font-style: italic;
+  }
+
+  /* Certifications Section */
+  #certifications-section {
+    background: #fef7f7;
+    padding: 2rem 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgb(178 34 34 / 0.15);
+  }
+  #certifications-section h2 {
+    color: #800020;
+    margin-bottom: 1.5rem;
+  }
+  #certifications-section .cert-card {
+    background: white;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgb(178 34 34 / 0.2);
+  }
+  #certifications-section .cert-card h3 {
+    margin: 0 0 0.3rem 0;
+    font-weight: 600;
+    color: #800020;
+  }
+  #certifications-section .cert-card p {
+    margin: 0;
+    font-style: italic;
+    color: #555;
   }
 
   /* Experience section */
@@ -241,6 +277,52 @@
     color: #800020;
   }
 
+  /* Skills Section */
+  #skills-section {
+    background: #f9e6e6;
+    padding: 2.5rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 22px rgb(178 34 34 / 0.15);
+  }
+  #skills-section h2 {
+    color: #800020;
+    margin-bottom: 2rem;
+  }
+  .skills-card {
+    background: #fff;
+    padding: 1.8rem 2.2rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgb(178 34 34 / 0.2);
+  }
+  .skill-group {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+  .skill-group > div {
+    flex: 1 1 220px;
+    background: #fff7f5;
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    box-shadow: 0 4px 12px rgb(178 34 34 / 0.15);
+  }
+  .skill-group h3 {
+    color: #800020;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    font-size: 1.15rem;
+  }
+  .skill-group ul {
+    list-style: disc inside;
+    margin: 0;
+    padding-left: 1rem;
+    color: #4a4a4a;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
   /* Footer */
   footer {
     text-align: center;
@@ -282,6 +364,9 @@
     #about-section .photo {
       margin: 0 auto;
     }
+    .skill-group {
+      flex-direction: column;
+    }
   }
 </style>
 
@@ -294,8 +379,10 @@
     <ul>
       <li><a href="#about-section" class="active">About</a></li>
       <li><a href="#education-section">Education</a></li>
+      <li><a href="#certifications-section">Certifications</a></li>
       <li><a href="#experience-section">Experience</a></li>
       <li><a href="#projects-section">Projects</a></li>
+      <li><a href="#skills-section">Skills</a></li>
     </ul>
   </nav>
   <div class="contact">
@@ -322,13 +409,32 @@
 </section>
 
 <section id="education-section" aria-label="Education">
-  <h2>Education</h2>
+  <h2>
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/University_of_Waterloo_logo.svg/1280px-University_of_Waterloo_logo.svg.png" alt="University of Waterloo logo" />
+    Education
+  </h2>
   <article tabindex="0">
     <h3>Bachelor of Applied Science (BASc), Honors Mechatronics, Robotics, and Automation Engineering</h3>
     <p>University of Waterloo — Sep 2024 to Present</p>
     <p>Activities: Academic Rep, Formula Electric Chassis Member</p>
     <p>Award: President's Scholarship of Distinction</p>
   </article>
+</section>
+
+<section id="certifications-section" aria-label="Certifications">
+  <h2>Certifications</h2>
+  <div class="cert-card" tabindex="0">
+    <h3>Engineering Machine Shop Training</h3>
+    <p>University of Waterloo — Issued Sep 2024</p>
+  </div>
+  <div class="cert-card" tabindex="0">
+    <h3>Workplace Hazardous Materials Information System Training (WHMIS)</h3>
+    <p>University of Waterloo — Issued Nov 2024</p>
+  </div>
+  <div class="cert-card" tabindex="0">
+    <h3>Lathe and Machining</h3>
+    <p>University of Waterloo — Issued Sep 2024</p>
+  </div>
 </section>
 
 <section id="experience-section" aria-label="Experience">
@@ -393,6 +499,47 @@
       <h3>Cat-Themed Speaker</h3>
       <p>Built a fully functional cardboard speaker with Seeeduino Nano, amplifier components, and push button. Designed conical face and octagonal rear chamber for max volume and sound directivity. Integrated cat-themed aesthetics; recognized for creativity and performance.</p>
       <a href="https://khajani.wixsite.com/khajani-sivapala/cat-speaker" target="_blank" rel="noopener noreferrer">Project Link</a>
+    </div>
+  </div>
+</section>
+
+<section id="skills-section" aria-label="Skills">
+  <h2>Skills</h2>
+  <div class="skills-card" tabindex="0">
+    <div class="skill-group">
+      <div>
+        <h3>Mechanical</h3>
+        <ul>
+          <li>Engineering Machine Shop Training</li>
+          <li>Lathe</li>
+          <li>Bandsaw</li>
+          <li>Hand Tools</li>
+          <li>Computer & Vehicle Repair</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Design</h3>
+        <ul>
+          <li>SolidWorks</li>
+          <li>AutoCAD</li>
+          <li>GD&T</li>
+          <li>Circuit Design</li>
+          <li>Dimensioning</li>
+          <li>Engineering Drawings</li>
+          <li>Technical Writing</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Software</h3>
+        <ul>
+          <li>C++</li>
+          <li>RobotC</li>
+          <li>GitLab</li>
+          <li>Seeeduino (Arduino-compatible board)</li>
+          <li>MS Office</li>
+          <li>VEX Robotics</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
