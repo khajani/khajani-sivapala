@@ -1,0 +1,229 @@
+/* === General Styles === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #f9f9f9;
+  color: #1a1a1a;
+  line-height: 1.6;
+  padding-left: 220px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  color: #800020; /* Burgundy */
+}
+
+/* === Sidebar Navigation === */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  background-color: #ffffff;
+  border-right: 1px solid #ddd;
+  padding-top: 40px;
+  z-index: 1000;
+}
+
+#navbar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-left: 20px;
+}
+
+#navbar li a {
+  font-weight: bold;
+  padding: 6px 8px;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+#navbar li a:hover,
+#navbar li a:focus {
+  background-color: #f0e6e6;
+  color: #800020;
+}
+
+/* === Section Cards === */
+.section-card {
+  max-width: 1000px;
+  margin: 60px auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s;
+}
+
+.section-card:hover {
+  transform: translateY(-2px);
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === About Section === */
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.about-text {
+  flex: 1 1 60%;
+}
+
+.about-photo {
+  flex: 1 1 30%;
+}
+
+.about-photo img {
+  max-width: 200px;
+  border-radius: 12px;
+  border: 3px solid #800020;
+}
+
+/* === Education === */
+.education-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.uw-logo {
+  height: 50px;
+  width: 50px;
+  object-fit: contain;
+}
+
+/* === Experience & Project Cards === */
+.experience-card, .project-card {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.experience-card ul,
+.project-card p {
+  margin-top: 0.75rem;
+  margin-left: 1.25rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-thumbnail {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+/* === Skills Section === */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.skill-card {
+  background: #fefefe;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 1.2rem;
+}
+
+.skill-card h3 {
+  margin-bottom: 0.5rem;
+  color: #800020;
+}
+
+.skill-card ul {
+  margin-left: 1rem;
+  list-style-type: disc;
+}
+
+/* === Certifications Section === */
+#certifications ul {
+  margin-top: 1rem;
+  padding-left: 1.2rem;
+}
+
+#certifications li {
+  margin-bottom: 0.5rem;
+}
+
+/* === Footer === */
+footer {
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+  color: #444;
+  font-size: 0.9rem;
+}
+
+/* === Scroll Highlight (Optional) === */
+#navbar a.active {
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+/* === Responsive Adjustments === */
+@media (max-width: 768px) {
+  body {
+    padding-left: 0;
+  }
+
+  #navbar {
+    position: static;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    padding: 1rem 0;
+    background-color: #fff;
+  }
+
+  #navbar ul {
+    flex-direction: row;
+    justify-content: space-around;
+    padding-left: 0;
+  }
+
+  .about-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about-photo img {
+    max-width: 150px;
+  }
+}
