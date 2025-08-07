@@ -136,10 +136,11 @@
     gap: 1rem;
   }
   #education-section .edu-logo {
-    width: 40px;
-    height: 40px;
-    background: url('https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/University_of_Waterloo_logo.svg/1200px-University_of_Waterloo_logo.svg.png') center/contain no-repeat;
-  }
+  width: 60px;
+  height: 60px;
+  background: url('https://www.liblogo.com/img-logo/un7764a306-university-of-waterloo-logo-applied-ergonomics-to-publish-university-of-waterloo-research.png') center/contain no-repeat;
+  flex-shrink: 0;
+}
   #education-section article {
     display: flex;
     gap: 1.5rem;
