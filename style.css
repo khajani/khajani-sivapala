@@ -1,5 +1,4 @@
-
-  /* Reset */
+ /* Reset */
   * {
     box-sizing: border-box;
   }
@@ -172,13 +171,14 @@
     margin-bottom: 2rem;
   }
   .experience-card {
-    background: #fff;
-    padding: 1.6rem 2rem;
-    margin-bottom: 2.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgb(178 34 34 / 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+  background: #fff;
+  padding: 1.6rem 2rem;
+  margin-bottom: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgb(178 34 34 / 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform, box-shadow;
+}
   .experience-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 10px 30px rgb(178 34 34 / 0.4);
