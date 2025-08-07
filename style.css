@@ -446,6 +446,31 @@
   line-height: 1.5;
 }
 
+/* Education article hover effect */
+#education-section article {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  background: #fff7f5;
+  box-shadow: 0 8px 20px rgba(178, 34, 34, 0.15);
+  padding: 1.5rem;
+}
+
+#education-section article:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(178, 34, 34, 0.35);
+}
+
+/* Certifications card hover effect */
+.cert-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(178, 34, 34, 0.35);
+}
+
+
 #interests-section h2 {
   color: #800020 !important;
 }
