@@ -8,6 +8,9 @@
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet" />
 
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet" />
+
 <style>
   /* Reset */
   * {
@@ -90,8 +93,6 @@
     margin-bottom: 4rem;
     position: relative;
   }
-
-  /* About Section */
   #about-section {
     background: #fff7f5;
     padding: 2rem 2.5rem;
@@ -100,11 +101,10 @@
     display: flex;
     gap: 3rem;
     align-items: center;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.3s ease;
   }
   #about-section:hover {
     transform: translateY(-6px);
-    box-shadow: 0 15px 30px rgb(178 34 34 / 0.3);
   }
   #about-section .photo {
     width: 180px;
@@ -139,41 +139,33 @@
     padding: 2rem 2.5rem;
     border-radius: 10px;
     box-shadow: 0 8px 20px rgb(178 34 34 / 0.15);
+    transition: transform 0.3s ease;
+  }
+  #education-section:hover {
+    transform: translateY(-6px);
   }
   #education-section h2 {
     color: #800020;
-    margin-bottom: 1rem;
-    font-weight: 700;
-  }
-  .education-content {
+    margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
   }
-  .education-logo {
-    flex-shrink: 0;
-    width: 80px;
-    height: 80px;
+  #education-section h2 img {
+    width: 36px;
+    height: 36px;
   }
-  .education-logo img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
+  #education-section article {
+    margin-bottom: 1.8rem;
   }
-  .education-info {
-    flex-grow: 1;
-  }
-  .education-info h3 {
+  #education-section h3 {
     margin: 0;
     font-weight: 700;
     color: #6b1a1a;
-    font-size: 1.15rem;
   }
-  .education-info p {
+  #education-section p {
     margin: 0.3rem 0 0 0;
     font-style: italic;
-    color: #4a4a4a;
-    font-size: 1rem;
   }
 
   /* Experience section */
@@ -193,10 +185,11 @@
     margin-bottom: 2.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgb(178 34 34 / 0.2);
-    transition: box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
   }
   .experience-card:hover {
     box-shadow: 0 10px 30px rgb(178 34 34 / 0.4);
+    transform: translateY(-6px);
   }
   .experience-card h3 {
     margin-top: 0;
@@ -266,7 +259,7 @@
     color: #800020;
   }
 
-  /* Skills section */
+  /* Skills Section */
   #skills-section {
     background: #f9e6e6;
     padding: 2.5rem 3rem;
@@ -278,42 +271,31 @@
     margin-bottom: 2rem;
   }
   .skills-card {
-    background: #fff7f5;
-    border-radius: 12px;
-    padding: 2rem 2.5rem;
-    box-shadow: 0 6px 18px rgb(178 34 34 / 0.15);
+    background: #fff;
+    padding: 1.6rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgb(178 34 34 / 0.2);
+    margin-bottom: 2rem;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
   }
-  .skill-group {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-  .skill-group > div {
-    flex: 1 1 220px;
-    background: #fff7f5;
-    border-radius: 8px;
-    padding: 1rem 1.2rem;
-    box-shadow: 0 4px 12px rgb(178 34 34 / 0.15);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    cursor: default;
-  }
-  .skill-group > div:hover {
+  .skills-card:hover {
+    box-shadow: 0 10px 30px rgb(178 34 34 / 0.4);
     transform: translateY(-6px);
-    box-shadow: 0 15px 30px rgb(178 34 34 / 0.3);
   }
-  .skill-group h3 {
+  .skills-card h3 {
     margin-top: 0;
-    margin-bottom: 0.6rem;
-    font-weight: 700;
     color: #800020;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
   }
-  .skill-group ul {
+  .skills-list {
+    list-style: none;
+    padding-left: 0;
     margin: 0;
-    padding-left: 1.3rem;
-    line-height: 1.5;
   }
-  .skill-group ul li {
-    margin-bottom: 0.4rem;
+  .skills-list li {
+    margin-bottom: 0.5rem;
     font-size: 1rem;
   }
 
@@ -358,10 +340,6 @@
     #about-section .photo {
       margin: 0 auto;
     }
-    .skill-group {
-      flex-direction: column;
-      gap: 1.4rem;
-    }
   }
 </style>
 
@@ -403,18 +381,13 @@
 </section>
 
 <section id="education-section" aria-label="Education">
-  <h2>Education</h2>
-  <div class="education-content">
-    <div class="education-logo" aria-hidden="true">
-      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/University_of_Waterloo_logo.svg/1280px-University_of_Waterloo_logo.svg.png" alt="University of Waterloo Logo" />
-    </div>
-    <div class="education-info" tabindex="0">
-      <h3>Bachelor of Applied Science (BASc), Honors Mechatronics, Robotics, and Automation Engineering</h3>
-      <p>University of Waterloo — Sep 2024 to Present</p>
-      <p>Activities: Academic Rep, Formula Electric Chassis Member</p>
-      <p>Award: President's Scholarship of Distinction</p>
-    </div>
-  </div>
+  <h2><img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/2c/University_of_Waterloo_logo.svg/1200px-University_of_Waterloo_logo.svg.png" alt="University of Waterloo logo" style="height:36px; margin-right:10px;">Education</h2>
+  <article tabindex="0">
+    <h3>Bachelor of Applied Science (BASc), Honors Mechatronics, Robotics, and Automation Engineering</h3>
+    <p>University of Waterloo — Sep 2024 to Present</p>
+    <p>Activities: Academic Rep, Formula Electric Chassis Member</p>
+    <p>Award: President's Scholarship of Distinction</p>
+  </article>
 </section>
 
 <section id="experience-section" aria-label="Experience">
@@ -485,36 +458,38 @@
 
 <section id="skills-section" aria-label="Skills">
   <h2>Skills</h2>
-  <div class="skills-card">
-    <div class="skill-group">
-      <div tabindex="0">
-        <h3>Mechanical</h3>
-        <ul>
-          <li>SolidWorks</li>
-          <li>AutoCAD</li>
-          <li>GD&T</li>
-          <li>Manual machining</li>
-        </ul>
-      </div>
-      <div tabindex="0">
-        <h3>Software & Programming</h3>
-        <ul>
-          <li>Python</li>
-          <li>MATLAB</li>
-          <li>Robot C</li>
-          <li>Excel VBA</li>
-        </ul>
-      </div>
-      <div tabindex="0">
-        <h3>Electromechanical</h3>
-        <ul>
-          <li>Arduino</li>
-          <li>PLC basics</li>
-          <li>Motor controllers</li>
-          <li>3D printing</li>
-        </ul>
-      </div>
-    </div>
+  <div class="skills-card" tabindex="0">
+    <h3>Mechanical</h3>
+    <ul class="skills-list">
+      <li>Engineering Machine Shop Training</li>
+      <li>Lathe</li>
+      <li>Bandsaw</li>
+      <li>Hand Tools</li>
+      <li>Computer & Vehicle Repair</li>
+    </ul>
+  </div>
+  <div class="skills-card" tabindex="0">
+    <h3>Design</h3>
+    <ul class="skills-list">
+      <li>Solidworks</li>
+      <li>AutoCAD</li>
+      <li>GD&T</li>
+      <li>Circuit Design</li>
+      <li>Dimensioning</li>
+      <li>Engineering Drawings</li>
+      <li>Technical Writing</li>
+    </ul>
+  </div>
+  <div class="skills-card" tabindex="0">
+    <h3>Software</h3>
+    <ul class="skills-list">
+      <li>C++</li>
+      <li>RobotC</li>
+      <li>GitLab</li>
+      <li>Seeeduino (Arduino-compatible board)</li>
+      <li>MS Office</li>
+      <li>VEX Robotics</li>
+    </ul>
   </div>
 </section>
 
