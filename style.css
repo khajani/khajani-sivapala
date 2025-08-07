@@ -565,3 +565,9 @@
   transform: translateY(-6px);
   box-shadow: 0 15px 30px rgba(178, 34, 34, 0.35);
 }
+
+#interests-section h2 {
+  color: #800020; /* burgundy */
+  margin-bottom: 1.5rem;
+}
+
