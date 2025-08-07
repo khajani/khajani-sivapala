@@ -1,4 +1,4 @@
-/* === General Styles === */
+/* === Base Reset === */
 * {
   margin: 0;
   padding: 0;
@@ -11,32 +11,22 @@ html {
 
 body {
   font-family: 'Lato', sans-serif;
-  background-color: #f9f9f9;
-  color: #1a1a1a;
+  background-color: #fff;
+  color: #111;
   line-height: 1.6;
   padding-left: 220px;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-h1, h2, h3 {
-  color: #800020; /* Burgundy */
-}
-
-/* === Sidebar Navigation === */
+/* === Navigation Sidebar === */
 #navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 200px;
   height: 100vh;
-  background-color: #ffffff;
+  background-color: #fff;
   border-right: 1px solid #ddd;
   padding-top: 40px;
-  z-index: 1000;
 }
 
 #navbar ul {
@@ -48,7 +38,8 @@ h1, h2, h3 {
 }
 
 #navbar li a {
-  font-weight: bold;
+  font-weight: 600;
+  color: #800020; /* burgundy */
   padding: 6px 8px;
   border-radius: 4px;
   transition: background 0.2s ease;
@@ -56,19 +47,19 @@ h1, h2, h3 {
 
 #navbar li a:hover,
 #navbar li a:focus {
-  background-color: #f0e6e6;
-  color: #800020;
+  background-color: #f3f3f3;
+  color: #000;
 }
 
-/* === Section Cards === */
+/* === Section Container Cards === */
 .section-card {
   max-width: 1000px;
   margin: 60px auto;
-  background: #fff;
+  background: #fafafa;
   border-radius: 12px;
   padding: 2rem;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease;
 }
 
 .section-card:hover {
@@ -80,8 +71,14 @@ h1, h2, h3 {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* === About Section === */
@@ -102,8 +99,8 @@ h1, h2, h3 {
 
 .about-photo img {
   max-width: 200px;
-  border-radius: 12px;
-  border: 3px solid #800020;
+  border-radius: 10px;
+  border: 2px solid #800020;
 }
 
 /* === Education === */
@@ -114,26 +111,39 @@ h1, h2, h3 {
 }
 
 .uw-logo {
-  height: 50px;
-  width: 50px;
+  height: 45px;
+  width: 45px;
   object-fit: contain;
 }
 
 /* === Experience & Project Cards === */
-.experience-card, .project-card {
-  background: #fafafa;
+.experience-card,
+.project-card {
+  background: #fff;
   border: 1px solid #ddd;
   border-radius: 10px;
-  padding: 1.2rem 1.5rem;
+  padding: 1.5rem;
   margin-bottom: 1.5rem;
+  transition: box-shadow 0.3s ease;
 }
 
-.experience-card ul,
-.project-card p {
-  margin-top: 0.75rem;
-  margin-left: 1.25rem;
+.experience-card:hover,
+.project-card:hover {
+  box-shadow: 0 4px 12px rgba(128, 0, 32, 0.15);
 }
 
+.experience-card h3,
+.project-card h3 {
+  color: #800020;
+  margin-bottom: 0.6rem;
+}
+
+.experience-card ul {
+  margin-left: 1.2rem;
+  list-style-type: disc;
+}
+
+/* === Projects Grid === */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -143,10 +153,11 @@ h1, h2, h3 {
 .project-thumbnail {
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 6px;
   margin-bottom: 10px;
 }
-/* === Skills Section === */
+
+/* === Skills Section (inside card) === */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -155,7 +166,7 @@ h1, h2, h3 {
 }
 
 .skill-card {
-  background: #fefefe;
+  background: #fff;
   border: 1px solid #ccc;
   border-radius: 10px;
   padding: 1.2rem;
@@ -171,7 +182,7 @@ h1, h2, h3 {
   list-style-type: disc;
 }
 
-/* === Certifications Section === */
+/* === Certifications === */
 #certifications ul {
   margin-top: 1rem;
   padding-left: 1.2rem;
@@ -186,17 +197,11 @@ footer {
   text-align: center;
   padding: 2rem;
   margin-top: 3rem;
-  color: #444;
+  color: #555;
   font-size: 0.9rem;
 }
 
-/* === Scroll Highlight (Optional) === */
-#navbar a.active {
-  color: #2c3e50;
-  font-weight: bold;
-}
-
-/* === Responsive Adjustments === */
+/* === Responsive === */
 @media (max-width: 768px) {
   body {
     padding-left: 0;
