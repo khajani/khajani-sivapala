@@ -14,7 +14,6 @@
       color: #000;
     }
 
-    /* Layout & General */
     main {
       margin-left: 240px;
       padding: 2rem;
@@ -61,6 +60,7 @@
       transform: translateY(-6px);
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     }
+
     .skill-card h3 {
       margin-top: 0;
       color: #800020;
@@ -91,22 +91,74 @@
 </head>
 <body>
 
-<!-- Sidebar & Header (unchanged, not included here) -->
+<!-- Sidebar -->
+<aside style="position: fixed; top: 0; left: 0; width: 240px; height: 100vh; background: #800020; color: white; padding: 2rem;">
+  <h1>Khajani Sivapala</h1>
+  <nav>
+    <ul style="list-style:none; padding-left: 0;">
+      <li><a href="#about" style="color: white; text-decoration:none;">About</a></li>
+      <li><a href="#education" style="color: white; text-decoration:none;">Education</a></li>
+      <li><a href="#experience" style="color: white; text-decoration:none;">Experience</a></li>
+      <li><a href="#projects" style="color: white; text-decoration:none;">Projects</a></li>
+      <li><a href="#skills-section" style="color: white; text-decoration:none;">Skills</a></li>
+    </ul>
+  </nav>
+</aside>
 
 <main>
 
   <!-- About Section -->
-  <!-- ... -->
+  <section id="about" aria-label="About Me">
+    <h2>About Me</h2>
+    <p>Hello! I’m Khajani Sivapala, an engineering student passionate about automotive design and power electronics.</p>
+    <img src="https://media.licdn.com/dms/image/C5603AQGz3Sa6fPBQHA/profile-displayphoto-shrink_400_400/0/1634840852978?e=1695859200&v=beta&t=example" alt="Khajani Sivapala" style="max-width:150px; border-radius:50%; margin-top:1rem;">
+  </section>
 
   <!-- Education Section -->
-  <!-- ... -->
-
+  <section id="education" aria-label="Education">
+    <h2>Education</h2>
+    <p><strong>University of Waterloo</strong>, Bachelor of Engineering, Electrical Engineering — Power Electronics Focus</p>
+    <p>2022 – Present</p>
+  </section>
   <!-- Experience Section -->
-  <!-- ... -->
+  <section id="experience" aria-label="Experience">
+    <h2>Experience</h2>
+
+    <article>
+      <h3>Power Electronics Co-op Intern</h3>
+      <p>Tesla, Summer 2024</p>
+      <ul>
+        <li>Designed and tested power conversion circuits for EV applications.</li>
+        <li>Improved inverter efficiency by 3% through component optimization.</li>
+        <li>Collaborated with cross-functional teams to integrate hardware and software.</li>
+      </ul>
+    </article>
+
+    <article>
+      <h3>Mechanical Engineering Intern</h3>
+      <p>Toyota Motor Manufacturing Canada, Summer 2023</p>
+      <ul>
+        <li>Completed and analyzed coupon adhesion stress testing to determine optimal adhesive properties.</li>
+        <li>Conducted mechanical design reviews and contributed to GD&T documentation.</li>
+        <li>Supported chassis assembly and testing operations.</li>
+      </ul>
+    </article>
+  </section>
 
   <!-- Projects Section -->
-  <!-- ... -->
+  <section id="projects" aria-label="Projects">
+    <h2>Projects</h2>
 
+    <article>
+      <h3>Automated Guided Vehicle (AGV) Design</h3>
+      <p>Designed a safe and efficient AGV system for Toyota’s manufacturing process simulation.</p>
+    </article>
+
+    <article>
+      <h3>Power Electronics Converter</h3>
+      <p>Developed a prototype DC-DC converter to improve power efficiency in EV charging.</p>
+    </article>
+  </section>
   <!-- Skills Section -->
   <section id="skills-section" aria-label="Skills">
     <h2>Skills</h2>
@@ -153,7 +205,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     &copy; 2025 Khajani Sivapala
   </footer>
