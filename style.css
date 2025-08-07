@@ -237,7 +237,7 @@
 }
 .skill-card h3 {
   margin-top: 0;
-  color: #800020;
+  color: #5e2c04;
   font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 0.8rem;
@@ -359,4 +359,38 @@
 
 .fade-up {
   animation: fadeUp 1s ease-out both;
+}
+
+#certifications-section h2 {
+  color: #800020;
+  margin-bottom: 1.5rem;
+}
+
+.cert-card {
+  background: #fff7f5;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(178, 34, 34, 0.15);
+}
+
+.cert-item {
+  margin-bottom: 1.5rem;
+}
+
+.cert-item h3 {
+  margin: 0;
+  color: #5e2c04;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.cert-item p {
+  margin: 0.3rem 0 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+#certifications-section h2,
+#interests-section h2 {
+  color: #800020;
 }
