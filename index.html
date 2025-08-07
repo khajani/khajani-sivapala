@@ -216,42 +216,50 @@
 
   /* Skills section */
   #skills-section {
-    background: #f9e6e6;
-    padding: 2.5rem 3rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 22px rgb(178 34 34 / 0.15);
-  }
-  #skills-section h2 {
-    color: #800020;
-    margin-bottom: 2rem;
-  }
-  .skills-card {
-    background: #fff;
-    border-radius: 10px;
-    padding: 1.6rem 2rem;
-    box-shadow: 0 4px 15px rgb(178 34 34 / 0.2);
-  }
-  .skills-card:hover {
-    box-shadow: 0 10px 30px rgb(178 34 34 / 0.4);
-  }
-  .skill-type-card {
-    margin-bottom: 1.8rem;
-  }
-  .skill-type-card h3 {
-    margin-top: 0;
-    color: #800020;
-    font-weight: 700;
-    font-size: 1.2rem;
-  }
-  .skill-type-card ul {
-    padding-left: 1.3rem;
-    margin-top: 0.5rem;
-    line-height: 1.5;
-  }
-  .skill-type-card ul li {
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-  }
+  margin-top: 3rem;
+}
+#skills-section h2 {
+  color: #800020;
+  margin-bottom: 1.5rem;
+}
+.skills-wrapper {
+  background: #fff7f5;
+  padding: 2rem 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgb(178 34 34 / 0.15);
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.skill-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  padding: 1.4rem 1.6rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+.skill-card h3 {
+  margin-top: 0;
+  color: #800020;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+.skill-card ul {
+  padding-left: 1.2rem;
+  line-height: 1.6;
+  margin: 0;
+}
+.skill-card ul li {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
 
   /* Projects section */
   #projects-section {
@@ -444,39 +452,46 @@
 
 <section id="skills-section" aria-label="Skills">
   <h2>Skills</h2>
-  <div class="skills-card">
-    <article class="skill-type-card" tabindex="0">
-      <h3>Mechanical</h3>
-      <ul>
-        <li>Engineering Machine Shop Training</li>
-        <li>Lathe, Bandsaw, Hand Tools</li>
-        <li>Computer & Vehicle Repair</li>
-      </ul>
-    </article>
-    <article class="skill-type-card" tabindex="0">
-      <h3>Design</h3>
-      <ul>
-        <li>CAD Modeling: SolidWorks, Fusion 360</li>
-        <li>Structural Adhesive Coupon Testing</li>
-        <li>Composite Layup & Vacuum Bagging</li>
-      </ul>
-    </article>
-    <article class="skill-type-card" tabindex="0">
-      <h3>Software & Programming</h3>
-      <ul>
-        <li>MATLAB & Simulink</li>
-        <li>Arduino, Robot C (LEGO EV3)</li>
-        <li>Python (Automation, Data Analysis)</li>
-      </ul>
-    </article>
-    <article class="skill-type-card" tabindex="0">
-      <h3>Other</h3>
-      <ul>
-        <li>CMMS Maintenance Software</li>
-        <li>Lean & 5S Manufacturing</li>
-        <li>3D Printing & Rapid Prototyping</li>
-      </ul>
-    </article>
+  <div class="skills-wrapper">
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <h3>🔧 Mechanical</h3>
+        <ul>
+          <li>Engineering Machine Shop Training</li>
+          <li>Lathe</li>
+          <li>Bandsaw</li>
+          <li>Hand Tools</li>
+          <li>Computer & Vehicle Repair</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h3>📐 Design</h3>
+        <ul>
+          <li>SolidWorks</li>
+          <li>AutoCAD</li>
+          <li>GD&T</li>
+          <li>Circuit Design</li>
+          <li>Dimensioning</li>
+          <li>Engineering Drawings</li>
+          <li>Technical Writing</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h3>💻 Software</h3>
+        <ul>
+          <li>C++</li>
+          <li>RobotC</li>
+          <li>GitLab</li>
+          <li>Seeeduino</li>
+          <li>MS Office</li>
+          <li>VEX Robotics</li>
+        </ul>
+      </div>
+
+    </div>
   </div>
 </section>
 
