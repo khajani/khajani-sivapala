@@ -307,45 +307,6 @@
     color: #800020;
   }
 
-/* Fade Animation */
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-.fade-in.visible {
-  opacity: 1;
-  transform: none;
-}
-
-/* Card Title Subheader (e.g., skills + interests) */
-.skill-card h3 {
-  color: #5e2c04; /* warm brown */
-}
-
-/* Section Headings */
-section h2 {
-  color: #800020; /* burgundy */
-  margin-bottom: 1.5rem;
-}
-
-/* Certifications Section Styled Like a Card */
-.certifications-wrapper {
-  background: #fff7f5;
-  padding: 2rem 2.5rem;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgb(178 34 34 / 0.15);
-}
-.certifications-wrapper ul {
-  padding-left: 1.5rem;
-  line-height: 1.8;
-  margin: 0;
-}
-.certifications-wrapper li {
-  font-size: 1rem;
-  margin-bottom: 0.6rem;
-}
-  
   /* Footer */
   footer {
     text-align: center;
@@ -443,15 +404,6 @@ section h2 {
   </article>
 </section>
 
-<!-- Education Section (with fade) -->
-<section id="education" class="fade-in" aria-label="Education">
-  <h2>Education</h2>
-  <div class="certifications-wrapper">
-    <p><strong>University of Waterloo</strong><br />Bachelor of Engineering, Electrical Engineering — Power Electronics Focus</p>
-    <p>2022 – Present</p>
-  </div>
-</section>
-  
 <section id="experience-section" aria-label="Experience">
   <h2>Experience</h2>
 
@@ -563,16 +515,21 @@ section h2 {
   </div>
 </section>
 
-<!-- Certifications Section (with fade + updated formatting) -->
-<section id="certifications" class="fade-in" aria-label="Certifications" style="margin-top: 3rem;">
+<!-- Certifications Section -->
+<section id="certifications" aria-label="Certifications" style="margin-top: 3rem;">
   <h2>Certifications</h2>
-  <div class="certifications-wrapper">
-    <ul>
+  <div class="skills-wrapper">
+    <ul style="list-style-type: disc; padding-left: 1.5rem; line-height: 1.8;">
       <li>WHMIS (Workplace Hazardous Materials Information System)</li>
       <li>Engineering Machine Shop Training – Lathe, Bandsaw, Hand Tools</li>
     </ul>
   </div>
 </section>
+
+<!-- Interests Section -->
+<section id="interests" aria-label="Interests" style="margin-top: 3rem;">
+  <h2>Interests</h2>
+  <div class="skills-grid">
 
     <div class="skill-card">
       <h3>Bharatanatyam</h3>
@@ -634,19 +591,5 @@ section h2 {
   });
 </script>
 
-<script>
-  const fadeEls = document.querySelectorAll('.fade-in');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-
-  fadeEls.forEach(el => observer.observe(el));
-</script>
-  
 </body>
 </html>
