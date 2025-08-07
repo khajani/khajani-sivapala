@@ -401,19 +401,14 @@
   line-height: 1.5;
 }
 
-#certifications-section h2,
 #interests-section h2 {
   color: #800020;
+  margin-bottom: 1.5rem;
 }
 
 /* Interests section */
 #interests-section {
   margin-top: 3rem;
-}
-
-#interests-section h2 {
-  color: #800020;
-  margin-bottom: 1.5rem;
 }
 
 .interests-grid {
@@ -536,11 +531,6 @@
   box-shadow: 0 15px 30px rgba(178, 34, 34, 0.35);
 }
 
-
-#interests-section h2 {
-  color: #800020 !important;
-}
-
 #certifications-section {
   background: #fff7f5;
   padding: 2rem 2.5rem;
@@ -565,9 +555,3 @@
   transform: translateY(-6px);
   box-shadow: 0 15px 30px rgba(178, 34, 34, 0.35);
 }
-
-#interests-section h2 {
-  color: #800020; /* burgundy */
-  margin-bottom: 1.5rem;
-}
-
