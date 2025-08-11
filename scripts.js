@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       let currentIndex = 0;
 
-      // Start cycling after 3s delay, keeping cover visible initially
       setTimeout(() => {
         setInterval(() => {
           images[currentIndex].classList.remove('active');
@@ -52,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', onScroll);
 
-  // Also check on page load
   if (isInViewport(section)) {
     startCarousels();
   }
