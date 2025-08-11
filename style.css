@@ -568,6 +568,7 @@
   background: #fff;
 }
 
+/*interests*/
 .carousel {
   position: relative; /* needed for absolute images inside */
   overflow: hidden;
