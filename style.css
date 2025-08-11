@@ -555,50 +555,35 @@
   transform: translateY(-6px);
   box-shadow: 0 15px 30px rgba(178, 34, 34, 0.35);
 }
-
-.interests-grid {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.interest-card {
-  background: white;
-  border-radius: 10px;
-  padding: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.interest-card h3 {
-  color: #5e2c04;
-  margin-bottom: 0.5rem;
-}
-
-/* Interests grid 3 columns */
 .interests-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
 
-/* Carousel container */
+.interest-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #fff;
+}
+
 .carousel {
   position: relative;
   overflow: hidden;
-  height: 180px; /* or any fixed height for your images */
+  height: 180px;
+  margin-bottom: 1rem;
 }
 
-/* Hide all images except active */
 .carousel-image {
   display: none;
   width: 100%;
-  height: 100%;
+  height: 180px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 6px;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .carousel-image.active {
   display: block;
-}
-
 }
