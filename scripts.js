@@ -11,3 +11,44 @@ window.addEventListener('scroll', () => {
   });
 });
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const observerOptions = { threshold: 0.5 }; // Start when 50% visible
+
+  document.querySelectorAll('.carousel').forEach(carousel => {
+    let index = 0;
+    const images = carousel.querySelectorAll('.carousel-image');
+    let intervalId;
+
+    const startCarousel = () => {
+      clearInterval(intervalId); // avoid duplicates
+      setTimeout(() => { // wait before starting
+        intervalId = setInterval(() => {
+          images[index].classList.remove('active');
+          index = (index + 1) % images.length;
+          images[index].classList.add('active');
+        }, 3000); // change every 3s
+      }, 2000); // 2s delay before rotating
+    };
+
+    const stopCarousel = () => {
+      clearInterval(intervalId);
+      index = 0;
+      images.forEach(img => img.classList.remove('active'));
+      images[0].classList.add('active'); // reset to cover image
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          startCarousel();
+        } else {
+          stopCarousel();
+        }
+      });
+    }, observerOptions);
+
+    observer.observe(carousel);
+  });
+});
+</script>
