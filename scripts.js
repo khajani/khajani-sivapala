@@ -10,17 +10,50 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+document.addEventListener('DOMContentLoaded', () => {
+  const section = document.getElementById('interests-section');
+  let carouselStarted = false;
 
-// Simple carousel script for all carousels
-document.querySelectorAll('.carousel').forEach(carousel => {
-  const images = carousel.querySelectorAll('.carousel-image');
-  let currentIndex = 0;
+  function startCarousels() {
+    if (carouselStarted) return;
+    carouselStarted = true;
 
-  if(images.length <= 1) return; // no carousel if 1 image only
+    document.querySelectorAll('.carousel').forEach(carousel => {
+      const images = carousel.querySelectorAll('.carousel-image');
+      if (images.length <= 1) return; // no carousel if 1 image only
 
-  setInterval(() => {
-    images[currentIndex].classList.remove('active');
-    currentIndex = (currentIndex + 1) % images.length;
-    images[currentIndex].classList.add('active');
-  }, 3000); // change every 3 seconds
+      let currentIndex = 0;
+
+      // Start cycling after 3s delay, keeping cover visible initially
+      setTimeout(() => {
+        setInterval(() => {
+          images[currentIndex].classList.remove('active');
+          currentIndex = (currentIndex + 1) % images.length;
+          images[currentIndex].classList.add('active');
+        }, 3000);
+      }, 3000);
+    });
+  }
+
+  function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.bottom >= 0
+    );
+  }
+
+  function onScroll() {
+    if (isInViewport(section)) {
+      startCarousels();
+      window.removeEventListener('scroll', onScroll);
+    }
+  }
+
+  window.addEventListener('scroll', onScroll);
+
+  // Also check on page load
+  if (isInViewport(section)) {
+    startCarousels();
+  }
 });
