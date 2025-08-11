@@ -574,24 +574,31 @@
   margin-bottom: 0.5rem;
 }
 
-.carousel {
-  position: relative;
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-  border-radius: 8px;
-  margin-bottom: 0.75rem;
+/* Interests grid 3 columns */
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
 }
 
+/* Carousel container */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  height: 180px; /* or any fixed height for your images */
+}
+
+/* Hide all images except active */
 .carousel-image {
-  position: absolute;
+  display: none;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  border-radius: 8px;
 }
 
 .carousel-image.active {
-  opacity: 1;
+  display: block;
+}
+
 }
