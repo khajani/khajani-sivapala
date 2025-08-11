@@ -1,6 +1,6 @@
 # 🌐 Personal Portfolio
 
-This is my digital personal portfolio, created to showcase all things engineering -- my projects, experiences, skills and more. 
+This is my digital portfolio, created to showcase all things engineering like my projects, experiences, skills and more. 
 
 ## 📸 Features
 
