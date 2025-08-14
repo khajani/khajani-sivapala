@@ -169,6 +169,9 @@ a:hover {
   }
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700; /* Try 800 or 900 if your font supports it */
+}
 
   /* Main content */
   main {
