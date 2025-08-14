@@ -11,9 +11,10 @@ body {
   display: flex;
   min-height: 100vh;
 
-  /* Ombré background using your provided palette */
+  /* REMOVE any previous background-color */
+  /* Apply the ombré gradient with your hex codes */
   background: linear-gradient(to right, #211f20, #521328, #a9243f, #c4554e, #f6d5a7, #eadbbe, #e4dbd4);
-  color: #211f20; /* dark text for readability on lighter portions */
+  color: #211f20; /* adjust text color for contrast */
 }
 
 /* Sidebar */
