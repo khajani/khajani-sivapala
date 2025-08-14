@@ -1,71 +1,151 @@
 /* Reset */
-  * {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0; 
-    font-family: 'Lato', sans-serif;
-    background-color: #f9f5f0;
-    color: #3a3a3a;
-    scroll-behavior: smooth;
-    display: flex;
-    min-height: 100vh;
-  }
+* {
+  box-sizing: border-box;
+}
 
-  /* Sidebar */
-  aside {
-    background: #800020; /* burgundy */
-    width: 250px;
-    color: #f9f5f0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem 1rem;
-    position: sticky;
-    top: 0;
-    height: 100vh;
-  }
-  aside .name {
-    font-weight: 700;
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-    text-align: center;
-  }
-  aside nav ul {
-    list-style: none;
-    padding: 0;
-    width: 100%;
-  }
-  aside nav ul li {
-    margin-bottom: 1.5rem;
-  }
-  aside nav ul li a {
-    color: #f9f5f0;
-    font-weight: 600;
-    font-size: 1.1rem;
-    text-decoration: none;
-    display: block;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    transition: background-color 0.3s ease;
-  }
-  aside nav ul li a:hover,
-  aside nav ul li a.active {
-    background: #003366; /* navy blue */
-  }
-  aside .contact {
-    margin-top: auto;
-    font-size: 0.9rem;
-    text-align: center;
-  }
-  aside .contact a {
-    color: #f9f5f0;
-    text-decoration: none;
-    font-weight: 600;
-  }
-  aside .contact a:hover {
-    text-decoration: underline;
-  }
+body {
+  margin: 0; 
+  font-family: 'Lato', sans-serif;
+  scroll-behavior: smooth;
+  display: flex;
+  min-height: 100vh;
+
+  /* Ombré background */
+  background: linear-gradient(to right, #5e2c04, #800020);
+  color: #f9f5f0; /* light text for readability */
+}
+
+/* Sidebar */
+aside {
+  background: #800020; /* keep burgundy */
+  width: 250px;
+  color: #f9f5f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+aside .name {
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+aside nav ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+aside nav ul li {
+  margin-bottom: 1.5rem;
+}
+
+aside nav ul li a {
+  color: #f9f5f0;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+aside nav ul li a:hover,
+aside nav ul li a.active {
+  background: #5e2c04; /* brown hover accent instead of navy */
+}
+
+aside .contact {
+  margin-top: auto;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+aside .contact a {
+  color: #f9f5f0;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+aside .contact a:hover {
+  text-decoration: underline;
+}
+
+/* Headers */
+h2 {
+  color: #800020; /* burgundy for section headers */
+}
+
+h3 {
+  color: #f9f5f0; /* light text for readability */
+}
+
+.subheader {
+  color: #800020; /* burgundy subheaders */
+}
+
+.skill-subheader,
+.interest-subheader {
+  color: #5e2c04; /* brown accents */
+}
+
+/* Cards (Projects, Skills, Interests, Certifications) */
+.card {
+  background-color: rgba(255, 255, 255, 0.15); /* translucent to show ombré */
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 1rem 0;
+  transition: transform 0.3s, box-shadow 0.3s;
+  color: #f9f5f0;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Buttons and call-to-action links */
+button,
+a.button {
+  background-color: #800020; /* burgundy */
+  color: #f9f5f0;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover,
+a.button:hover {
+  background-color: #5e2c04; /* brown hover */
+  color: #f9f5f0;
+}
+
+/* Footer / Connect with Me section */
+footer {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #f9f5f0;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Links inside content */
+a {
+  color: #f9f5f0;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #5e2c04;
+}
 
   /* Main content */
   main {
