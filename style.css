@@ -1,1 +1,595 @@
-/* Reset */ * { box-sizing: border-box; } body { margin: 0; font-family: 'Lato', sans-serif; background-color: #f9f5f0; color: #3a3a3a; scroll-behavior: smooth; display: flex; min-height: 100vh; } /* Sidebar */ aside { background: #800020; /* burgundy */ width: 250px; color: #f9f5f0; display: flex; flex-direction: column; align-items: center; padding: 2rem 1rem; position: sticky; top: 0; height: 100vh; } aside .name { font-weight: 700; font-size: 1.8rem; margin-bottom: 2rem; text-align: center; } aside nav ul { list-style: none; padding: 0; width: 100%; } aside nav ul li { margin-bottom: 1.5rem; } aside nav ul li a { color: #f9f5f0; font-weight: 600; font-size: 1.1rem; text-decoration: none; display: block; padding: 0.5rem 1rem; border-radius: 6px; transition: background-color 0.3s ease; } aside nav ul li a:hover, aside nav ul li a.active { background: #003366; /* navy blue */ } aside .contact { margin-top: auto; font-size: 0.9rem; text-align: center; } aside .contact a { color: #f9f5f0; text-decoration: none; font-weight: 600; } aside .contact a:hover { text-decoration: underline; } /* Main content */ main { flex-grow: 1; padding: 3rem 4rem; overflow-x: hidden; } /* Section backgrounds */ section { margin-bottom: 4rem; position: relative; } #about-section { background: #fff7f5; padding: 2rem 2.5rem; border-radius: 10px; box-shadow: 0 8px 20px rgb(178 34 34 / 0.15); display: flex; gap: 3rem; align-items: center; transition: transform 0.3s ease, box-shadow 0.3s ease; } #about-section:hover { transform: translateY(-6px); box-shadow: 0 15px 30px rgb(178 34 34 / 0.35); } #about-section .photo { width: 180px; height: 180px; border-radius: 50%; background: url('https://media.licdn.com/dms/image/v2/D4E03AQEQC5JdhcAM2g/profile-displayphoto-shrink_400_400/B4EZXRcoqJHUAg-/0/1742975699954?e=1757548800&v=beta&t=TXNtMYuIsPdgZM7v-lTKw1dgxJgduIXWC0BO3uE3BP8') center/cover no-repeat; box-shadow: 0 8px 15px rgb(178 34 34 / 0.35); flex-shrink: 0; } #about-section .intro { flex-grow: 1; } #about-section .intro h1 { margin-top: 0; color: #800020; } #about-section .intro p { line-height: 1.5; font-size: 1.1rem; } #about-section .intro a { color: #800020; font-weight: 600; } #about-section .intro a:hover { color: #b22222; } /* Education Section */ #education-section { background: #fff7f5; padding: 2rem 2.5rem; border-radius: 10px; box-shadow: 0 8px 20px rgb(178 34 34 / 0.15); } #education-section h2 { color: #800020; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; } #education-section .edu-logo { width: 60px; height: 60px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; overflow: hidden; /* prevents overflow if image is bigger */ } #education-section .edu-logo img { width: 60px !important; height: 60px !important; object-fit: contain; display: block; } #education-section article { display: flex; gap: 1.5rem; align-items: center; margin-bottom: 1.8rem; } #education-section article .degree-info { flex-grow: 1; } #education-section h3 { margin: 0; font-weight: 700; color: #6b1a1a; } #education-section p { margin: 0.3rem 0 0 0; font-style: italic; } /* Experience section */ #experience-section { background: #f9e6e6; padding: 2.5rem 3rem; border-radius: 12px; box-shadow: 0 8px 22px rgb(178 34 34 / 0.15); } #experience-section h2 { color: #800020; margin-bottom: 2rem; } .experience-card { background: #fff; padding: 1.6rem 2rem; margin-bottom: 2.5rem; border-radius: 10px; box-shadow: 0 4px 15px rgb(178 34 34 / 0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; will-change: transform, box-shadow; } .experience-card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgb(178 34 34 / 0.4); } .experience-card h3 { margin-top: 0; color: #800020; font-weight: 700; font-size: 1.25rem; } .experience-card h4 { margin: 0.3rem 0 1rem; font-weight: 600; font-style: normal; color: #003366; } .experience-card ul { padding-left: 1.3rem; margin-top: 0.3rem; line-height: 1.5; } .experience-card ul li { margin-bottom: 0.6rem; font-size: 1rem; } /* Skills section */ #skills-section { margin-top: 3rem; } #skills-section h2 { color: #800020; margin-bottom: 1.5rem; } .skills-wrapper { background: #fff7f5; padding: 2rem 2.5rem; border-radius: 10px; box-shadow: 0 8px 20px rgb(178 34 34 / 0.15); } .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; } .skill-card { background: #fff; border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,0.08); padding: 1.4rem 1.6rem; transition: transform 0.25s ease, box-shadow 0.25s ease; } .skill-card:hover { transform: translateY(-6px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); } .skill-card h3 { margin-top: 0; color: #5e2c04; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.8rem; } .skill-card ul { padding-left: 1.2rem; line-height: 1.6; margin: 0; } .skill-card ul li { font-size: 1rem; margin-bottom: 0.4rem; } /* Projects section */ #projects-section { padding: 0 0 1rem 0; } #projects-section h2 { color: #800020; margin-bottom: 1.8rem; } #projects-section .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.8rem; margin-top: 1rem; } .project-card { background: #fff; border-radius: 10px; box-shadow: 0 4px 14px rgb(178 34 34 / 0.1); padding: 1.6rem 1.8rem; transition: transform 0.25s ease, box-shadow 0.25s ease; } .project-card:hover { transform: translateY(-6px); box-shadow: 0 15px 30px rgb(178 34 34 / 0.3); } .project-card h3 { margin-top: 0; color: #800020; font-weight: 700; font-size: 1.2rem; } .project-card p { font-size: 1rem; line-height: 1.4; } .project-card a { display: inline-block; margin-top: 1rem; color: #b22222; font-weight: 600; text-decoration: none; } .project-card a:hover { color: #800020; } /* Footer */ footer { text-align: center; padding: 1.2rem; font-size: 0.9rem; color: #666; } /* Responsive */ @media (max-width: 900px) { body { flex-direction: column; } aside { width: 100%; height: auto; padding: 1.2rem 0.5rem; flex-direction: row; justify-content: center; gap: 1.5rem; position: relative; } aside .name { display: none; } aside nav ul { display: flex; gap: 1.4rem; width: auto; } main { padding: 2rem 1.2rem; } #about-section { flex-direction: column; text-align: center; gap: 1.6rem; } #about-section .photo { margin: 0 auto; } #education-section article { flex-direction: column; align-items: flex-start; } } /* Fade-up animation */ @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } } .fade-up { animation: fadeUp 1s ease-out both; } #certifications-section h2 { color: #800020; margin-bottom: 1.5rem; } .cert-card { background: #fff7f5; padding: 2rem; border-radius: 10px; box-shadow: 0 8px 20px rgba(178, 34, 34, 0.15); } .cert-item { margin-bottom: 1.5rem; } .cert-item h3 { margin: 0; color: #5e2c04; font-size: 1.1rem; font-weight: 700; } .cert-item p { margin: 0.3rem 0 0; font-size: 1rem; line-height: 1.5; } #interests-section h2 { color: #800020; margin-bottom: 1.5rem; } /* Interests section */ #interests-section { margin-top: 3rem; } .interests-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; } .interest-card { background: #fff7f5; padding: 1.6rem; border-radius: 10px; #education-section { background: #fff7f5; padding: 2rem 2.5rem; border-radius: 10px; box-shadow: 0 8px 20px rgb(178 34 34 / 0.15); } #education-section h2 { color: #800020; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; } /* Education article and hover effect */ #education-section article { display: flex; gap: 1.5rem; align-items: center; margin-bottom: 1.8rem; background: #fff7f5; padding: 1.5rem; border-radius: 10px; box-shadow: 0 8px 20px rgba(178, 34, 34, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; } #education-section article:hover { transform: translateY(-6px); box-shadow: 0 15px 30px rgba(178, 34, 34, 0.35); } #education-section .edu-logo { width: 60px; height: 60px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; overflow: hidden; } #education-section .edu-logo img { width: 60px !important; height: 60px !important; object-fit: contain; display: block; } #education-section article .degree-info { flex-grow: 1; } #education-section h3 { margin: 0; font-weight: 700; color: #6b1a1a; } #education-section p { margin: 0.3rem 0 0 0; font-style: italic; } box-shadow: 0 6px 16px rgba(178, 34, 34, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; } .interest-card:hover { transform: translateY(-6px); box-shadow: 0 15px 30px rgba(178, 34, 34, 0.25); } .interest-card h3 { color: #5e2c04; font-weight: 700; margin-bottom: 0.6rem; } .interest-card p { font-size: 1rem; line-height: 1.5; } /* Education article hover effect */ #education-section article { transition: transform 0.3s ease, box-shadow 0.3s ease; border-radius: 10px; background: #fff7f5; box-shadow: 0 8px 20px rgba(178, 34, 34, 0.15); padding: 1.5rem; } #education-section article:hover { transform: translateY(-6px); box-shadow: 0 15px 30px rgba(178, 34, 34, 0.35); } /* Certifications card hover effect */ .cert-card { transition: transform 0.3s ease, box-shadow 0.3s ease; } .cert-card:hover { transform: translateY(-6px); box-shadow: 0 15px 30px rgba(178, 34, 34, 0.35); } #certifications-section { background: #fff7f5; padding: 2rem 2.5rem; border-radius: 10px; box-shadow: 0 8px 20px rgb(178 34 34 / 0.15); } #certifications-section h2 { color: #800020; margin-bottom: 1.5rem; } .cert-card { background: #fff7f5; padding: 2rem; border-radius: 10px; box-shadow: 0 8px 20px rgba(178, 34, 34, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; } .cert-card:hover { transform: translateY(-6px); box-shadow: 0 15px 30px rgba(178, 34, 34, 0.35); } .interests-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; } .interest-card { border: 1px solid #ddd; padding: 1rem; border-radius: 8px; background: #fff; } /*interests*/ .carousel { position: relative; width: 100%; height: 220px; /* make taller here — try 240px if you want more height */ overflow: hidden; } .carousel-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; /* keeps proportions without distortion */ border-radius: 8px; opacity: 0; transition: opacity 0.6s ease-in-out; } .carousel-image.active { opacity: 1; }
+/* Reset */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0; 
+    font-family: 'Lato', sans-serif;
+    background-color: #f9f5f0;
+    color: #3a3a3a;
+    scroll-behavior: smooth;
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* Sidebar */
+  aside {
+    background: #800020; /* burgundy */
+    width: 250px;
+    color: #f9f5f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+  }
+  aside .name {
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  aside nav ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+  }
+  aside nav ul li {
+    margin-bottom: 1.5rem;
+  }
+  aside nav ul li a {
+    color: #f9f5f0;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+  }
+  aside nav ul li a:hover,
+  aside nav ul li a.active {
+    background: #003366; /* navy blue */
+  }
+  aside .contact {
+    margin-top: auto;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  aside .contact a {
+    color: #f9f5f0;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  aside .contact a:hover {
+    text-decoration: underline;
+  }
+
+  /* Main content */
+  main {
+    flex-grow: 1;
+    padding: 3rem 4rem;
+    overflow-x: hidden;
+  }
+
+  /* Section backgrounds */
+  section {
+    margin-bottom: 4rem;
+    position: relative;
+  }
+  #about-section {
+    background: #fff7f5;
+    padding: 2rem 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgb(178 34 34 / 0.15);
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  #about-section:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgb(178 34 34 / 0.35);
+  }
+  #about-section .photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: url('https://media.licdn.com/dms/image/v2/D4E03AQEQC5JdhcAM2g/profile-displayphoto-shrink_400_400/B4EZXRcoqJHUAg-/0/1742975699954?e=1757548800&v=beta&t=TXNtMYuIsPdgZM7v-lTKw1dgxJgduIXWC0BO3uE3BP8') center/cover no-repeat;
+    box-shadow: 0 8px 15px rgb(178 34 34 / 0.35);
+    flex-shrink: 0;
+  }
+  #about-section .intro {
+    flex-grow: 1;
+  }
+  #about-section .intro h1 {
+    margin-top: 0;
+    color: #800020;
+  }
+  #about-section .intro p {
+    line-height: 1.5;
+    font-size: 1.1rem;
+  }
+  #about-section .intro a {
+    color: #800020;
+    font-weight: 600;
+  }
+  #about-section .intro a:hover {
+    color: #b22222;
+  }
+
+  /* Education Section */
+  #education-section {
+    background: #fff7f5;
+    padding: 2rem 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgb(178 34 34 / 0.15);
+  }
+  #education-section h2 {
+    color: #800020;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+#education-section .edu-logo {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* prevents overflow if image is bigger */
+}
+
+#education-section .edu-logo img {
+  width: 60px !important;
+  height: 60px !important;
+  object-fit: contain;
+  display: block;
+}
+
+  #education-section article {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    margin-bottom: 1.8rem;
+  }
+  #education-section article .degree-info {
+    flex-grow: 1;
+  }
+  #education-section h3 {
+    margin: 0;
+    font-weight: 700;
+    color: #6b1a1a;
+  }
+  #education-section p {
+    margin: 0.3rem 0 0 0;
+    font-style: italic;
+  }
+
+  /* Experience section */
+  #experience-section {
+    background: #f9e6e6;
+    padding: 2.5rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 22px rgb(178 34 34 / 0.15);
+  }
+  #experience-section h2 {
+    color: #800020;
+    margin-bottom: 2rem;
+  }
+  .experience-card {
+  background: #fff;
+  padding: 1.6rem 2rem;
+  margin-bottom: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgb(178 34 34 / 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform, box-shadow;
+}
+  .experience-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgb(178 34 34 / 0.4);
+  }
+  .experience-card h3 {
+    margin-top: 0;
+    color: #800020;
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+  .experience-card h4 {
+    margin: 0.3rem 0 1rem;
+    font-weight: 600;
+    font-style: normal;
+    color: #003366;
+  }
+  .experience-card ul {
+    padding-left: 1.3rem;
+    margin-top: 0.3rem;
+    line-height: 1.5;
+  }
+  .experience-card ul li {
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+  }
+
+  /* Skills section */
+  #skills-section {
+  margin-top: 3rem;
+}
+#skills-section h2 {
+  color: #800020;
+  margin-bottom: 1.5rem;
+}
+.skills-wrapper {
+  background: #fff7f5;
+  padding: 2rem 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgb(178 34 34 / 0.15);
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.skill-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  padding: 1.4rem 1.6rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+.skill-card h3 {
+  margin-top: 0;
+  color: #5e2c04;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+.skill-card ul {
+  padding-left: 1.2rem;
+  line-height: 1.6;
+  margin: 0;
+}
+.skill-card ul li {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+  /* Projects section */
+  #projects-section {
+    padding: 0 0 1rem 0;
+  }
+  #projects-section h2 {
+    color: #800020;
+    margin-bottom: 1.8rem;
+  }
+  #projects-section .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.8rem;
+    margin-top: 1rem;
+  }
+  .project-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgb(178 34 34 / 0.1);
+    padding: 1.6rem 1.8rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgb(178 34 34 / 0.3);
+  }
+  .project-card h3 {
+    margin-top: 0;
+    color: #800020;
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+  .project-card p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  .project-card a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #b22222;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .project-card a:hover {
+    color: #800020;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1.2rem;
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    body {
+      flex-direction: column;
+    }
+    aside {
+      width: 100%;
+      height: auto;
+      padding: 1.2rem 0.5rem;
+      flex-direction: row;
+      justify-content: center;
+      gap: 1.5rem;
+      position: relative;
+    }
+    aside .name {
+      display: none;
+    }
+    aside nav ul {
+      display: flex;
+      gap: 1.4rem;
+      width: auto;
+    }
+    main {
+      padding: 2rem 1.2rem;
+    }
+    #about-section {
+      flex-direction: column;
+      text-align: center;
+      gap: 1.6rem;
+    }
+    #about-section .photo {
+      margin: 0 auto;
+    }
+    #education-section article {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+/* Fade-up animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 1s ease-out both;
+}
+
+#certifications-section h2 {
+  color: #800020;
+  margin-bottom: 1.5rem;
+}
+
+.cert-card {
+  background: #fff7f5;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(178, 34, 34, 0.15);
+}
+
+.cert-item {
+  margin-bottom: 1.5rem;
+}
+
+.cert-item h3 {
+  margin: 0;
+  color: #5e2c04;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.cert-item p {
+  margin: 0.3rem 0 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+#interests-section h2 {
+  color: #800020;
+  margin-bottom: 1.5rem;
+}
+
+/* Interests section */
+#interests-section {
+  margin-top: 3rem;
+}
+
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.interest-card {
+  background: #fff7f5;
+  padding: 1.6rem;
+  border-radius: 10px;
+
+ #education-section {
+  background: #fff7f5;
+  padding: 2rem 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgb(178 34 34 / 0.15);
+}
+
+#education-section h2 {
+  color: #800020;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Education article and hover effect */
+#education-section article {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 1.8rem;
+  background: #fff7f5;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(178, 34, 34, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#education-section article:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(178, 34, 34, 0.35);
+}
+
+#education-section .edu-logo {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#education-section .edu-logo img {
+  width: 60px !important;
+  height: 60px !important;
+  object-fit: contain;
+  display: block;
+}
+
+#education-section article .degree-info {
+  flex-grow: 1;
+}
+
+#education-section h3 {
+  margin: 0;
+  font-weight: 700;
+  color: #6b1a1a;
+}
+
+#education-section p {
+  margin: 0.3rem 0 0 0;
+  font-style: italic;
+}
+
+  box-shadow: 0 6px 16px rgba(178, 34, 34, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.interest-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(178, 34, 34, 0.25);
+}
+
+.interest-card h3 {
+  color: #5e2c04;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.interest-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Education article hover effect */
+#education-section article {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  background: #fff7f5;
+  box-shadow: 0 8px 20px rgba(178, 34, 34, 0.15);
+  padding: 1.5rem;
+}
+
+#education-section article:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(178, 34, 34, 0.35);
+}
+
+/* Certifications card hover effect */
+.cert-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(178, 34, 34, 0.35);
+}
+
+#certifications-section {
+  background: #fff7f5;
+  padding: 2rem 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgb(178 34 34 / 0.15);
+}
+
+#certifications-section h2 {
+  color: #800020;
+  margin-bottom: 1.5rem;
+}
+
+.cert-card {
+  background: #fff7f5;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(178, 34, 34, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(178, 34, 34, 0.35);
+}
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.interest-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #fff;
+}
+
+/*interests*/
+.carousel {
+  position: relative;
+  width: 100%;
+  padding-top: 70%; /* increase this for taller images, default was ~56% */
+  height: 220px; /* make taller here — try 240px if you want more height */
+  overflow: hidden;
+}
+
+.carousel-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fills without distortion */
+  object-fit: cover; /* keeps proportions without distortion */
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.carousel-image.active {
+  opacity: 1;
+}
