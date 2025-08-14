@@ -169,19 +169,6 @@ a:hover {
   }
 }
 
-/* Apply Oswald to all headers */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Oswald', sans-serif;
-}
-
-/* Optional: specific weights for section headers */
-h2 {
-  font-weight: 600; /* adjust as desired */
-}
-h3 {
-  font-weight: 500;
-}
-
 
   /* Main content */
   main {
