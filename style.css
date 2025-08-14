@@ -570,10 +570,10 @@
 
 /*interests*/
 .carousel {
-  position: relative; /* needed for absolute images inside */
+  position: relative;
+  width: 100%;
+  padding-top: 70%; /* increase this for taller images, default was ~56% */
   overflow: hidden;
-  height: 180px;
-  margin-bottom: 1rem;
 }
 
 .carousel-image {
@@ -581,17 +581,13 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 6px;
-
+  height: 100%;
+  object-fit: cover; /* fills without distortion */
+  border-radius: 8px;
   opacity: 0;
-  transition: opacity 0.7s ease-in-out;
-  pointer-events: none;
+  transition: opacity 0.6s ease-in-out;
 }
 
 .carousel-image.active {
   opacity: 1;
-  pointer-events: auto;
-  position: relative; /* keeps active image in flow */
 }
