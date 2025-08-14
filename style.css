@@ -79,96 +79,83 @@
     margin-bottom: 4rem;
     position: relative;
   }
+  /* About Section Hero Card */
+#about-section {
+  background: #fff7f5; /* soft card background */
+  padding: 3rem 3.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(178, 34, 34, 0.2);
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  margin-top: 3rem; /* space above for banner */
+  flex-wrap: wrap;
+}
+
+#about-section .photo {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: url('https://media.licdn.com/dms/image/v2/D4E03AQEQC5JdhcAM2g/profile-displayphoto-shrink_400_400/B4EZXRcoqJHUAg-/0/1742975699954?e=1757548800&v=beta&t=TXNtMYuIsPdgZM7v-lTKw1dgxJgduIXWC0BO3uE3BP8') center/cover no-repeat;
+  box-shadow: 0 10px 20px rgba(178, 34, 34, 0.35);
+  flex-shrink: 0;
+}
+
+#about-section .intro {
+  flex: 1;
+}
+
+#about-section .intro h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin: 0;
+  color: #800020;
+}
+
+#about-section .intro h3 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin: 0.3rem 0 1.2rem 0;
+  color: #5e2c04;
+}
+
+#about-section .intro p {
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0.6rem 0;
+}
+
+#about-section .intro a {
+  color: #800020;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+#about-section .intro a:hover {
+  color: #b22222;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
   #about-section {
-    background: #fff7f5;
-    padding: 2rem 2.5rem;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgb(178 34 34 / 0.15);
-    display: flex;
-    gap: 3rem;
-    align-items: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  #about-section:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 30px rgb(178 34 34 / 0.35);
+    flex-direction: column;
+    text-align: center;
   }
   #about-section .photo {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    background: url('https://media.licdn.com/dms/image/v2/D4E03AQEQC5JdhcAM2g/profile-displayphoto-shrink_400_400/B4EZXRcoqJHUAg-/0/1742975699954?e=1757548800&v=beta&t=TXNtMYuIsPdgZM7v-lTKw1dgxJgduIXWC0BO3uE3BP8') center/cover no-repeat;
-    box-shadow: 0 8px 15px rgb(178 34 34 / 0.35);
-    flex-shrink: 0;
-  }
-  #about-section .intro {
-    flex-grow: 1;
+    margin: 0 auto;
   }
   #about-section .intro h1 {
-    margin-top: 0;
-    color: #800020;
+    font-size: 2rem;
   }
-  #about-section .intro p {
-    line-height: 1.5;
-    font-size: 1.1rem;
+  #about-section .intro h3 {
+    font-size: 1.2rem;
   }
-  #about-section .intro a {
-    color: #800020;
-    font-weight: 600;
-  }
-  #about-section .intro a:hover {
-    color: #b22222;
-  }
-
-  /* Education Section */
-  #education-section {
-    background: #fff7f5;
-    padding: 2rem 2.5rem;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgb(178 34 34 / 0.15);
-  }
-  #education-section h2 {
-    color: #800020;
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-#education-section .edu-logo {
-  width: 60px;
-  height: 60px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden; /* prevents overflow if image is bigger */
 }
 
-#education-section .edu-logo img {
-  width: 60px !important;
-  height: 60px !important;
-  object-fit: contain;
-  display: block;
-}
-
-  #education-section article {
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
-    margin-bottom: 1.8rem;
-  }
-  #education-section article .degree-info {
-    flex-grow: 1;
-  }
-  #education-section h3 {
-    margin: 0;
-    font-weight: 700;
-    color: #6b1a1a;
-  }
-  #education-section p {
-    margin: 0.3rem 0 0 0;
-    font-style: italic;
-  }
 
   /* Experience section */
   #experience-section {
