@@ -3,6 +3,7 @@
   box-sizing: border-box;
 }
 
+/* Body and background */
 body {
   margin: 0; 
   font-family: 'Lato', sans-serif;
@@ -10,16 +11,16 @@ body {
   display: flex;
   min-height: 100vh;
 
-  /* Ombré background */
-  background: linear-gradient(to right, #5e2c04, #800020);
-  color: #f9f5f0; /* light text for readability */
+  /* Ombré background using your provided palette */
+  background: linear-gradient(to right, #211f20, #521328, #a9243f, #c4554e, #f6d5a7, #eadbbe, #e4dbd4);
+  color: #211f20; /* dark text for readability on lighter portions */
 }
 
 /* Sidebar */
 aside {
-  background: #800020; /* keep burgundy */
+  background: #800020; /* burgundy */
   width: 250px;
-  color: #f9f5f0;
+  color: #f6d5a7; /* light accent for text */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,19 +48,20 @@ aside nav ul li {
 }
 
 aside nav ul li a {
-  color: #f9f5f0;
+  color: #f6d5a7;
   font-weight: 600;
   font-size: 1.1rem;
   text-decoration: none;
   display: block;
   padding: 0.5rem 1rem;
   border-radius: 6px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 aside nav ul li a:hover,
 aside nav ul li a.active {
-  background: #5e2c04; /* brown hover accent instead of navy */
+  background: #211f20; /* dark hover for contrast */
+  color: #f6d5a7;
 }
 
 aside .contact {
@@ -69,7 +71,7 @@ aside .contact {
 }
 
 aside .contact a {
-  color: #f9f5f0;
+  color: #f6d5a7;
   text-decoration: none;
   font-weight: 600;
 }
@@ -84,7 +86,7 @@ h2 {
 }
 
 h3 {
-  color: #f9f5f0; /* light text for readability */
+  color: #211f20; /* dark text for readability */
 }
 
 .subheader {
@@ -93,7 +95,7 @@ h3 {
 
 .skill-subheader,
 .interest-subheader {
-  color: #5e2c04; /* brown accents */
+  color: #521328; /* brown/red accent from palette */
 }
 
 /* Cards (Projects, Skills, Interests, Certifications) */
@@ -103,7 +105,7 @@ h3 {
   padding: 1rem;
   margin: 1rem 0;
   transition: transform 0.3s, box-shadow 0.3s;
-  color: #f9f5f0;
+  color: #211f20; /* dark text for readability */
 }
 
 .card:hover {
@@ -115,7 +117,7 @@ h3 {
 button,
 a.button {
   background-color: #800020; /* burgundy */
-  color: #f9f5f0;
+  color: #f6d5a7; /* light text */
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 8px;
@@ -125,27 +127,40 @@ a.button {
 
 button:hover,
 a.button:hover {
-  background-color: #5e2c04; /* brown hover */
-  color: #f9f5f0;
+  background-color: #521328; /* brown/red hover */
+  color: #f6d5a7;
 }
 
 /* Footer / Connect with Me section */
 footer {
   background-color: rgba(0, 0, 0, 0.6);
-  color: #f9f5f0;
+  color: #f6d5a7;
   padding: 2rem;
   text-align: center;
 }
 
 /* Links inside content */
 a {
-  color: #f9f5f0;
+  color: #211f20;
   transition: color 0.3s;
 }
 
 a:hover {
-  color: #5e2c04;
+  color: #521328;
 }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  aside {
+    width: 100%;
+    padding: 1.5rem;
+  }
+}
+
 
   /* Main content */
   main {
