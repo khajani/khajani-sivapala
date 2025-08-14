@@ -173,6 +173,15 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700; /* Try 800 or 900 if your font supports it */
 }
 
+/* About Me heading style */
+#about h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.5rem; /* increase/decrease to taste */
+  font-weight: 700;  /* makes it bold */
+}
+
+
+
   /* Main content */
   main {
     flex-grow: 1;
