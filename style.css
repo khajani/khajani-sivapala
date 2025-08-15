@@ -828,3 +828,16 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5rem; /* or even 0 if you want it very tight */
 }
 
+/* Reduce all vertical spacing inside outer cards */
+.card * {
+  margin-top: 0;
+  margin-bottom: 0.4rem; /* adjust as needed */
+}
+
+.card p:last-child,
+.card h1:last-child,
+.card h2:last-child,
+.card h3:last-child,
+.card h4:last-child {
+  margin-bottom: 0.3rem; /* tighter for the last element */
+}
