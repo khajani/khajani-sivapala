@@ -823,3 +823,8 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.4; /* optional: slightly tighter text spacing */
 }
 
+/* Reduce bottom spacing for the last element in all outer cards */
+.card > :last-child {
+  margin-bottom: 0.5rem; /* or even 0 if you want it very tight */
+}
+
