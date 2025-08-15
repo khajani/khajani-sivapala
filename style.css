@@ -695,3 +695,18 @@ h1, h2, h3, h4, h5, h6 {
 .carousel-image.active {
   opacity: 1;
 }
+
+
+
+.banner {
+  width: 100%;
+  max-height: 300px; /* adjust as needed */
+  overflow: hidden; /* crops if banner is taller */
+}
+
+.banner img {
+  width: 100%;
+  height: auto; /* keeps aspect ratio */
+  display: block;
+}
+
