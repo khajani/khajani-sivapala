@@ -774,10 +774,12 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 4px 15px rgba(0,0,0,0.12);
 }
 
-#about-me.card {
-  margin: 1rem auto; /* reduces space outside the card */
-  padding: 1.5rem 2rem; /* reduces internal spacing */
-  max-width: 900px; /* optional: keeps the card from being too wide */
+
+/* Outer card styling for About Me, Projects, Experience, etc. */
+.card {
+  margin: 0.7rem auto;      /* reduced from ~1rem */
+  padding: 1rem 1.5rem;     /* reduced from ~1.5-2rem */
+  max-width: 900px;
   border-radius: 15px;
   background-color: #fff;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
