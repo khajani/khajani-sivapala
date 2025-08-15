@@ -754,7 +754,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .project-card img {
   width: 100%;
-  height: 220px; /* taller thumbnail */
+  height: 275px; /* taller thumbnail */
   object-fit: cover;
 }
 
