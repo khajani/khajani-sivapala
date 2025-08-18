@@ -954,3 +954,31 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 1100;
   }
 }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    transform: translateX(-100%);
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .content {
+    margin-left: 0; /* Remove left margin on mobile */
+    padding: 0 15px; /* Add small padding for readability */
+  }
+}
