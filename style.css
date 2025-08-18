@@ -856,3 +856,52 @@ h1, h2, h3, h4, h5, h6 {
 .card h4:last-child {
   margin-bottom: 0.3rem; /* tighter for the last element */
 }
+
+.experience-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.experience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.company-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+.experience-details h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #800020; /* burgundy */
+}
+
+.dates {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 4px 0 8px;
+}
+
+.experience-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.experience-details li {
+  margin-bottom: 4px;
+  color: #333;
+}
+
