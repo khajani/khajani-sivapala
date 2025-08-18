@@ -1,3 +1,13 @@
+const toggleBtn = document.querySelector('.menu-toggle');
+const sidebar = document.querySelector('.sidebar');
+
+toggleBtn.addEventListener('click', () => {
+  sidebar.classList.toggle('active');
+});
+
+
+
+
 // Highlight sidebar nav on scroll
 const links = document.querySelectorAll('aside nav ul li a');
 const sections = Array.from(links).map(link => document.querySelector(link.getAttribute('href')));
