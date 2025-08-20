@@ -20,9 +20,21 @@ function initSidebar() {
 initSidebar();
 
 // Toggle sidebar on hamburger click
+// Toggle sidebar on hamburger click
 toggleBtn.addEventListener('click', () => {
   sidebar.classList.toggle('active');
   toggleBtn.classList.toggle('open');
+
+  // Desktop: shift content dynamically
+  if (!isMobile()) {
+    if (sidebar.classList.contains('active')) {
+      content.style.marginLeft = '250px';
+      content.style.maxWidth = 'calc(100% - 250px)';
+    } else {
+      content.style.marginLeft = '0';
+      content.style.maxWidth = '100%';
+    }
+  }
 });
 
 // Close mobile sidebar when a link is clicked
