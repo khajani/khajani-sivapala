@@ -1,55 +1,41 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const toggleBtn = document.querySelector('.menu-toggle');
-  const sidebar = document.querySelector('.sidebar');
-  const links = document.querySelectorAll('.sidebar nav ul li a');
-  const mainContent = document.querySelector('main') || document.querySelector('.content');
+// ================= Sidebar Toggle =================
+const toggleBtn = document.querySelector('.menu-toggle');
+const sidebar = document.querySelector('.sidebar');
+const links = document.querySelectorAll('.sidebar nav ul li a');
+const content = document.querySelector('main, .content');
 
-  // Hamburger icon animation
-  toggleBtn.addEventListener('click', () => {
-    sidebar.classList.toggle('active');
-    toggleBtn.classList.toggle('open'); // for X animation
-  });
+// Function to check if device is mobile
+function isMobile() {
+  return window.innerWidth <= 768;
+}
 
-  // Mobile: close sidebar on link click
-  links.forEach(link => {
-    link?.addEventListener('click', () => {
-      if (window.innerWidth < 768) {
-        sidebar?.classList.remove('active');
-        toggleBtn.classList.remove('open');
-      }
-    });
-  });
+// Initialize sidebar state
+function initSidebar() {
+  if (isMobile()) {
+    sidebar.classList.remove('active');
+  } else {
+    sidebar.classList.add('active'); // Desktop default open
+  }
+}
+initSidebar();
 
-  // Reset on window resize
-  window.addEventListener('resize', () => {
-    if (window.innerWidth >= 768) {
-      if (!sidebar.classList.contains('active')) {
-        sidebar.classList.add('active'); // desktop default open
-      }
-      mainContent.style.marginLeft = ''; 
-    } else {
+// Toggle sidebar on hamburger click
+toggleBtn.addEventListener('click', () => {
+  sidebar.classList.toggle('active');
+  toggleBtn.classList.toggle('open');
+});
+
+// Close mobile sidebar when a link is clicked
+links.forEach(link => {
+  link.addEventListener('click', () => {
+    if (isMobile()) {
+      sidebar.classList.remove('active');
       toggleBtn.classList.remove('open');
     }
   });
+});
 
-  // Initialize sidebar for desktop
-  if (window.innerWidth >= 768) {
-    sidebar?.classList.add('active');
-  }
-
-  // Scroll highlighting (safe version)
-  const navLinks = document.querySelectorAll('.sidebar nav ul li a');
-  const sections = Array.from(navLinks).map(link => document.querySelector(link.getAttribute('href')));
-
-  window.addEventListener('scroll', () => {
-    const scrollPos = window.scrollY || window.pageYOffset;
-
-    sections.forEach((section, idx) => {
-      if (section && section.offsetTop <= scrollPos + 100 &&
-          section.offsetTop + section.offsetHeight > scrollPos + 100) {
-        navLinks.forEach(link => link.classList.remove('active'));
-        navLinks[idx]?.classList.add('active');
-      }
-    });
-  });
+// Adjust sidebar state on window resize
+window.addEventListener('resize', () => {
+  initSidebar();
 });
