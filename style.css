@@ -12,32 +12,25 @@ html, body {
   overflow-x: hidden;
 }
 
-/* ================= Body Background ================= */
 body {
-  color: #211f20;
-  background: linear-gradient(to bottom,
-    #211f20,
-    #521328,
-    #a9243f,
-    #c4554e,
-    #f6d5a7,
-    #eadbbe,
-    #e4dbd4
-  );
   display: flex;
   min-height: 100vh;
+  color: #211f20;
+  background: linear-gradient(to bottom, #211f20, #521328, #a9243f, #c4554e, #f6d5a7, #eadbbe, #e4dbd4);
 }
 
 /* ================= Sidebar ================= */
 .sidebar {
+  width: 250px;
+  background-color: #800020;
+  color: white;
   position: fixed;
   top: 0;
+  bottom: 0;
   left: 0;
-  width: 250px;
-  height: 100%;
-  background-color: #800020; /* Burgundy */
-  padding-top: 2rem;
-  transition: transform 0.3s ease;
+  padding: 2rem 1rem;
+  overflow-y: auto;
+  transition: transform 0.3s ease-in-out;
   z-index: 1000;
 }
 
@@ -46,7 +39,6 @@ body {
   font-size: 1.8rem;
   margin-bottom: 2rem;
   text-align: center;
-  color: #f6d5a7;
 }
 
 .sidebar nav ul {
@@ -55,103 +47,76 @@ body {
 }
 
 .sidebar nav ul li {
-  margin-bottom: 1.5rem;
+  margin: 1rem 0;
 }
 
 .sidebar nav ul li a {
-  color: #f6d5a7;
-  font-weight: 600;
-  font-size: 1.1rem;
+  color: white;
   text-decoration: none;
+  font-weight: bold;
   display: block;
   padding: 0.5rem 1rem;
   border-radius: 6px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background 0.3s;
 }
 
-.sidebar nav ul li a:hover,
-.sidebar nav ul li a.active {
-  background: #521328;
+.sidebar nav ul li a.active,
+.sidebar nav ul li a:hover {
+  background: #5e2c04;
   color: #f6d5a7;
-}
-
-.sidebar .contact {
-  margin-top: auto;
-  font-size: 0.9rem;
-  text-align: center;
-}
-
-.sidebar .contact a {
-  color: #f6d5a7;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.sidebar .contact a:hover {
-  text-decoration: underline;
 }
 
 /* ================= Toggle Button ================= */
 .menu-toggle {
+  display: none;
   position: fixed;
   top: 1rem;
   left: 1rem;
   z-index: 1100;
-  display: none;
-  background: none;
+  background-color: #800020;
+  color: white;
   border: none;
-  font-size: 1.8rem;
-  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
   cursor: pointer;
 }
 
 /* ================= Main Content ================= */
-.content {
+.main-content {
+  flex: 1;
   margin-left: 250px;
-  flex-grow: 1;
-  padding: 3rem 4rem;
-  transition: margin-left 0.3s ease, max-width 0.3s ease;
-  max-width: calc(100% - 250px);
+  padding: 2rem;
+  max-width: 1100px;
+  width: 100%;
 }
 
-/* Collapsed sidebar */
-.sidebar.collapsed + .content {
-  margin-left: 0;
-  max-width: 100%;
-}
-
-/* ================= Cards ================= */
-.card, #about-section, .experience-card, .projects-section, .cert-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 1.5rem;
+/* ================= Banner ================= */
+.banner {
+  text-align: center;
   margin-bottom: 2rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
-  color: #211f20;
 }
 
-.card:hover,
-.experience-card:hover,
-.project-card:hover,
-.skill-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+.banner img {
+  max-width: 350px;
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 10px 25px rgba(178,34,34,0.35);
 }
 
-/* ================= Section Headers ================= */
-h2 {
-  color: #800020;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-/* ================= About Me ================= */
+/* ================= About Me Section ================= */
 #about-section {
+  background: #fff7f5;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(178,34,34,0.2);
   display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
+  gap: 3rem;
   align-items: center;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
 }
 
 #about-section .photo {
@@ -159,8 +124,12 @@ h2 {
   height: 220px;
   border-radius: 50%;
   background: url('https://media.licdn.com/dms/image/v2/D4E03AQEQC5JdhcAM2g/profile-displayphoto-shrink_400_400/B4EZXRcoqJHUAg-/0/1742975699954?e=1757548800&v=beta&t=TXNtMYuIsPdgZM7v-lTKw1dgxJgduIXWC0BO3uE3BP8') center/cover no-repeat;
-  flex-shrink: 0;
   box-shadow: 0 10px 20px rgba(178,34,34,0.35);
+  flex-shrink: 0;
+}
+
+#about-section .intro {
+  flex: 1;
 }
 
 #about-section .intro h1 {
@@ -169,9 +138,42 @@ h2 {
   color: #800020;
 }
 
-#about-section .intro h3, #about-section .intro h4 {
+#about-section .intro h3 {
+  font-weight: 600;
+  font-size: 1.3rem;
   color: #5e2c04;
-  margin: 0.5rem 0;
+}
+
+#about-section .intro h4,
+#about-section .intro p,
+#about-section .intro a {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
+
+#about-section .intro a {
+  color: #800020;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+#about-section .intro a:hover {
+  color: #b22222;
+}
+
+/* ================= Section Headers ================= */
+h2 {
+  color: #800020;
+  margin-bottom: 1rem;
+}
+
+/* ================= Cards ================= */
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 /* ================= Experience ================= */
@@ -179,7 +181,23 @@ h2 {
   display: flex;
   align-items: flex-start;
   gap: 15px;
-  padding: 1rem 1.5rem;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.6s;
+  margin-bottom: 20px;
+  opacity: 0;
+}
+
+.experience-card.fade-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.experience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .company-logo {
@@ -191,8 +209,15 @@ h2 {
 }
 
 .experience-details h3 {
-  margin: 0 0 0.5rem 0;
+  margin: 0;
+  font-size: 1.1rem;
   color: #800020;
+}
+
+.experience-details ul {
+  list-style: none;
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
 }
 
 .experience-details li {
@@ -203,73 +228,151 @@ h2 {
 /* ================= Projects ================= */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
+}
+
+.project-card {
+  background-color: #fdfdfd;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.6s;
+  opacity: 0;
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  margin: 1rem;
+  color: #800020;
+}
+
+.project-card p {
+  margin: 0 1rem 1rem;
+  font-size: 0.95rem;
+  color: #3a3a3a;
+}
+
+.project-card a {
+  display: inline-block;
+  margin: 0 1rem 1rem;
+  color: #b22222;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.project-card a:hover {
+  color: #800020;
 }
 
 /* ================= Certifications ================= */
 .cert-card {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
-/* ================= Interests ================= */
+.cert-item {
+  flex: 1;
+  min-width: 250px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid #5e2c04;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: opacity 0.6s, transform 0.6s;
+  opacity: 0;
+}
+
+/* ================= Interests / Carousel ================= */
 .interests-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
 }
 
-/* Carousel */
+.interest-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  border-left: 4px solid #5e2c04;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: opacity 0.6s, transform 0.6s;
+  opacity: 0;
+}
+
 .carousel {
-  display: flex;
-  overflow-x: auto;
-  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  margin: 0.5rem 0;
 }
 
 .carousel img {
-  border-radius: 10px;
-  max-height: 200px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: none;
 }
 
-/* ================= Connect Section ================= */
+/* ================= Connect ================= */
 #connect {
   text-align: center;
+  margin-top: 3rem;
 }
 
-#connect a {
-  display: inline-block;
-  margin: 0.5rem;
-  padding: 0.8rem 1.6rem;
-  background: #800020;
-  color: #fff;
-  border-radius: 30px;
-  font-weight: bold;
+.connect-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.connect-buttons a {
+  min-width: 150px;
+  background-color: #800020;
+  color: white;
   text-decoration: none;
-  transition: background 0.3s ease;
+  font-weight: bold;
+  padding: 0.75rem 1rem;
+  border-radius: 30px;
+  text-align: center;
+  transition: transform 0.2s;
 }
 
-#connect a:hover {
-  background: #5e2c04;
+.connect-buttons a:hover {
+  transform: translateY(-2px);
+}
+
+/* ================= Footer ================= */
+footer {
+  text-align: center;
+  padding: 1.2rem;
+  font-size: 0.9rem;
+  color: #f6d5a7;
 }
 
 /* ================= Responsive ================= */
-@media(max-width: 900px) {
-  #about-section {
-    flex-direction: column;
-    text-align: center;
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
   }
-  #about-section .photo {
-    margin: 0 auto;
+  .sidebar.active {
+    transform: translateX(0);
   }
-  .content {
-    padding: 2rem 1.2rem;
+  .main-content {
+    margin-left: 0;
+    padding: 1rem;
   }
-}
-
-@media(max-width: 768px) {
-  .menu-toggle { display: block; }
-  .sidebar { transform: translateX(-100%); }
-  .sidebar.active { transform: translateX(0); }
-  .content { margin-left: 0; max-width: 100%; padding: 1rem; }
+  .menu-toggle {
+    display: block;
+  }
 }
