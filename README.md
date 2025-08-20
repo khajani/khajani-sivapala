@@ -6,9 +6,8 @@ This is my digital portfolio, created to showcase all things engineering like my
 https://khajani.github.io/khajani-sivapala/
 
 ## 📸 Features
-
-## 🔎  Overview  
-- Project Showcase with Links  
-- About Me Section Identifying Skills & Background  
-- Social Media Links  
-- Clean UI Design
+- Project Showcase with Links
+- Social Media Links
+- Animated Features
+- Pictures 
+- Aesthetic Design
