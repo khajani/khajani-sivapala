@@ -384,3 +384,43 @@ footer {
   .sidebar.active { transform: translateX(0); }
   .content { margin-left: 0; padding: 0 15px; }
 }
+
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* hidden initially */
+  width: 250px;
+  height: 100%;
+  background-color: #211f20; /* dark color */
+  transition: left 0.3s ease;
+  z-index: 1000;
+  padding-top: 2rem;
+}
+
+/* Sidebar active */
+.sidebar.active {
+  left: 0;
+}
+
+/* Toggle button (hamburger) */
+.menu-toggle {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1100;
+  cursor: pointer;
+}
+
+/* Main content transition */
+main {
+  transition: margin-left 0.3s ease;
+}
+
+/* Desktop: push content */
+@media(min-width: 768px) {
+  .sidebar.active + main {
+    margin-left: 250px;
+  }
+}
