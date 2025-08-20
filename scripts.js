@@ -56,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
       window.removeEventListener('scroll', onScroll);
     }
   }
-
   window.addEventListener('scroll', onScroll);
 
   if (isInViewport(section)) {
