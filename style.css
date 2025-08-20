@@ -27,7 +27,6 @@ body {
   overflow-x: hidden; /* prevent horizontal scroll */
 }
 
-
 /* Sidebar */
 .sidebar {
   position: fixed;
