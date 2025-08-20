@@ -5,6 +5,7 @@ body {
   background-color: #211f20; /* charcoal */
   color: #f6d5a7; /* champagne */
   display: flex;
+  flex-direction: row; /* keep sidebar on left for desktop */
 }
 
 /* ===== Sidebar (Desktop) ===== */
@@ -133,7 +134,7 @@ h2 {
 /* ===== Mobile Navbar (<=900px) ===== */
 @media (max-width: 900px) {
   body {
-    flex-direction: column;
+    flex-direction: column; /* stack navbar on top */
   }
 
   aside.sidebar {
@@ -156,7 +157,7 @@ h2 {
 
   aside.sidebar nav {
     width: 100%;
-    overflow-x: auto;
+    overflow-x: auto; /* horizontal scroll */
     -webkit-overflow-scrolling: touch;
   }
 
