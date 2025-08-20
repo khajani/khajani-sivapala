@@ -1055,3 +1055,13 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 60px; 
   }
 }
+
+/* Desktop: Interests grid (3 columns, 2 rows) */
+@media (min-width: 769px) {
+  .interests-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    grid-auto-rows: minmax(180px, auto);
+  }
+}
