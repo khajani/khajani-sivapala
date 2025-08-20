@@ -774,7 +774,6 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 4px 15px rgba(0,0,0,0.12);
 }
 
-
 /* Outer card styling for About Me, Projects, Experience, etc. */
 .card {
   margin: 0.7rem auto;      /* reduced from ~1rem */
