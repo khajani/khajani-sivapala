@@ -10,6 +10,7 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+
 document.addEventListener('DOMContentLoaded', () => {
   const section = document.getElementById('interests-section');
   let carouselStarted = false;
