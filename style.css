@@ -12,7 +12,7 @@ html, body {
   overflow-x: hidden;
 }
 
-/* ================= Body Background ================= */
+/* ================= Body Background (Aug 18 ombré) ================= */
 body {
   display: flex;
   min-height: 100vh;
@@ -29,8 +29,8 @@ body {
   left: -250px; /* hidden initially for mobile */
   width: 250px;
   height: 100%;
-  background-color: #211f20;
-  color: #f6d5a7;
+  background-color: #211f20; /* dark sidebar */
+  color: #f6d5a7; /* sidebar text */
   padding: 2rem 1.5rem;
   display: flex;
   flex-direction: column;
@@ -131,8 +131,8 @@ body {
 /* ================= Main Content ================= */
 .content, main {
   transition: margin-left 0.3s ease;
-  margin-left: 250px; /* desktop default */
-  padding: 3rem 4rem; /* restored Aug 18 spacing */
+  margin-left: 250px; /* desktop default open */
+  padding: 3rem 4rem; /* Aug 18 spacing */
 }
 
 /* Desktop: push content when sidebar active */
@@ -149,11 +149,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2 {
-  color: #800020; /* burgundy section headers */
+  color: #800020; /* burgundy */
 }
 
 h3 {
-  color: #211f20; /* dark text for readability */
+  color: #211f20; /* dark text */
 }
 
 .subheader,
@@ -164,11 +164,11 @@ h3 {
 
 /* ================= Cards ================= */
 .card {
-  margin: 1rem auto;
-  padding: 1.5rem 2rem;
+  margin: 0.7rem auto;
+  padding: 1rem 1.5rem;
   max-width: 900px;
   border-radius: 15px;
-  background-color: #fff;
+  background-color: #fff; /* restored white */
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -180,7 +180,7 @@ h3 {
 
 /* ================= About Me Section ================= */
 #about-section {
-  background: #fff7f5;
+  background: #fff7f5; /* light pinkish */
   padding: 3rem 3.5rem;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(178,34,34,0.2);
@@ -232,18 +232,188 @@ h3 {
   color: #b22222;
 }
 
-/* ================= Responsive Adjustments ================= */
+/* ================= Experience Section ================= */
+.experience-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.experience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.company-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+.experience-details h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #800020;
+}
+
+.dates {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 4px 0 8px;
+}
+
+.experience-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.experience-details li {
+  margin-bottom: 4px;
+  color: #333;
+}
+
+/* ================= Skills Section ================= */
+#skills-section .skills-wrapper {
+  background: #fff7f5;
+  padding: 2rem 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgb(178 34 34 / 0.15);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.4rem 1.6rem;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.skill-card h3 {
+  color: #5e2c04;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.skill-card ul {
+  padding-left: 1.2rem;
+  line-height: 1.6;
+}
+
+/* ================= Projects Section ================= */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card img {
+  width: 100%;
+  height: 475px;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  margin: 1rem;
+  color: #800020;
+}
+
+.project-card p {
+  margin: 0 1rem 1rem;
+  font-size: 0.95rem;
+  color: #3a3a3a;
+}
+
+.project-card a {
+  display: inline-block;
+  margin: 1rem;
+  color: #b22222;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.project-card a:hover {
+  color: #800020;
+}
+
+/* ================= Connect With Me ================= */
+#connect {
+  margin-top: 3rem;
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#connect a {
+  font-weight: bold;
+  border-radius: 30px;
+  padding: 0.8rem 1.6rem;
+  text-decoration: none;
+  color: white;
+  background: #800020;
+  transition: background 0.3s;
+}
+
+#connect a:hover {
+  background: #521328;
+}
+
+/* ================= Footer ================= */
+footer {
+  text-align: center;
+  padding: 1.2rem;
+  font-size: 0.9rem;
+  color: #f6d5a7;
+}
+
+/* ================= Animations ================= */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+.fade-up {
+  animation: fadeUp 1s ease-out both;
+}
+
+/* ================= Responsive ================= */
 @media (max-width: 900px) {
-  main, .content {
-    padding: 2rem 2rem;
-    margin-left: 0;
-  }
   #about-section {
     flex-direction: column;
     text-align: center;
     gap: 1.6rem;
   }
   #about-section .photo { margin: 0 auto; }
+  main, .content { padding: 2rem 1.2rem; margin-left: 0; }
 }
 
 @media (max-width: 768px) {
