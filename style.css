@@ -10,49 +10,35 @@ html, body {
   font-family: 'Lato', sans-serif;
   scroll-behavior: smooth;
   overflow-x: hidden;
+}
+
+/* ================= Body Background ================= */
+body {
   color: #211f20;
-  background: linear-gradient(to bottom, 
-    #211f20, #521328, #a9243f, #c4554e, #f6d5a7, #eadbbe, #e4dbd4
+  background: linear-gradient(to bottom,
+    #211f20,
+    #521328,
+    #a9243f,
+    #c4554e,
+    #f6d5a7,
+    #eadbbe,
+    #e4dbd4
   );
+  display: flex;
+  min-height: 100vh;
 }
 
 /* ================= Sidebar ================= */
 .sidebar {
   position: fixed;
   top: 0;
-  left: -250px; /* hidden on mobile */
+  left: 0;
   width: 250px;
   height: 100%;
-  background: #800020; /* burgundy */
-  color: #f6d5a7;
-  display: flex;
-  flex-direction: column;
-  padding: 20px 10px;
-  transition: transform 0.3s ease, left 0.3s ease;
+  background-color: #800020; /* Burgundy */
+  padding-top: 2rem;
+  transition: transform 0.3s ease;
   z-index: 1000;
-}
-
-.sidebar.active {
-  left: 0;
-}
-
-.menu-toggle {
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
-  font-size: 1.6rem;
-  background: #800020;
-  color: #f6d5a7;
-  border: none;
-  padding: 0.6rem 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  z-index: 1100;
-  transition: background 0.3s;
-}
-
-.menu-toggle:hover {
-  background: #b22222;
 }
 
 .sidebar .name {
@@ -60,12 +46,12 @@ html, body {
   font-size: 1.8rem;
   margin-bottom: 2rem;
   text-align: center;
+  color: #f6d5a7;
 }
 
 .sidebar nav ul {
   list-style: none;
   padding: 0;
-  width: 100%;
 }
 
 .sidebar nav ul li {
@@ -85,8 +71,8 @@ html, body {
 
 .sidebar nav ul li a:hover,
 .sidebar nav ul li a.active {
-  background: #b22222;
-  color: #fff;
+  background: #521328;
+  color: #f6d5a7;
 }
 
 .sidebar .contact {
@@ -105,44 +91,66 @@ html, body {
   text-decoration: underline;
 }
 
+/* ================= Toggle Button ================= */
+.menu-toggle {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1100;
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+}
+
 /* ================= Main Content ================= */
-.main-content {
-  margin-left: 250px; /* match sidebar width */
+.content {
+  margin-left: 250px;
   flex-grow: 1;
   padding: 3rem 4rem;
-  transition: margin-left 0.3s ease;
+  transition: margin-left 0.3s ease, max-width 0.3s ease;
+  max-width: calc(100% - 250px);
 }
 
-/* Adjust content when sidebar hidden on mobile */
-@media (max-width: 1024px) {
-  .main-content {
-    margin-left: 0;
-    padding: 2rem 1.2rem;
-  }
+/* Collapsed sidebar */
+.sidebar.collapsed + .content {
+  margin-left: 0;
+  max-width: 100%;
 }
 
-/* ================= Banner ================= */
-.banner img {
-  width: 100%;
+/* ================= Cards ================= */
+.card, #about-section, .experience-card, .projects-section, .cert-card {
+  background: #fff;
   border-radius: 12px;
+  padding: 1.5rem;
   margin-bottom: 2rem;
-  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+  color: #211f20;
 }
 
-/* ================= Section Cards ================= */
-.card, .projects-section, .cert-card, #skills-section .skills-wrapper, .interests-grid {
-  background: #fff7f5;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(178,34,34,0.15);
-  padding: 2rem 2.5rem;
-  margin-bottom: 2rem;
+.card:hover,
+.experience-card:hover,
+.project-card:hover,
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* ================= Section Headers ================= */
+h2 {
+  color: #800020;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 /* ================= About Me ================= */
 #about-section {
   display: flex;
   flex-wrap: wrap;
-  gap: 3rem;
+  gap: 2rem;
   align-items: center;
 }
 
@@ -151,12 +159,8 @@ html, body {
   height: 220px;
   border-radius: 50%;
   background: url('https://media.licdn.com/dms/image/v2/D4E03AQEQC5JdhcAM2g/profile-displayphoto-shrink_400_400/B4EZXRcoqJHUAg-/0/1742975699954?e=1757548800&v=beta&t=TXNtMYuIsPdgZM7v-lTKw1dgxJgduIXWC0BO3uE3BP8') center/cover no-repeat;
-  box-shadow: 0 10px 20px rgba(178,34,34,0.35);
   flex-shrink: 0;
-}
-
-#about-section .intro {
-  flex: 1;
+  box-shadow: 0 10px 20px rgba(178,34,34,0.35);
 }
 
 #about-section .intro h1 {
@@ -165,60 +169,17 @@ html, body {
   color: #800020;
 }
 
-#about-section .intro h3 {
-  font-weight: 600;
-  font-size: 1.3rem;
+#about-section .intro h3, #about-section .intro h4 {
   color: #5e2c04;
+  margin: 0.5rem 0;
 }
 
-#about-section .intro h4 {
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: #5e2c04;
-}
-
-#about-section .intro p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin: 0.6rem 0;
-}
-
-#about-section .intro a {
-  color: #800020;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-#about-section .intro a:hover {
-  color: #b22222;
-}
-
-/* ================= Section Headers ================= */
-h2 {
-  color: #800020;
-  margin-bottom: 1.2rem;
-}
-
-h3 {
-  color: #211f20;
-}
-
-/* ================= Experience Section ================= */
+/* ================= Experience ================= */
 .experience-card {
   display: flex;
   align-items: flex-start;
   gap: 15px;
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  margin-bottom: 20px;
-}
-
-.experience-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  padding: 1rem 1.5rem;
 }
 
 .company-logo {
@@ -230,15 +191,8 @@ h3 {
 }
 
 .experience-details h3 {
-  margin: 0;
-  font-size: 1.1rem;
+  margin: 0 0 0.5rem 0;
   color: #800020;
-}
-
-.experience-details ul {
-  list-style: none;
-  padding-left: 1rem;
-  margin: 0.5rem 0 0;
 }
 
 .experience-details li {
@@ -246,186 +200,76 @@ h3 {
   color: #333;
 }
 
-/* ================= Projects Section ================= */
+/* ================= Projects ================= */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
 
-.project-card {
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.project-card img {
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-}
-
-.project-card h3 {
-  margin: 1rem;
-  color: #800020;
-}
-
-.project-card p {
-  margin: 0 1rem 1rem;
-  font-size: 0.95rem;
-  color: #3a3a3a;
-}
-
-.project-card a {
-  display: inline-block;
-  margin: 0 1rem 1rem;
-  color: #b22222;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.project-card a:hover {
-  color: #800020;
-}
-
-/* ================= Certifications Section ================= */
+/* ================= Certifications ================= */
 .cert-card {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-
-.cert-item {
-  flex: 1 1 300px;
-  background: #fff;
-  padding: 1.2rem 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-.cert-item h3 {
-  color: #5e2c04;
-  margin-bottom: 0.6rem;
-}
-
-.cert-item p, .cert-item a {
-  font-size: 0.95rem;
-  color: #333;
-}
-
-.cert-item a {
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.cert-item a:hover {
-  color: #800020;
-}
-
-/* ================= Skills Section ================= */
-#skills-section .skills-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
-/* ================= Interests Section ================= */
+/* ================= Interests ================= */
 .interests-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
 }
 
-.interest-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  padding: 1.2rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.interest-card h3 {
-  color: #5e2c04;
-  margin-bottom: 0.8rem;
-}
-
+/* Carousel */
 .carousel {
-  position: relative;
-  width: 100%;
-  height: 220px;
-  overflow: hidden;
-  border-radius: 8px;
-  margin-bottom: 0.8rem;
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
 }
 
 .carousel img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.carousel img.active {
-  opacity: 1;
+  border-radius: 10px;
+  max-height: 200px;
 }
 
 /* ================= Connect Section ================= */
+#connect {
+  text-align: center;
+}
+
 #connect a {
-  font-weight: bold;
-  border-radius: 30px;
+  display: inline-block;
+  margin: 0.5rem;
   padding: 0.8rem 1.6rem;
-  text-decoration: none;
-  color: white;
   background: #800020;
-  transition: background 0.3s;
+  color: #fff;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
 }
 
 #connect a:hover {
-  background: #521328;
-}
-
-#connect a.social-link {
-  background: none;
-  color: #800020;
-  font-weight: 600;
-  margin: 0 0.5rem;
-}
-
-/* ================= Footer ================= */
-footer {
-  text-align: center;
-  padding: 1.2rem;
-  font-size: 0.9rem;
-  color: #f6d5a7;
-}
-
-/* ================= Animations ================= */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px);}
-  to { opacity: 1; transform: translateY(0);}
-}
-
-.fade-up {
-  animation: fadeUp 1s ease-out both;
+  background: #5e2c04;
 }
 
 /* ================= Responsive ================= */
-@media (max-width: 1024px) {
-  .sidebar { transform: translateX(-100%); }
-  .sidebar.active { transform: translateX(0); }
-  .main-content { margin-left: 0; padding: 2rem 1rem; }
+@media(max-width: 900px) {
+  #about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  #about-section .photo {
+    margin: 0 auto;
+  }
+  .content {
+    padding: 2rem 1.2rem;
+  }
 }
 
-@media (max-width: 768px) {
-  #about-section { flex-direction: column; text-align: center; gap: 1.6rem; }
-  #about-section .photo { margin: 0 auto; }
+@media(max-width: 768px) {
+  .menu-toggle { display: block; }
+  .sidebar { transform: translateX(-100%); }
+  .sidebar.active { transform: translateX(0); }
+  .content { margin-left: 0; max-width: 100%; padding: 1rem; }
 }
