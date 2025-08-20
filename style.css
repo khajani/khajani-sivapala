@@ -961,10 +961,80 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-
 /* Responsive stacking for mobile */
 @media (max-width: 900px) {
   .cert-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Interests section */
+.interests-grid {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Mobile: make horizontal scroll instead of cutoff */
+@media (max-width: 900px) {
+  .interests-grid {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .interest-card {
+    min-width: 250px;
+    flex: 0 0 auto;
+  }
+}
+
+/* Mobile navbar */
+@media (max-width: 900px) {
+  aside.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background: #800020; /* burgundy */
+    padding: 0.5rem 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    z-index: 1000;
+  }
+
+  aside.sidebar nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  aside.sidebar nav ul li {
+    margin: 0 0.5rem;
+  }
+
+  aside.sidebar nav ul li a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  /* Remove toggle button on mobile since nav is always visible */
+  .menu-toggle {
+    display: none !important;
+  }
+
+  /* Push content down so it doesn’t overlap with navbar */
+  main {
+    margin-top: 60px; 
   }
 }
