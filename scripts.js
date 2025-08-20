@@ -36,7 +36,7 @@ links.forEach(link => {
   });
 });
 
-// ================= Interests Carousel =================
+// ================= Interests Carousel ========================
 const carousels = document.querySelectorAll('.interests-grid');
 
 carousels.forEach(carousel => {
