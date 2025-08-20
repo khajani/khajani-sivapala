@@ -976,50 +976,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* ===== Interests Section Updates ===== */
-
-/* Desktop: 2 rows × 3 columns */
-@media (min-width: 769px) {
-  .interests-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    grid-auto-rows: minmax(180px, auto);
-  }
-}
-
-/* Mobile: horizontal scroll with two rows */
-@media (max-width: 768px) {
-  .interests-scroll-wrapper {
-    display: flex;
-    flex-wrap: wrap;       /* allows two rows */
-    gap: 1rem;
-    overflow-x: auto;      /* horizontal scroll if needed */
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 0.5rem;
-  }
-
-  .interests-scroll-wrapper .interest-card {
-    flex: 0 0 45%; /* fixed width to fit two rows nicely */
-    margin-bottom: 1rem;
-  }
-}
-
-  aside nav ul {
-    display: flex;
-    gap: 0.8rem;
-    flex-wrap: wrap; /* ensures links do not get cut off */
-    width: 100%;
-    justify-content: space-around;
-  }
-
-  aside nav ul li {
-    margin-bottom: 0; /* remove extra spacing for horizontal layout */
-  }
-}
-
-
-/* ===== Interests Section Updates ===== */
+/* ===== Interests Section ===== */
 
 /* Desktop: 2 rows × 3 columns */
 @media (min-width: 769px) {
@@ -1035,20 +992,20 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
   .interests-grid {
     display: flex;
-    flex-wrap: wrap;       /* allows two rows */
+    flex-wrap: wrap;
     gap: 1rem;
-    overflow-x: auto;      /* horizontal scroll if needed */
+    overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     padding-bottom: 0.5rem;
   }
 
   .interests-grid .interest-card {
-    flex: 0 0 45%; /* fixed width to fit two rows nicely */
+    flex: 0 0 45%;
     margin-bottom: 1rem;
   }
 }
 
-/* ===== Mobile Nav Bar Updates ===== */
+/* ===== Mobile Navbar ===== */
 @media (max-width: 900px) {
   aside.sidebar {
     position: fixed;
@@ -1058,7 +1015,7 @@ h1, h2, h3, h4, h5, h6 {
     height: auto;
     display: flex;
     flex-direction: row;
-    justify-content: space-around; /* evenly space links */
+    justify-content: space-around;
     align-items: center;
     background: #800020; /* burgundy */
     padding: 0.5rem 0;
@@ -1070,7 +1027,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    flex-wrap: wrap; /* ensures links do not get cut off */
+    flex-wrap: wrap;
     width: 100%;
     margin: 0;
     padding: 0;
