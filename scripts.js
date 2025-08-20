@@ -39,13 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       let currentIndex = 0;
 
-      setTimeout(() => {
-        setInterval(() => {
-          images[currentIndex].classList.remove('active');
-          currentIndex = (currentIndex + 1) % images.length;
-          images[currentIndex].classList.add('active');
-        }, 3000);
-      }, 3000);
+      setInterval(() => {
+  images[currentIndex].classList.remove('active');
+  currentIndex = (currentIndex + 1) % images.length;
+  images[currentIndex].classList.add('active');
+}, 3000);
     });
   }
 
