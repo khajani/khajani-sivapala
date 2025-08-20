@@ -906,6 +906,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Certifications section */
+/* Certifications section */
 #certifications .card {
   padding: 2rem;
   background: #fff;
@@ -915,13 +916,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .cert-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  justify-content: space-between;
   gap: 1.5rem;
   margin-top: 1.5rem;
 }
 
 .cert-card {
+  flex: 1;
   background: #f9f9f9;
   border-radius: 12px;
   padding: 1.5rem;
@@ -944,6 +946,21 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-5px);
   box-shadow: 0 6px 14px rgba(0,0,0,0.15);
 }
+
+/* Make sure they stay in one row on all screens */
+@media (max-width: 900px) {
+  .cert-grid {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .cert-card {
+    min-width: 250px;
+    flex: 0 0 auto;
+  }
+}
+
 
 /* Responsive stacking for mobile */
 @media (max-width: 900px) {
