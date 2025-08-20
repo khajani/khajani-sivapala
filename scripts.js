@@ -1,29 +1,25 @@
-// ================= Sidebar Toggle =================
+// ================= Sidebar =================
 const toggleBtn = document.querySelector('.menu-toggle');
 const sidebar = document.querySelector('.sidebar');
-const content = document.querySelector('.content');
 
-// Open sidebar by default on desktop
+// Desktop: open sidebar by default
 if (window.innerWidth >= 768) {
   sidebar.classList.add('active');
 }
 
-// Toggle sidebar for mobile
+// Toggle sidebar
 toggleBtn.addEventListener('click', () => {
   sidebar.classList.toggle('active');
 });
 
-// Close sidebar on mobile when a link is clicked
-const sidebarLinks = document.querySelectorAll('.sidebar nav ul li a');
-sidebarLinks.forEach(link => {
+// Close sidebar on mobile when clicking a link
+document.querySelectorAll('.sidebar nav ul li a').forEach(link => {
   link.addEventListener('click', () => {
-    if (window.innerWidth < 768) {
-      sidebar.classList.remove('active');
-    }
+    if (window.innerWidth < 768) sidebar.classList.remove('active');
   });
 });
 
-// ================= Highlight Active Section on Scroll =================
+// Highlight active section
 const sections = document.querySelectorAll('main section');
 window.addEventListener('scroll', () => {
   let scrollPos = window.scrollY || document.documentElement.scrollTop;
@@ -38,19 +34,30 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// ================= Carousel for Interests =================
-const carousels = document.querySelectorAll('.carousel');
-carousels.forEach(carousel => {
-  let currentIndex = 0;
-  const images = carousel.querySelectorAll('.carousel-image');
-  images.forEach((img, idx) => {
-    if (idx !== 0) img.style.display = 'none';
-  });
-
-  // Auto-slide every 3 seconds
+// ================= Carousel for interests =================
+document.querySelectorAll('.carousel').forEach(carousel => {
+  let index = 0;
+  const images = carousel.querySelectorAll('img');
+  if (images.length > 0) images[0].style.display = 'block';
   setInterval(() => {
-    images[currentIndex].style.display = 'none';
-    currentIndex = (currentIndex + 1) % images.length;
-    images[currentIndex].style.display = 'block';
+    images[index].style.display = 'none';
+    index = (index + 1) % images.length;
+    images[index].style.display = 'block';
   }, 3000);
 });
+
+// ================= Fade-up animation =================
+function fadeUpOnScroll() {
+  const fadeElements = document.querySelectorAll('section, .experience-card, .project-card, .cert-item, .interest-card');
+  const triggerBottom = window.innerHeight - 100;
+  fadeElements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < triggerBottom) {
+      el.style.opacity = 1;
+      el.style.transform = 'translateY(0)';
+      el.classList.add('fade-up');
+    }
+  });
+}
+window.addEventListener('scroll', fadeUpOnScroll);
+window.addEventListener('load', fadeUpOnScroll);
