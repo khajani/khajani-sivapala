@@ -255,11 +255,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Responsive adjustments */
-@media (max-width: 900px) {
-  #about-section {
-    flex-direction: column;
-    text-align: center;
-  }
+
   #about-section .photo {
     margin: 0 auto;
   }
@@ -420,7 +416,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   /* Responsive */
-  @media (max-width: 900px) {
     body {
       flex-direction: column;
     }
@@ -511,12 +506,6 @@ h1, h2, h3, h4, h5, h6 {
 /* Interests section */
 #interests-section {
   margin-top: 3rem;
-}
-
-.interests-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
 }
 
 .interest-card {
@@ -656,11 +645,6 @@ h1, h2, h3, h4, h5, h6 {
 .cert-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 15px 30px rgba(178, 34, 34, 0.35);
-}
-.interests-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
 }
 
 .interest-card {
@@ -948,7 +932,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Make sure they stay in one row on all screens */
-@media (max-width: 900px) {
   .cert-grid {
     flex-direction: row;
     flex-wrap: nowrap;
@@ -960,52 +943,6 @@ h1, h2, h3, h4, h5, h6 {
     flex: 0 0 auto;
   }
 }
-
-/* Responsive stacking for mobile */
-@media (max-width: 900px) {
-  .cert-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Interests section */
-.interests-grid {
-  display: flex;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-  flex-wrap: wrap;
-}
-
-/* Mobile: make horizontal scroll instead of cutoff */
-@media (max-width: 900px) {
-  .interests-grid {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-  }
-
-  .interest-card {
-    min-width: 250px;
-    flex: 0 0 auto;
-  }
-}
-
-/* Mobile navbar */
-@media (max-width: 900px) {
-  aside.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    background: #800020; /* burgundy */
-    padding: 0.5rem 0;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    z-index: 1000;
-  }
 
   aside.sidebar nav ul {
     display: flex;
@@ -1068,16 +1005,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* ===== Mobile Nav Bar Updates ===== */
-@media (max-width: 900px) {
-  aside {
-    flex-direction: row;
-    justify-content: space-around; /* evenly space links */
-    flex-wrap: wrap; /* wrap if tiny screens */
-    padding: 0.8rem 1rem;
-    height: auto;
-  }
-
   aside nav ul {
     display: flex;
     gap: 0.8rem;
@@ -1088,5 +1015,86 @@ h1, h2, h3, h4, h5, h6 {
 
   aside nav ul li {
     margin-bottom: 0; /* remove extra spacing for horizontal layout */
+  }
+}
+
+
+/* ===== Interests Section Updates ===== */
+
+/* Desktop: 2 rows × 3 columns */
+@media (min-width: 769px) {
+  .interests-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    grid-auto-rows: minmax(180px, auto);
+  }
+}
+
+/* Mobile: horizontal scroll with two rows */
+@media (max-width: 768px) {
+  .interests-grid {
+    display: flex;
+    flex-wrap: wrap;       /* allows two rows */
+    gap: 1rem;
+    overflow-x: auto;      /* horizontal scroll if needed */
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.5rem;
+  }
+
+  .interests-grid .interest-card {
+    flex: 0 0 45%; /* fixed width to fit two rows nicely */
+    margin-bottom: 1rem;
+  }
+}
+
+/* ===== Mobile Nav Bar Updates ===== */
+@media (max-width: 900px) {
+  aside.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; /* evenly space links */
+    align-items: center;
+    background: #800020; /* burgundy */
+    padding: 0.5rem 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    z-index: 1000;
+  }
+
+  aside.sidebar nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap; /* ensures links do not get cut off */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  aside.sidebar nav ul li {
+    margin: 0 0.5rem;
+  }
+
+  aside.sidebar nav ul li a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  /* Remove toggle button on mobile since nav is always visible */
+  .menu-toggle {
+    display: none !important;
+  }
+
+  /* Push content down so it doesn’t overlap with navbar */
+  main {
+    margin-top: 60px; 
   }
 }
