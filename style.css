@@ -982,3 +982,12 @@ html, body {
     padding: 0 15px; /* Add small padding for readability */
   }
 }
+
+.sidebar {
+  background-color: #800020; /* your maroon color */
+  height: 100vh; /* fill full screen height */
+  width: 250px; /* adjust to your desired width */
+  position: fixed; /* keeps it on the left */
+  top: 0;
+  left: 0;
+}
