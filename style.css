@@ -9,7 +9,7 @@ html, body {
   width: 100%;
   font-family: 'Lato', sans-serif;
   scroll-behavior: smooth;
-  overflow-x: hidden; /* prevent horizontal scroll */
+  overflow-x: hidden;
 }
 
 /* ================= Body Background ================= */
@@ -22,7 +22,7 @@ body {
   );
 }
 
-/* ================= Sidebar (Cleaned) ================= */
+/* ================= Sidebar ================= */
 .sidebar {
   position: fixed;
   top: 0;
@@ -47,6 +47,7 @@ body {
   font-size: 1.8rem;
   margin-bottom: 2rem;
   text-align: center;
+  color: #f6d5a7;
 }
 
 .sidebar nav ul {
@@ -72,8 +73,8 @@ body {
 
 .sidebar nav ul li a:hover,
 .sidebar nav ul li a.active {
-  background: #211f20;
-  color: #f6d5a7;
+  background: #800020; /* burgundy highlight */
+  color: #fff;
 }
 
 .sidebar .contact {
@@ -92,7 +93,7 @@ body {
   text-decoration: underline;
 }
 
-/* Toggle button (hamburger) */
+/* Toggle button */
 .menu-toggle {
   position: fixed;
   top: 1rem;
@@ -104,9 +105,11 @@ body {
 /* Main content */
 .content, main {
   transition: margin-left 0.3s ease;
+  margin-left: 250px; /* default desktop left margin */
+  padding: 3rem 4rem; /* restore Aug 18 spacing */
 }
 
-/* Desktop: push content */
+/* Desktop: push content when sidebar active */
 @media (min-width: 768px) {
   .sidebar.active + .content,
   .sidebar.active + main {
@@ -135,8 +138,8 @@ h3 {
 
 /* ================= Cards ================= */
 .card {
-  margin: 0.7rem auto;
-  padding: 1rem 1.5rem;
+  margin: 1rem auto; /* slightly more spacing like Aug 18 */
+  padding: 1.5rem 2rem; /* restored spacing */
   max-width: 900px;
   border-radius: 15px;
   background-color: #fff;
@@ -154,8 +157,8 @@ h3 {
 }
 
 .card p {
-  margin: 0.3rem 0 0.5rem;
-  line-height: 1.4;
+  margin: 0.4rem 0 0.6rem;
+  line-height: 1.6;
 }
 
 /* ================= About Me Section ================= */
@@ -218,11 +221,11 @@ h3 {
   align-items: flex-start;
   gap: 15px;
   background: #fff;
-  padding: 20px;
+  padding: 1.5rem 2rem;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 
 .experience-card:hover {
@@ -257,14 +260,14 @@ h3 {
 }
 
 .experience-details li {
-  margin-bottom: 4px;
+  margin-bottom: 0.4rem;
   color: #333;
 }
 
 /* ================= Skills Section ================= */
 #skills-section .skills-wrapper {
   background: #fff7f5;
-  padding: 2rem 2.5rem;
+  padding: 2.5rem 3rem;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgb(178 34 34 / 0.15);
 }
@@ -272,13 +275,13 @@ h3 {
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .skill-card {
   background: #fff;
   border-radius: 10px;
-  padding: 1.4rem 1.6rem;
+  padding: 1.5rem 1.8rem;
   box-shadow: 0 4px 14px rgba(0,0,0,0.08);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -292,7 +295,7 @@ h3 {
   color: #5e2c04;
   font-size: 1.2rem;
   font-weight: 700;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
 }
 
 .skill-card ul {
@@ -300,98 +303,21 @@ h3 {
   line-height: 1.6;
 }
 
-/* ================= Projects Section ================= */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-.project-card {
-  background-color: #fdfdfd;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.project-card img {
-  width: 100%;
-  height: 475px;
-  object-fit: cover;
-}
-
-.project-card h3 {
-  margin: 1rem;
-  color: #800020;
-}
-
-.project-card p {
-  margin: 0 1rem 1rem;
-  font-size: 0.95rem;
-  color: #3a3a3a;
-}
-
-.project-card a {
-  display: inline-block;
-  margin: 1rem;
-  color: #b22222;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.project-card a:hover {
-  color: #800020;
-}
-
-/* ================= Connect With Me ================= */
-#connect {
-  margin-top: 3rem;
-  text-align: center;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#connect a {
-  font-weight: bold;
-  border-radius: 30px;
-  padding: 0.8rem 1.6rem;
-  text-decoration: none;
-  color: white;
-  background: #800020;
-  transition: background 0.3s;
-}
-
-#connect a:hover {
-  background: #521328;
-}
-
-/* ================= Footer ================= */
-footer {
-  text-align: center;
-  padding: 1.2rem;
-  font-size: 0.9rem;
-  color: #f6d5a7;
-}
-
-/* ================= Animations ================= */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px);}
-  to { opacity: 1; transform: translateY(0);}
-}
-
-.fade-up {
-  animation: fadeUp 1s ease-out both;
-}
-
-/* ================= Responsive ================= */
+/* ================= Responsive Adjustments ================= */
 @media (max-width: 900px) {
+  main, .content {
+    padding: 2rem 2rem;
+    margin-left: 0;
+  }
   #about-section {
     flex-direction: column;
     text-align: center;
     gap: 1.6rem;
   }
   #about-section .photo { margin: 0 auto; }
-  main { padding: 2rem 1.2rem; }
+}
+
+@media (max-width: 768px) {
+  .sidebar { left: -100%; width: 200px; }
+  .sidebar.active { left: 0; }
 }
