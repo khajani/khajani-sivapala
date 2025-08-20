@@ -20,7 +20,6 @@ function initSidebar() {
 initSidebar();
 
 // Toggle sidebar on hamburger click
-// Toggle sidebar on hamburger click
 toggleBtn.addEventListener('click', () => {
   sidebar.classList.toggle('active');
   toggleBtn.classList.toggle('open');
