@@ -1080,3 +1080,30 @@ body {
 .sidebar .contact a:hover {
   text-decoration: underline;
 }
+
+/* Sidebar default state */
+.sidebar {
+  transform: translateX(-250px); /* hidden by default */
+  transition: transform 0.3s ease;
+}
+
+/* Sidebar active state */
+.sidebar.active {
+  transform: translateX(0); /* slide in */
+}
+
+/* Menu toggle button */
+.menu-toggle {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1000;
+  background: #800020;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
