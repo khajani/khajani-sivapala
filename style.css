@@ -1038,3 +1038,55 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 60px; 
   }
 }
+
+/* ===== Interests Section Updates ===== */
+
+/* Desktop: 2 rows × 3 columns */
+@media (min-width: 769px) {
+  .interests-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    grid-auto-rows: minmax(180px, auto);
+  }
+}
+
+/* Mobile: horizontal scroll with two rows */
+@media (max-width: 768px) {
+  .interests-scroll-wrapper {
+    display: flex;
+    flex-wrap: wrap;       /* allows two rows */
+    gap: 1rem;
+    overflow-x: auto;      /* horizontal scroll if needed */
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.5rem;
+  }
+
+  .interests-scroll-wrapper .interest-card {
+    flex: 0 0 45%; /* fixed width to fit two rows nicely */
+    margin-bottom: 1rem;
+  }
+}
+
+/* ===== Mobile Nav Bar Updates ===== */
+@media (max-width: 900px) {
+  aside {
+    flex-direction: row;
+    justify-content: space-around; /* evenly space links */
+    flex-wrap: wrap; /* wrap if tiny screens */
+    padding: 0.8rem 1rem;
+    height: auto;
+  }
+
+  aside nav ul {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap; /* ensures links do not get cut off */
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  aside nav ul li {
+    margin-bottom: 0; /* remove extra spacing for horizontal layout */
+  }
+}
