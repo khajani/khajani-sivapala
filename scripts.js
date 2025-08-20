@@ -5,14 +5,12 @@ toggleBtn.addEventListener('click', () => {
   sidebar.classList.toggle('active');
 });
 
-<script>
-const toggle = document.querySelector('.menu-toggle');
+const toggleBtn = document.querySelector('.menu-toggle');
 const sidebar = document.querySelector('.sidebar');
 
-toggle.addEventListener('click', () => {
+toggleBtn.addEventListener('click', () => {
   sidebar.classList.toggle('active');
 });
-</script>
 
 // Highlight sidebar nav on scroll
 const links = document.querySelectorAll('aside nav ul li a');
