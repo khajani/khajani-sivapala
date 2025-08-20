@@ -12,7 +12,7 @@ html, body {
   overflow-x: hidden;
 }
 
-/* ================= Body Background (Aug 18 ombré) ================= */
+/* ================= Body Background ================= */
 body {
   display: flex;
   min-height: 100vh;
@@ -29,8 +29,8 @@ body {
   left: -250px; /* hidden initially for mobile */
   width: 250px;
   height: 100%;
-  background-color: #211f20; /* dark sidebar */
-  color: #f6d5a7; /* sidebar text */
+  background-color: #800020; /* burgundy */
+  color: #fff; 
   padding: 2rem 1.5rem;
   display: flex;
   flex-direction: column;
@@ -47,7 +47,6 @@ body {
   font-size: 1.8rem;
   margin-bottom: 2rem;
   text-align: center;
-  color: #f6d5a7;
 }
 
 .sidebar nav ul {
@@ -73,7 +72,7 @@ body {
 
 .sidebar nav ul li a:hover,
 .sidebar nav ul li a.active {
-  background: #800020; /* burgundy highlight */
+  background: #b22222; /* slightly lighter on hover */
   color: #fff;
 }
 
@@ -132,15 +131,7 @@ body {
 .content, main {
   transition: margin-left 0.3s ease;
   margin-left: 250px; /* desktop default open */
-  padding: 3rem 4rem; /* Aug 18 spacing */
-}
-
-/* Desktop: push content when sidebar active */
-@media (min-width: 768px) {
-  .sidebar.active + .content,
-  .sidebar.active + main {
-    margin-left: 250px;
-  }
+  padding: 3rem 4rem;
 }
 
 /* ================= Section Headers ================= */
@@ -153,13 +144,13 @@ h2 {
 }
 
 h3 {
-  color: #211f20; /* dark text */
+  color: #211f20;
 }
 
 .subheader,
 .skill-subheader,
 .interest-subheader {
-  color: #5e2c04; /* brown accent */
+  color: #5e2c04; /* brown */
 }
 
 /* ================= Cards ================= */
@@ -168,7 +159,7 @@ h3 {
   padding: 1rem 1.5rem;
   max-width: 900px;
   border-radius: 15px;
-  background-color: #fff; /* restored white */
+  background-color: #fff; 
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -180,7 +171,7 @@ h3 {
 
 /* ================= About Me Section ================= */
 #about-section {
-  background: #fff7f5; /* light pinkish */
+  background: #fff7f5; 
   padding: 3rem 3.5rem;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(178,34,34,0.2);
@@ -362,6 +353,55 @@ h3 {
 
 .project-card a:hover {
   color: #800020;
+}
+
+/* ================= Interests Section ================= */
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.interest-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.interest-card h3 {
+  color: #5e2c04;
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.interest-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ================= Certifications Section ================= */
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.certification-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.certification-card h3 {
+  color: #5e2c04;
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
 }
 
 /* ================= Connect With Me ================= */
