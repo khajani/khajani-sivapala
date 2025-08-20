@@ -1,4 +1,3 @@
-// Toggle sidebar
 const toggleBtn = document.querySelector('.menu-toggle');
 const sidebar = document.querySelector('.sidebar');
 
@@ -6,10 +5,12 @@ toggleBtn.addEventListener('click', () => {
   sidebar.classList.toggle('active');
 });
 
-// Highlight sidebar nav on scroll
-const links = document.querySelectorAll('.sidebar nav ul li a');
-const sections = Array.from(links).map(link => document.querySelector(link.getAttribute('href')));
 
+
+
+// Highlight sidebar nav on scroll
+const links = document.querySelectorAll('aside nav ul li a');
+const sections = Array.from(links).map(link => document.querySelector(link.getAttribute('href')));
 window.addEventListener('scroll', () => {
   const scrollPos = window.scrollY + window.innerHeight / 3;
   sections.forEach((section, i) => {
@@ -19,8 +20,6 @@ window.addEventListener('scroll', () => {
     }
   });
 });
-
-// Carousel logic
 document.addEventListener('DOMContentLoaded', () => {
   const section = document.getElementById('interests-section');
   let carouselStarted = false;
@@ -31,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.carousel').forEach(carousel => {
       const images = carousel.querySelectorAll('.carousel-image');
-      if (images.length <= 1) return;
+      if (images.length <= 1) return; // no carousel if 1 image only
 
       let currentIndex = 0;
 
@@ -47,7 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function isInViewport(el) {
     const rect = el.getBoundingClientRect();
-    return rect.top < (window.innerHeight || document.documentElement.clientHeight) && rect.bottom >= 0;
+    return (
+      rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.bottom >= 0
+    );
   }
 
   function onScroll() {
@@ -56,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
       window.removeEventListener('scroll', onScroll);
     }
   }
+
   window.addEventListener('scroll', onScroll);
 
   if (isInViewport(section)) {
