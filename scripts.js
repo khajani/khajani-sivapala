@@ -1,63 +1,57 @@
-// ================= Sidebar =================
-const toggleBtn = document.querySelector('.menu-toggle');
-const sidebar = document.querySelector('.sidebar');
-
-// Desktop: open sidebar by default
-if (window.innerWidth >= 768) {
-  sidebar.classList.add('active');
-}
-
-// Toggle sidebar
-toggleBtn.addEventListener('click', () => {
-  sidebar.classList.toggle('active');
-});
-
-// Close sidebar on mobile when clicking a link
-document.querySelectorAll('.sidebar nav ul li a').forEach(link => {
-  link.addEventListener('click', () => {
-    if (window.innerWidth < 768) sidebar.classList.remove('active');
-  });
-});
-
-// Highlight active section
-const sections = document.querySelectorAll('main section');
+// Highlight sidebar nav on scroll
+const links = document.querySelectorAll('aside nav ul li a');
+const sections = Array.from(links).map(link => document.querySelector(link.getAttribute('href')));
 window.addEventListener('scroll', () => {
-  let scrollPos = window.scrollY || document.documentElement.scrollTop;
-  sections.forEach(section => {
-    const id = section.getAttribute('id');
-    const link = document.querySelector(`.sidebar nav ul li a[href="#${id}"]`);
-    if (section.offsetTop <= scrollPos + 100 && section.offsetTop + section.offsetHeight > scrollPos + 100) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
+  const scrollPos = window.scrollY + window.innerHeight / 3;
+  sections.forEach((section, i) => {
+    if (section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
+      links.forEach(l => l.classList.remove('active'));
+      links[i].classList.add('active');
     }
   });
 });
+document.addEventListener('DOMContentLoaded', () => {
+  const section = document.getElementById('interests-section');
+  let carouselStarted = false;
 
-// ================= Carousel for interests =================
-document.querySelectorAll('.carousel').forEach(carousel => {
-  let index = 0;
-  const images = carousel.querySelectorAll('img');
-  if (images.length > 0) images[0].style.display = 'block';
-  setInterval(() => {
-    images[index].style.display = 'none';
-    index = (index + 1) % images.length;
-    images[index].style.display = 'block';
-  }, 3000);
-});
+  function startCarousels() {
+    if (carouselStarted) return;
+    carouselStarted = true;
 
-// ================= Fade-up animation =================
-function fadeUpOnScroll() {
-  const fadeElements = document.querySelectorAll('section, .experience-card, .project-card, .cert-item, .interest-card');
-  const triggerBottom = window.innerHeight - 100;
-  fadeElements.forEach(el => {
+    document.querySelectorAll('.carousel').forEach(carousel => {
+      const images = carousel.querySelectorAll('.carousel-image');
+      if (images.length <= 1) return; // no carousel if 1 image only
+
+      let currentIndex = 0;
+
+      setTimeout(() => {
+        setInterval(() => {
+          images[currentIndex].classList.remove('active');
+          currentIndex = (currentIndex + 1) % images.length;
+          images[currentIndex].classList.add('active');
+        }, 3000);
+      }, 3000);
+    });
+  }
+
+  function isInViewport(el) {
     const rect = el.getBoundingClientRect();
-    if (rect.top < triggerBottom) {
-      el.style.opacity = 1;
-      el.style.transform = 'translateY(0)';
-      el.classList.add('fade-up');
+    return (
+      rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.bottom >= 0
+    );
+  }
+
+  function onScroll() {
+    if (isInViewport(section)) {
+      startCarousels();
+      window.removeEventListener('scroll', onScroll);
     }
-  });
-}
-window.addEventListener('scroll', fadeUpOnScroll);
-window.addEventListener('load', fadeUpOnScroll);
+  }
+
+  window.addEventListener('scroll', onScroll);
+
+  if (isInViewport(section)) {
+    startCarousels();
+  }
+});
