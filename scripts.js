@@ -83,3 +83,41 @@ links.forEach(link => {
     }
   });
 });
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* hide initially */
+  width: 250px;
+  height: 100%;
+  background-color: #211f20; /* your dark color */
+  transition: left 0.3s ease;
+  z-index: 1000;
+  padding-top: 2rem;
+}
+
+.sidebar.active {
+  left: 0; /* slide in */
+}
+
+/* Toggle button (hamburger) */
+.menu-toggle {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1100;
+}
+
+/* Main content should remain full width */
+main {
+  transition: margin-left 0.3s ease;
+}
+
+/* Optional: shift content when sidebar opens (desktop) */
+@media(min-width: 768px) {
+  .sidebar.active + main {
+    margin-left: 250px;
+  }
+}
+
