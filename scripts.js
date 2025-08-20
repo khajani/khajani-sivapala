@@ -1,58 +1,55 @@
-// Sidebar Toggle
+// Sidebar toggle
 const toggleBtn = document.querySelector('.menu-toggle');
 const sidebar = document.querySelector('.sidebar');
+const content = document.querySelector('.content');
 const links = document.querySelectorAll('.sidebar nav ul li a');
-const mediaQuery = window.matchMedia('(min-width: 1025px)');
 
-// Open sidebar by default on desktop
-function handleSidebarOnResize(e) {
-  if (e.matches) {
-    sidebar.classList.add('active');
+// Desktop: keep sidebar open by default
+function checkSidebar() {
+  if (window.innerWidth >= 768) {
+    sidebar.classList.remove('collapsed');
+    content.style.marginLeft = '250px';
+    content.style.maxWidth = 'calc(100% - 250px)';
   } else {
-    sidebar.classList.remove('active');
+    sidebar.classList.add('collapsed');
+    content.style.marginLeft = '0';
+    content.style.maxWidth = '100%';
   }
 }
+checkSidebar();
+window.addEventListener('resize', checkSidebar);
 
-// Initial check
-handleSidebarOnResize(mediaQuery);
-mediaQuery.addEventListener('change', handleSidebarOnResize);
-
-// Toggle button for mobile
+// Mobile toggle button
 toggleBtn.addEventListener('click', () => {
   sidebar.classList.toggle('active');
 });
 
-// Close sidebar when link is clicked (mobile only)
+// Close sidebar on link click (mobile)
 links.forEach(link => {
   link.addEventListener('click', () => {
-    if (!mediaQuery.matches) {
+    if (window.innerWidth < 768) {
       sidebar.classList.remove('active');
     }
   });
 });
 
-// Highlight active link on scroll
-const sections = Array.from(links).map(link => document.querySelector(link.getAttribute('href')));
-window.addEventListener('scroll', () => {
-  const scrollPos = window.scrollY + 150; // offset for header
-  sections.forEach((section, i) => {
-    if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
-      links.forEach(l => l.classList.remove('active'));
-      links[i].classList.add('active');
-    }
-  });
-});
-
-// Interest Carousels
+// Simple carousel functionality
 const carousels = document.querySelectorAll('.carousel');
-
 carousels.forEach(carousel => {
   const images = carousel.querySelectorAll('img');
   let currentIndex = 0;
 
+  function showImage(index) {
+    images.forEach((img, i) => {
+      img.classList.toggle('active', i === index);
+    });
+  }
+
+  // Auto-slide every 3s
   setInterval(() => {
-    images[currentIndex].classList.remove('active');
     currentIndex = (currentIndex + 1) % images.length;
-    images[currentIndex].classList.add('active');
-  }, 3000); // 3 seconds
+    showImage(currentIndex);
+  }, 3000);
+
+  showImage(currentIndex);
 });
