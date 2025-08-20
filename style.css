@@ -16,7 +16,7 @@ html, body {
 body {
   display: flex;
   min-height: 100vh;
-  color: #211f20; /* dark text */
+  color: #211f20;
   background: linear-gradient(to bottom, 
     #211f20, #521328, #a9243f, #c4554e, #f6d5a7, #eadbbe, #e4dbd4
   );
@@ -26,12 +26,12 @@ body {
 .sidebar {
   position: fixed;
   top: 0;
-  left: -250px; /* hidden initially */
+  left: -250px; /* hidden initially for mobile */
   width: 250px;
   height: 100%;
-  background-color: #211f20; /* dark color */
-  color: white;
-  padding: 20px;
+  background-color: #211f20;
+  color: #f6d5a7;
+  padding: 2rem 1.5rem;
   display: flex;
   flex-direction: column;
   transition: left 0.3s ease;
@@ -93,20 +93,46 @@ body {
   text-decoration: underline;
 }
 
-/* Toggle button */
+/* ================= Hamburger Button ================= */
 .menu-toggle {
   position: fixed;
   top: 1rem;
   left: 1rem;
-  z-index: 1100;
+  width: 30px;
+  height: 22px;
   cursor: pointer;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-/* Main content */
+.menu-toggle span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: #f6d5a7;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ================= Main Content ================= */
 .content, main {
   transition: margin-left 0.3s ease;
-  margin-left: 250px; /* default desktop left margin */
-  padding: 3rem 4rem; /* restore Aug 18 spacing */
+  margin-left: 250px; /* desktop default */
+  padding: 3rem 4rem; /* restored Aug 18 spacing */
 }
 
 /* Desktop: push content when sidebar active */
@@ -138,8 +164,8 @@ h3 {
 
 /* ================= Cards ================= */
 .card {
-  margin: 1rem auto; /* slightly more spacing like Aug 18 */
-  padding: 1.5rem 2rem; /* restored spacing */
+  margin: 1rem auto;
+  padding: 1.5rem 2rem;
   max-width: 900px;
   border-radius: 15px;
   background-color: #fff;
@@ -150,15 +176,6 @@ h3 {
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-}
-
-.card h1, .card h2, .card h3, .card h4 {
-  margin: 0.4rem 0;
-}
-
-.card p {
-  margin: 0.4rem 0 0.6rem;
-  line-height: 1.6;
 }
 
 /* ================= About Me Section ================= */
@@ -213,94 +230,6 @@ h3 {
 
 #about-section .intro a:hover {
   color: #b22222;
-}
-
-/* ================= Experience Section ================= */
-.experience-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 15px;
-  background: #fff;
-  padding: 1.5rem 2rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  margin-bottom: 2rem;
-}
-
-.experience-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.company-logo {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-  border-radius: 8px;
-  background: #f9f9f9;
-}
-
-.experience-details h3 {
-  margin: 0;
-  font-size: 1.1rem;
-  color: #800020;
-}
-
-.dates {
-  font-size: 0.9rem;
-  color: #555;
-  margin: 4px 0 8px;
-}
-
-.experience-details ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.experience-details li {
-  margin-bottom: 0.4rem;
-  color: #333;
-}
-
-/* ================= Skills Section ================= */
-#skills-section .skills-wrapper {
-  background: #fff7f5;
-  padding: 2.5rem 3rem;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgb(178 34 34 / 0.15);
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-
-.skill-card {
-  background: #fff;
-  border-radius: 10px;
-  padding: 1.5rem 1.8rem;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.skill-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-}
-
-.skill-card h3 {
-  color: #5e2c04;
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.skill-card ul {
-  padding-left: 1.2rem;
-  line-height: 1.6;
 }
 
 /* ================= Responsive Adjustments ================= */
