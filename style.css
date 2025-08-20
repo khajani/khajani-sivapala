@@ -1155,3 +1155,39 @@ body {
   }
 }
 
+/* General reset */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  overflow-x: hidden; /* no horizontal scroll */
+}
+
+/* Desktop */
+.content {
+  margin-left: 220px; /* match sidebar width */
+  padding: 20px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .content {
+    margin-left: 0;   /* remove the desktop offset */
+    padding: 15px;    /* add light breathing room */
+  }
+}
