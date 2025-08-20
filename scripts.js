@@ -14,8 +14,6 @@ toggle.addEventListener('click', () => {
 });
 </script>
 
-
-
 // Highlight sidebar nav on scroll
 const links = document.querySelectorAll('aside nav ul li a');
 const sections = Array.from(links).map(link => document.querySelector(link.getAttribute('href')));
