@@ -1049,25 +1049,34 @@ body {
   color: white;
 }
 
-/* Main content */
-.main {
-  margin-left: 250px; /* same as sidebar width */
-  padding: 20px;
+
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background: #800020;
+  color: #f6d5a7;
+  z-index: 1000;
 }
-</style>
-</head>
-<body>
 
-<div class="sidebar">
-  <h2>Sidebar</h2>
-  <p>Links here</p>
-</div>
+.sidebar .contact {
+  margin-top: auto; /* pushes contact to the bottom */
+  font-size: 0.9rem;
+  text-align: center;
+}
 
-<div class="main">
-  <h1>Main Content</h1>
-  <p>This is your main content area.</p>
-</div>
+.sidebar .contact a {
+  color: #f6d5a7;
+  text-decoration: none;
+  font-weight: 600;
+}
 
-</body>
-</html>
-
+.sidebar .contact a:hover {
+  text-decoration: underline;
+}
