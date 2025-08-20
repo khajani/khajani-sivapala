@@ -22,20 +22,24 @@ body {
   );
 }
 
-/* ================= Sidebar ================= */
+/* ================= Sidebar (Cleaned) ================= */
 .sidebar {
   position: fixed;
   top: 0;
-  left: 0;
-  width: 220px;
-  height: 100vh;
-  background: #211f20;
+  left: -250px; /* hidden initially */
+  width: 250px;
+  height: 100%;
+  background-color: #211f20; /* dark color */
   color: white;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease;
+  transition: left 0.3s ease;
   z-index: 1000;
+}
+
+.sidebar.active {
+  left: 0;
 }
 
 .sidebar .name {
@@ -88,13 +92,26 @@ body {
   text-decoration: underline;
 }
 
-/* ================= Main Content ================= */
-.content {
-  margin-left: 220px;
-  flex-grow: 1;
-  padding: 3rem 4rem;
-  overflow-x: hidden;
+/* Toggle button (hamburger) */
+.menu-toggle {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1100;
+  cursor: pointer;
+}
+
+/* Main content */
+.content, main {
   transition: margin-left 0.3s ease;
+}
+
+/* Desktop: push content */
+@media (min-width: 768px) {
+  .sidebar.active + .content,
+  .sidebar.active + main {
+    margin-left: 250px;
+  }
 }
 
 /* ================= Section Headers ================= */
@@ -377,50 +394,4 @@ footer {
   }
   #about-section .photo { margin: 0 auto; }
   main { padding: 2rem 1.2rem; }
-}
-
-@media (max-width: 768px) {
-  .sidebar { transform: translateX(-100%); width: 200px; }
-  .sidebar.active { transform: translateX(0); }
-  .content { margin-left: 0; padding: 0 15px; }
-}
-
-
-/* Sidebar */
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: -250px; /* hidden initially */
-  width: 250px;
-  height: 100%;
-  background-color: #211f20; /* dark color */
-  transition: left 0.3s ease;
-  z-index: 1000;
-  padding-top: 2rem;
-}
-
-/* Sidebar active */
-.sidebar.active {
-  left: 0;
-}
-
-/* Toggle button (hamburger) */
-.menu-toggle {
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
-  z-index: 1100;
-  cursor: pointer;
-}
-
-/* Main content transition */
-main {
-  transition: margin-left 0.3s ease;
-}
-
-/* Desktop: push content */
-@media(min-width: 768px) {
-  .sidebar.active + main {
-    margin-left: 250px;
-  }
 }
