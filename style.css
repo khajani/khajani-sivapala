@@ -132,7 +132,23 @@ body {
   transition: margin-left 0.3s ease;
   margin-left: 250px; /* desktop default open */
   padding: 3rem 4rem;
+  max-width: calc(100% - 250px); /* prevent overflow on desktop */
+  width: 100%;
+  box-sizing: border-box;
 }
+
+/* When sidebar is inactive (desktop) */
+.sidebar:not(.active) + .content,
+.sidebar:not(.active) + main {
+  margin-left: 0;
+  max-width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  main, .content { padding: 2rem 1.2rem; margin-left: 0; max-width: 100%; }
+}
+
 
 /* ================= Section Headers ================= */
 h1, h2, h3, h4, h5, h6 {
