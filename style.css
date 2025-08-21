@@ -1,34 +1,23 @@
-/* Reset */
+/* ===== Reset ===== */
 * {
   box-sizing: border-box;
 }
 
-/* Body and background */
 body {
-  margin: 0; 
+  margin: 0;
   font-family: 'Lato', sans-serif;
   scroll-behavior: smooth;
   display: flex;
   min-height: 100vh;
-
-  /* Vertical ombré (top → bottom) with your palette */
-  background: linear-gradient(to bottom, 
-    #211f20, 
-    #521328, 
-    #a9243f, 
-    #c4554e, 
-    #f6d5a7, 
-    #eadbbe, 
-    #e4dbd4
-  );
-  color: #211f20; /* dark text for contrast on lighter portions */
+  background: linear-gradient(to bottom, #211f20, #2a2a2a, #211f20);
+  color: #f6d5a7; /* champagne */
 }
 
-/* Sidebar */
-aside {
+/* ===== Sidebar (Desktop) ===== */
+aside.sidebar {
   background: #800020; /* burgundy */
   width: 250px;
-  color: #f6d5a7; /* light accent for text */
+  color: #f6d5a7;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,24 +27,24 @@ aside {
   height: 100vh;
 }
 
-aside .name {
-  font-weight: 700;
-  font-size: 1.8rem;
+aside.sidebar .name {
+  font-size: 1.6rem;
+  font-weight: bold;
   margin-bottom: 2rem;
-  text-align: center;
 }
 
-aside nav ul {
+aside.sidebar nav ul {
   list-style: none;
   padding: 0;
+  margin: 0;
   width: 100%;
 }
 
-aside nav ul li {
+aside.sidebar nav ul li {
   margin-bottom: 1.5rem;
 }
 
-aside nav ul li a {
+aside.sidebar nav ul li a {
   color: #f6d5a7;
   font-weight: 600;
   font-size: 1.1rem;
@@ -63,1005 +52,199 @@ aside nav ul li a {
   display: block;
   padding: 0.5rem 1rem;
   border-radius: 6px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background 0.3s ease;
 }
 
-aside nav ul li a:hover,
-aside nav ul li a.active {
-  background: #211f20; /* dark hover for contrast */
-  color: #f6d5a7;
+aside.sidebar nav ul li a:hover,
+aside.sidebar nav ul li a.active {
+  background: #211f20;
 }
 
-aside .contact {
-  margin-top: auto;
-  font-size: 0.9rem;
-  text-align: center;
-}
-
-aside .contact a {
-  color: #f6d5a7;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-aside .contact a:hover {
-  text-decoration: underline;
-}
-
-/* Headers */
-h2 {
-  color: #800020; /* burgundy for section headers */
-}
-
-h3 {
-  color: #211f20; /* dark text for readability */
-}
-
-.subheader {
-  color: #800020; /* burgundy subheaders */
-}
-
-.skill-subheader,
-.interest-subheader {
-  color: #521328; /* brown/red accent from palette */
-}
-
-/* Cards (Projects, Skills, Interests, Certifications) */
-.card {
-  background-color: rgba(255, 255, 255, 0.15); /* translucent to show ombré */
-  border-radius: 12px;
-  padding: 1rem;
-  margin: 1rem 0;
-  transition: transform 0.3s, box-shadow 0.3s;
-  color: #211f20; /* dark text for readability */
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-}
-
-/* Buttons and call-to-action links */
-button,
-a.button {
-  background-color: #800020; /* burgundy */
-  color: #f6d5a7; /* light text */
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button:hover,
-a.button:hover {
-  background-color: #521328; /* brown/red hover */
-  color: #f6d5a7;
-}
-
-/* Footer / Connect with Me section */
-footer {
-  background-color: rgba(0, 0, 0, 0.6);
-  color: #f6d5a7;
-  padding: 2rem;
-  text-align: center;
-}
-
-/* Links inside content */
-a {
-  color: #211f20;
-  transition: color 0.3s;
-}
-
-a:hover {
-  color: #521328;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  body {
-    flex-direction: column;
-  }
-
-  aside {
-    width: 100%;
-    padding: 1.5rem;
-  }
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700; /* Try 800 or 900 if your font supports it */
-}
-
-/* About Me heading style */
-#about h2 {
-  font-family: 'Oswald', sans-serif;
-  font-size: 2.5rem; /* increase/decrease to taste */
-  font-weight: 700;  /* makes it bold */
-}
-
-
-
-  /* Main content */
-  main {
-    flex-grow: 1;
-    padding: 3rem 4rem;
-    overflow-x: hidden;
-  }
-
-  /* Section backgrounds */
-  section {
-    margin-bottom: 4rem;
-    position: relative;
-  }
-  /* About Section Hero Card */
-#about-section {
-  background: #fff7f5; /* soft card background */
-  padding: 3rem 3.5rem;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(178, 34, 34, 0.2);
-  display: flex;
-  gap: 3rem;
-  align-items: center;
-  margin-top: 3rem; /* space above for banner */
-  flex-wrap: wrap;
-}
-
-#about-section .photo {
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  background: url('https://media.licdn.com/dms/image/v2/D4E03AQEQC5JdhcAM2g/profile-displayphoto-shrink_400_400/B4EZXRcoqJHUAg-/0/1742975699954?e=1757548800&v=beta&t=TXNtMYuIsPdgZM7v-lTKw1dgxJgduIXWC0BO3uE3BP8') center/cover no-repeat;
-  box-shadow: 0 10px 20px rgba(178, 34, 34, 0.35);
-  flex-shrink: 0;
-}
-
-#about-section .intro {
+/* ===== Main Content ===== */
+main {
   flex: 1;
-}
-
-#about-section .intro h1 {
-  font-family: 'Guttery', sans-serif;
-  font-weight: 700;
-  font-size: 2.2rem;
-  margin: 0;
-  color: #800020;
-}
-
-#about-section .intro h3 {
-  font-family: 'Lato', sans-serif;
-  font-weight: 600;
-  font-size: 1.3rem;
-  margin: 0.3rem 0 1.2rem 0;
-  color: #5e2c04;
-}
-
-#about-section .intro p {
-  font-family: 'Lato', sans-serif;
-  font-weight: 500;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin: 0.6rem 0;
-}
-
-#about-section .intro a {
-  color: #800020;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-#about-section .intro a:hover {
-  color: #b22222;
-}
-
-/* Responsive adjustments */
-
-  #about-section .photo {
-    margin: 0 auto;
-  }
-  #about-section .intro h1 {
-    font-size: 2rem;
-  }
-  #about-section .intro h3 {
-    font-size: 1.2rem;
-  }
-}
-
-
-  /* Experience section */
-  #experience-section {
-    background: #f9e6e6;
-    padding: 2.5rem 3rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 22px rgb(178 34 34 / 0.15);
-  }
-  #experience-section h2 {
-    color: #800020;
-    margin-bottom: 2rem;
-  }
-  .experience-card {
-  background: #fff;
-  padding: 1.6rem 2rem;
-  margin-bottom: 2.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgb(178 34 34 / 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  will-change: transform, box-shadow;
-}
-  .experience-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 30px rgb(178 34 34 / 0.4);
-  }
-  .experience-card h3 {
-    margin-top: 0;
-    color: #800020;
-    font-weight: 700;
-    font-size: 1.25rem;
-  }
-  .experience-card h4 {
-    margin: 0.3rem 0 1rem;
-    font-weight: 600;
-    font-style: normal;
-    color: #003366;
-  }
-  .experience-card ul {
-    padding-left: 1.3rem;
-    margin-top: 0.3rem;
-    line-height: 1.5;
-  }
-  .experience-card ul li {
-    margin-bottom: 0.6rem;
-    font-size: 1rem;
-  }
-
-  /* Skills section */
-  #skills-section {
-  margin-top: 3rem;
-}
-#skills-section h2 {
-  color: #800020;
-  margin-bottom: 1.5rem;
-}
-.skills-wrapper {
-  background: #fff7f5;
-  padding: 2rem 2.5rem;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgb(178 34 34 / 0.15);
-}
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-.skill-card {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-  padding: 1.4rem 1.6rem;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-.skill-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-}
-.skill-card h3 {
-  margin-top: 0;
-  color: #5e2c04;
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 0.8rem;
-}
-.skill-card ul {
-  padding-left: 1.2rem;
-  line-height: 1.6;
-  margin: 0;
-}
-.skill-card ul li {
-  font-size: 1rem;
-  margin-bottom: 0.4rem;
-}
-
-  /* Projects section */
-  #projects-section {
-    padding: 0 0 1rem 0;
-  }
-  #projects-section h2 {
-    color: #800020;
-    margin-bottom: 1.8rem;
-  }
-  #projects-section .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1.8rem;
-    margin-top: 1rem;
-  }
-  .project-card {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 14px rgb(178 34 34 / 0.1);
-    padding: 1.6rem 1.8rem;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-  }
-  .project-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 30px rgb(178 34 34 / 0.3);
-  }
-  .project-card h3 {
-    margin-top: 0;
-    color: #800020;
-    font-weight: 700;
-    font-size: 1.2rem;
-  }
-  .project-card p {
-    font-size: 1rem;
-    line-height: 1.4;
-  }
-  .project-card a {
-    display: inline-block;
-    margin-top: 1rem;
-    color: #b22222;
-    font-weight: 600;
-    text-decoration: none;
-  }
-  .project-card a:hover {
-    color: #800020;
-  }
-
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 1.2rem;
-    font-size: 0.9rem;
-    color: #f6d5a7;
-  }
-
-  /* Responsive */
-    body {
-      flex-direction: column;
-    }
-    aside {
-      width: 100%;
-      height: auto;
-      padding: 1.2rem 0.5rem;
-      flex-direction: row;
-      justify-content: center;
-      gap: 1.5rem;
-      position: relative;
-    }
-    aside .name {
-      display: none;
-    }
-    aside nav ul {
-      display: flex;
-      gap: 1.4rem;
-      width: auto;
-    }
-    main {
-      padding: 2rem 1.2rem;
-    }
-    #about-section {
-      flex-direction: column;
-      text-align: center;
-      gap: 1.6rem;
-    }
-    #about-section .photo {
-      margin: 0 auto;
-    }
-    #education-section article {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  }
-
-/* Fade-up animation */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-up {
-  animation: fadeUp 1s ease-out both;
-}
-
-#certifications-section h2 {
-  color: #800020;
-  margin-bottom: 1.5rem;
-}
-
-.cert-card {
-  background: #fff7f5;
   padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(178, 34, 34, 0.15);
 }
 
-.cert-item {
-  margin-bottom: 1.5rem;
+section {
+  margin-bottom: 3rem;
 }
 
-.cert-item h3 {
-  margin: 0;
-  color: #5e2c04;
-  font-size: 1.1rem;
-  font-weight: 700;
-}
-
-.cert-item p {
-  margin: 0.3rem 0 0;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-#interests-section h2 {
+h2 {
   color: #800020;
-  margin-bottom: 1.5rem;
-}
-
-/* Interests section */
-#interests-section {
-  margin-top: 3rem;
-}
-
-.interest-card {
-  background: #fff7f5;
-  padding: 1.6rem;
-  border-radius: 10px;
-
- #education-section {
-  background: #fff7f5;
-  padding: 2rem 2.5rem;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgb(178 34 34 / 0.15);
-}
-
-#education-section h2 {
-  color: #800020;
-  margin-bottom: 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-/* Education article and hover effect */
-#education-section article {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-  margin-bottom: 1.8rem;
-  background: #fff7f5;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(178, 34, 34, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#education-section article:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 30px rgba(178, 34, 34, 0.35);
-}
-
-#education-section .edu-logo {
-  width: 60px;
-  height: 60px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-#education-section .edu-logo img {
-  width: 60px !important;
-  height: 60px !important;
-  object-fit: contain;
-  display: block;
-}
-
-#education-section article .degree-info {
-  flex-grow: 1;
-}
-
-#education-section h3 {
-  margin: 0;
-  font-weight: 700;
-  color: #6b1a1a;
-}
-
-#education-section p {
-  margin: 0.3rem 0 0 0;
-  font-style: italic;
-}
-
-  box-shadow: 0 6px 16px rgba(178, 34, 34, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.interest-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 30px rgba(178, 34, 34, 0.25);
-}
-
-.interest-card h3 {
-  color: #5e2c04;
-  font-weight: 700;
-  margin-bottom: 0.6rem;
-}
-
-.interest-card p {
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-/* Education article hover effect */
-#education-section article {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 10px;
-  background: #fff7f5;
-  box-shadow: 0 8px 20px rgba(178, 34, 34, 0.15);
-  padding: 1.5rem;
-}
-
-#education-section article:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 30px rgba(178, 34, 34, 0.35);
-}
-
-/* Certifications card hover effect */
-.cert-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.cert-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 30px rgba(178, 34, 34, 0.35);
-}
-
-#certifications-section {
-  background: #fff7f5;
-  padding: 2rem 2.5rem;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgb(178 34 34 / 0.15);
-}
-
-#certifications-section h2 {
-  color: #800020;
-  margin-bottom: 1.5rem;
-}
-
-.cert-card {
-  background: #fff7f5;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(178, 34, 34, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.cert-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 30px rgba(178, 34, 34, 0.35);
-}
-
-.interest-card {
-  border: 1px solid #ddd;
-  padding: 1rem;
-  border-radius: 8px;
-  background: #fff;
-}
-
-/*interests*/
-.carousel {
-  position: relative;
-  width: 100%;
-  padding-top: 70%; /* increase this for taller images, default was ~56% */
-  height: 220px; /* make taller here — try 240px if you want more height */
-  overflow: hidden;
-}
-
-.carousel-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* fills without distortion */
-  object-fit: cover; /* keeps proportions without distortion */
-  border-radius: 8px;
-  opacity: 0;
-  transition: opacity 0.6s ease-in-out;
-}
-
-.carousel-image.active {
-  opacity: 1;
-}
-
-.banner {
-  width: 100%;
-  max-height: 300px; /* adjust as needed */
-  overflow: hidden; /* crops if banner is taller */
-}
-
-.banner img {
-  width: 100%;
-  height: auto; /* keeps aspect ratio */
-  display: block;
-}
-
-.project-card {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.2s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-}
-
-.project-image {
-  width: 100%;
-  height: 180px; /* adjust as needed */
-  object-fit: cover;
-  border-radius: 8px;
+  border-bottom: 2px solid #800020;
+  display: inline-block;
   margin-bottom: 1rem;
 }
 
-.projects-section.card {
-  background-color: #FFF6F5; /* soft pinkish tone */
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+/* ===== Experience + Projects ===== */
+.experience,
+.projects,
+.skills,
+.certifications,
+.interests {
+  background: #2a2a2a;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
 }
 
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-.project-card {
-  background-color: #fdfdfd;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.project-card img {
-  width: 100%;
-  height: 475px; /* taller thumbnail */
-  object-fit: cover;
-}
-
-.project-card h3 {
-  margin: 1rem;
-  color: #800020; /* burgundy */
-}
-
-.project-card p {
-  margin: 0 1rem 1rem;
-  font-size: 0.95rem;
-  color: #3a3a3a;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.12);
-}
-
-
-/* Outer card styling for About Me, Projects, Experience, etc. */
-.card {
-  margin: 0.7rem auto;      /* reduced from ~1rem */
-  padding: 1rem 1.5rem;     /* reduced from ~1.5-2rem */
-  max-width: 900px;
-  border-radius: 15px;
-  background-color: #fff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-/* Compact inner content of About Me */
-#about-me .intro,
-#about-me .photo {
-  margin: 0;
-  padding: 0;
-}
-
-/* Reduce spacing inside intro */
-#about-me .intro h1,
-#about-me .intro h3,
-#about-me .intro p {
-  margin-top: 0.2rem;
-  margin-bottom: 0.2rem;
-  line-height: 1.3; /* optional: tighter text spacing */
-}
-
-
-.card h2,
-.card h3 {
-  margin-top: 0.5rem;   /* reduces space above header */
-  margin-bottom: 0.5rem; /* reduces space below header */
-}
-
-.card h4 {
-  margin-top: 0.4rem;
-  margin-bottom: 0.4rem;
-}
-
-/* Outer cards compact styling */
-.card {
-  margin: 0.7rem auto;       /* less space outside the card */
-  padding: 1rem 1.5rem;      /* less space inside the card */
-  max-width: 900px;
-  border-radius: 15px;
-  background-color: #fff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* Reduce spacing for all headers inside cards */
-.card h1,
-.card h2,
-.card h3,
-.card h4 {
-  margin-top: 0.4rem;
-  margin-bottom: 0.4rem;
-}
-
-/* Reduce spacing for paragraphs inside cards */
-.card p {
-  margin-top: 0.3rem;
-  margin-bottom: 0.5rem;
-  line-height: 1.4; /* optional: slightly tighter text spacing */
-}
-
-/* Reduce bottom spacing for the last element in all outer cards */
-.card > :last-child {
-  margin-bottom: 0.5rem; /* or even 0 if you want it very tight */
-}
-
-/* Reduce all vertical spacing inside outer cards */
-.card * {
-  margin-top: 0;
-  margin-bottom: 0.4rem; /* adjust as needed */
-}
-
-.card p:last-child,
-.card h1:last-child,
-.card h2:last-child,
-.card h3:last-child,
-.card h4:last-child {
-  margin-bottom: 0.3rem; /* tighter for the last element */
-}
-
-.experience-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 15px;
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  margin-bottom: 20px;
-}
-
-.experience-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.company-logo {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
+.experience-item,
+.project-item {
+  background: #333;
+  padding: 1.2rem;
   border-radius: 8px;
-  background: #f9f9f9;
+  margin-bottom: 1.5rem;
+  transition: transform 0.25s ease;
 }
 
-.experience-details h3 {
-  margin: 0;
-  font-size: 1.1rem;
-  color: #800020; /* burgundy */
+.experience-item:hover,
+.project-item:hover {
+  transform: translateY(-4px);
 }
 
-.dates {
-  font-size: 0.9rem;
-  color: #555;
-  margin: 4px 0 8px;
+.experience-item h3,
+.project-item h3 {
+  margin-top: 0;
+  color: #f6d5a7;
 }
 
-.experience-details ul {
+.experience-item p,
+.project-item p {
+  margin: 0.5rem 0;
+}
+
+/* ===== Skills ===== */
+.skills ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.skills ul li {
+  background: #800020;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ===== Certifications ===== */
+.certifications ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.experience-details li {
-  margin-bottom: 4px;
-  color: #333;
+.certifications ul li {
+  background: #444;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 0.8rem;
+  transition: background 0.25s ease;
 }
 
-/* Certifications section */
-/* Certifications section */
-#certifications .card {
-  padding: 2rem;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  margin-bottom: 2rem;
+.certifications ul li:hover {
+  background: #555;
 }
 
-.cert-grid {
-  display: flex;
-  justify-content: space-between;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+/* ===== Interests (Desktop Grid) ===== */
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
 }
 
-.cert-card {
-  flex: 1;
-  background: #f9f9f9;
-  border-radius: 12px;
-  padding: 1.5rem;
+.interest-item {
+  background: #333;
+  padding: 1rem;
+  border-radius: 8px;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.25s ease;
 }
 
-.cert-card h3 {
-  color: #5e2c04; /* brown accent like Skills/Interests */
+.interest-item:hover {
+  transform: translateY(-4px);
+}
+
+.interest-item h3 {
+  color: #5e2c04; /* brown */
   margin-bottom: 0.5rem;
-  font-size: 1.1rem;
 }
 
-.cert-card p {
-  font-size: 0.95rem;
-  color: #333;
+.interest-item p {
+  margin-top: 0.5rem;
+  line-height: 1.5;
 }
 
-.cert-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-}
-
-/* Make sure they stay in one row on all screens */
-  .cert-grid {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-  }
-
-  .cert-card {
-    min-width: 250px;
-    flex: 0 0 auto;
-  }
-}
-
-  aside.sidebar nav ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  aside.sidebar nav ul li {
-    margin: 0 0.5rem;
-  }
-
-  aside.sidebar nav ul li a {
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 0.9rem;
-  }
-
-  /* Remove toggle button on mobile since nav is always visible */
-  .menu-toggle {
-    display: none !important;
-  }
-
-  /* Push content down so it doesn’t overlap with navbar */
-  main {
-    margin-top: 60px; 
-  }
-}
-
-/* ===== Interests Section ===== */
-
-/* Desktop: 2 rows × 3 columns */
-@media (min-width: 769px) {
-  .interests-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    grid-auto-rows: minmax(180px, auto);
-  }
-}
-
-/* Mobile: horizontal scroll with two rows */
-@media (max-width: 768px) {
-  .interests-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 0.5rem;
-  }
-
-  .interests-grid .interest-card {
-    flex: 0 0 45%;
-    margin-bottom: 1rem;
-  }
-}
-
-/* ===== Mobile Navbar ===== */
+/* ===== Mobile Navbar (<=900px) ===== */
 @media (max-width: 900px) {
+  body {
+    flex-direction: column;
+  }
+
   aside.sidebar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: auto;
-    display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
-    background: #800020; /* burgundy */
-    padding: 0.5rem 0;
+    padding: 0.5rem 1rem;
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     z-index: 1000;
+  }
+
+  aside.sidebar .name {
+    display: none;
+  }
+
+  aside.sidebar nav {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   aside.sidebar nav ul {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    width: 100%;
+    gap: 1rem;
     margin: 0;
     padding: 0;
     list-style: none;
   }
 
   aside.sidebar nav ul li {
-    margin: 0 0.5rem;
+    flex: 0 0 auto;
   }
 
   aside.sidebar nav ul li a {
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    white-space: nowrap;
   }
 
-  /* Remove toggle button on mobile since nav is always visible */
-  .menu-toggle {
-    display: none !important;
-  }
-
-  /* Push content down so it doesn’t overlap with navbar */
   main {
-    margin-top: 60px; 
+    margin-top: 60px;
+    padding: 1.2rem;
   }
-}
 
-/* Desktop: Interests grid (3 columns, 2 rows) */
-@media (min-width: 769px) {
+  /* Interests → Horizontal Carousel */
   .interests-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    grid-auto-rows: minmax(180px, auto);
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 1rem;
+  }
+
+  .interest-item {
+    flex: 0 0 80%;
+    scroll-snap-align: center;
   }
 }
