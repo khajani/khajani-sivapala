@@ -19,13 +19,7 @@ body {
   flex-direction: row;
 }
 
-main {
-  flex: 1;
-  padding: 2rem;
-}
-
-/* === Sidebar (Desktop) === */
-.sidebar {
+aside {
   width: 250px;
   background: #111;
   color: #fff;
@@ -36,107 +30,130 @@ main {
   bottom: 0;
 }
 
-.sidebar h1 {
+aside .name {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
-.sidebar nav ul {
+aside nav ul {
   list-style: none;
 }
 
-.sidebar nav ul li {
+aside nav ul li {
   margin: 1rem 0;
 }
 
-.sidebar nav ul li a {
+aside nav ul li a {
   text-decoration: none;
   color: #fff;
   transition: color 0.3s;
 }
 
-.sidebar nav ul li a.active,
-.sidebar nav ul li a:hover {
+aside nav ul li a.active,
+aside nav ul li a:hover {
   color: #800020;
   font-weight: bold;
 }
 
-/* === Top Nav (Mobile only) === */
-.top-nav {
-  display: none;
+aside .contact {
+  margin-top: 2rem;
+  font-size: 0.9rem;
 }
 
-@media (max-width: 768px) {
-  body {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    display: none;
-  }
-
-  .top-nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background: #111;
-    padding: 1rem;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-
-  .top-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 0.9rem;
-  }
-
-  .top-nav a.active,
-  .top-nav a:hover {
-    color: #800020;
-    font-weight: bold;
-  }
-
-  main {
-    padding: 1rem;
-  }
+main {
+  flex: 1;
+  margin-left: 270px; /* leave space for sidebar */
+  padding: 2rem;
 }
 
-/* === Sections === */
-section {
+/* === Banner === */
+.banner img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+/* === About Me === */
+#about-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
   margin-bottom: 4rem;
 }
 
-section h2 {
-  color: #800020;
+#about-section .photo {
+  width: 250px;
+  height: 250px;
+  background-image: url('images/profile.jpg'); /* replace with your photo */
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+#about-section .intro {
+  flex: 1;
+}
+
+#about-section h1 {
   font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+#about-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #800020;
+}
+
+#about-section h4 {
+  font-size: 1rem;
   margin-bottom: 1rem;
 }
 
-/* === Cards === */
-.card {
+#about-section p {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+/* === Experience Cards === */
+.experience-card {
+  display: flex;
+  gap: 1rem;
   background: #1a1a1a;
   border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-  margin-bottom: 2rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.card:hover {
+.experience-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 14px rgba(0,0,0,0.7);
 }
 
-/* === Experience Cards === */
-.experience-card h3 {
-  margin-bottom: 0.5rem;
-  color: #5e2c04;
+.experience-card img.company-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 6px;
 }
 
-.experience-card p {
-  margin: 0.3rem 0;
+.experience-details h3 {
+  color: #5e2c04;
+  margin-bottom: 0.5rem;
+}
+
+.experience-details ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.experience-details ul li {
+  margin-bottom: 0.3rem;
 }
 
 /* === Projects Grid === */
@@ -146,26 +163,26 @@ section h2 {
   gap: 1.5rem;
 }
 
-/* === Skills Section === */
-.skills-card {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-}
-
-.skill-group {
-  background: #262626;
+.project-card {
+  background: #1a1a1a;
+  border-radius: 12px;
   padding: 1rem;
-  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.skill-group h3 {
-  color: #5e2c04;
-  margin-bottom: 0.5rem;
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.7);
 }
 
-/* === Certifications Section (1 row of 3 inside outer card) === */
-.certifications-container {
+.project-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* === Certifications === */
+.cert-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
@@ -173,8 +190,8 @@ section h2 {
 
 .cert-card {
   background: #262626;
-  padding: 1rem;
   border-radius: 10px;
+  padding: 1rem;
   text-align: center;
 }
 
@@ -184,12 +201,16 @@ section h2 {
 }
 
 @media (max-width: 768px) {
-  .certifications-container {
+  main {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  .cert-grid {
     display: flex;
-    flex-wrap: nowrap;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
     gap: 1rem;
+    -webkit-overflow-scrolling: touch;
   }
 
   .cert-card {
@@ -198,8 +219,8 @@ section h2 {
   }
 }
 
-/* === Interests Section === */
-.interests-container {
+/* === Interests Grid === */
+.interests-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1.5rem;
@@ -209,7 +230,6 @@ section h2 {
   background: #262626;
   border-radius: 10px;
   padding: 1rem;
-  overflow: hidden;
 }
 
 .interest-card h3 {
@@ -240,7 +260,7 @@ section h2 {
 
 /* Mobile: horizontal scroll with 2 rows */
 @media (max-width: 768px) {
-  .interests-container {
+  .interests-grid {
     display: grid;
     grid-auto-flow: column;
     grid-template-rows: repeat(2, 1fr);
@@ -268,4 +288,13 @@ section h2 {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* === Footer === */
+footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 1rem 0;
+  color: #fff;
+  background: #111;
 }
