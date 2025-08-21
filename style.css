@@ -998,3 +998,10 @@ h1, h2, h3, h4, h5, h6 {
 .carousel-dots span.active {
   opacity: 1;
 }
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* makes 2+ columns */
+  gap: 20px;
+}
+
