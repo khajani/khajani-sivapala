@@ -28,6 +28,7 @@ aside {
   top: 0;
   left: 0;
   bottom: 0;
+  overflow-y: auto;
 }
 
 aside .name {
@@ -62,7 +63,7 @@ aside .contact {
 
 main {
   flex: 1;
-  margin-left: 270px; /* leave space for sidebar */
+  margin-left: 270px;
   padding: 2rem;
 }
 
@@ -200,25 +201,6 @@ main {
   margin-bottom: 0.5rem;
 }
 
-@media (max-width: 768px) {
-  main {
-    margin-left: 0;
-    padding: 1rem;
-  }
-
-  .cert-grid {
-    display: flex;
-    overflow-x: auto;
-    gap: 1rem;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .cert-card {
-    min-width: 250px;
-    flex: 0 0 auto;
-  }
-}
-
 /* === Interests Grid === */
 .interests-grid {
   display: grid;
@@ -258,24 +240,6 @@ main {
   opacity: 1;
 }
 
-/* Mobile: horizontal scroll with 2 rows */
-@media (max-width: 768px) {
-  .interests-grid {
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-rows: repeat(2, 1fr);
-    grid-auto-columns: 80%;
-    overflow-x: auto;
-    gap: 1rem;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .interest-card {
-    min-width: 250px;
-    flex: 0 0 auto;
-  }
-}
-
 /* === Animations === */
 .fade-up {
   opacity: 0;
@@ -297,4 +261,46 @@ footer {
   padding: 1rem 0;
   color: #fff;
   background: #111;
+}
+
+/* === Mobile Responsive === */
+@media (max-width: 768px) {
+  main {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  /* Sidebar scroll fix */
+  aside {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Certifications horizontal scroll */
+  .cert-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    -webkit-overflow-scrolling: touch;
+  }
+  .cert-card {
+    min-width: 250px;
+    flex: 0 0 auto;
+  }
+
+  /* Interests horizontal scroll with 2 rows */
+  .interests-grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-columns: 80%;
+    overflow-x: auto;
+    gap: 1rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .interest-card {
+    min-width: 250px;
+  }
 }
