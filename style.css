@@ -1125,3 +1125,23 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
   object-fit: cover;
 }
+
+
+/* Fix carousel card height to match tall static project cards */
+#projects-section .carousel {
+  width: 100%;
+  height: auto; /* let it scale naturally */
+  position: relative;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* Make carousel images behave like the other project images */
+#projects-section .carousel-image {
+  display: block;
+  width: 100%;
+  height: auto;     /* natural tall scaling */
+  object-fit: cover;
+  border-radius: 8px;
+  position: relative; /* override absolute */
+}
