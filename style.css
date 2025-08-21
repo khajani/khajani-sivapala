@@ -9,6 +9,14 @@ html, body {
   height: 100%;
   font-family: 'Lato', sans-serif;
   scroll-behavior: smooth;
+  color: #211f20;
+}
+
+/* === Layout === */
+body {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
   background: linear-gradient(to bottom, 
     #211f20, 
     #521328, 
@@ -18,13 +26,7 @@ html, body {
     #eadbbe, 
     #e4dbd4
   );
-  color: #211f20;
-}
-
-/* === Layout === */
-body {
-  display: flex;
-  min-height: 100vh;
+  background-attachment: scroll; /* makes ombré move with scroll */
 }
 
 aside {
@@ -49,7 +51,6 @@ aside .name {
 
 aside nav ul {
   list-style: none;
-  padding: 0;
   width: 100%;
 }
 
@@ -65,44 +66,23 @@ aside nav ul li a {
   display: block;
   padding: 0.5rem 1rem;
   border-radius: 6px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 aside nav ul li a:hover,
 aside nav ul li a.active {
   background: #211f20;
-  color: #f6d5a7;
-}
-
-aside .contact {
-  margin-top: auto;
-  font-size: 0.9rem;
-  text-align: center;
-}
-
-aside .contact a {
-  color: #f6d5a7;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-aside .contact a:hover {
-  text-decoration: underline;
 }
 
 main {
   flex-grow: 1;
   padding: 3rem 4rem;
-  overflow-x: hidden;
 }
 
 /* === Headers === */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-}
-
 h2 {
   color: #800020;
+  margin-bottom: 1rem;
 }
 
 h3 {
@@ -112,7 +92,7 @@ h3 {
 .subheader,
 .skill-subheader,
 .interest-subheader {
-  color: #521328;
+  color: #5e2c04;
 }
 
 /* === Fade-up animation === */
@@ -125,42 +105,37 @@ h3 {
   animation: fadeUp 1s ease-out both;
 }
 
-/* === Cards === */
-.card {
-  margin: 0.7rem auto;
-  padding: 1rem 1.5rem;
-  max-width: 900px;
-  border-radius: 15px;
-  background-color: #fff7f5;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+/* === Cards (horizontal / uniform) === */
+.card, .experience-card, .project-card, .skill-card, .cert-card, .interest-card, .education-card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+  background: #fff7f5;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 6px 18px rgba(178,34,34,0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1.8rem;
 }
 
-.card:hover {
+.card:hover, .experience-card:hover, .project-card:hover, .skill-card:hover, .cert-card:hover, .interest-card:hover, .education-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 15px 30px rgba(178, 34, 34, 0.25);
+  box-shadow: 0 15px 30px rgba(178,34,34,0.25);
 }
 
-.card h1, .card h2, .card h3, .card h4 {
-  margin: 0.4rem 0;
+.card img, .experience-card img, .project-card img, .education-card img {
+  border-radius: 10px;
+  object-fit: cover;
 }
 
-.card p {
-  margin: 0.3rem 0 0.5rem;
-  line-height: 1.4;
-}
-
-/* === About Me Section === */
+/* === About Section === */
 #about-section {
   display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
+  flex-direction: row;
   align-items: center;
-  margin-top: 3rem;
-  padding: 3rem 3.5rem;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(178, 34, 34, 0.2);
-  background: #fff7f5;
+  gap: 3rem;
+  margin-bottom: 3rem;
 }
 
 #about-section .photo {
@@ -168,7 +143,6 @@ h3 {
   height: 220px;
   border-radius: 50%;
   background: url('https://media.licdn.com/dms/image/v2/D4E03AQEQC5JdhcAM2g/profile-displayphoto-shrink_400_400/B4EZXRcoqJHUAg-/0/1742975699954?e=1757548800&v=beta&t=TXNtMYuIsPdgZM7v-lTKw1dgxJgduIXWC0BO3uE3BP8') center/cover no-repeat;
-  box-shadow: 0 10px 20px rgba(178, 34, 34, 0.35);
   flex-shrink: 0;
 }
 
@@ -177,150 +151,67 @@ h3 {
 }
 
 #about-section .intro h1 {
-  font-family: 'Guttery', sans-serif;
   font-size: 2.2rem;
   color: #800020;
+  margin-bottom: 0.5rem;
 }
 
 #about-section .intro h3 {
   font-size: 1.3rem;
   color: #5e2c04;
-  margin: 0.3rem 0 1.2rem 0;
+  margin-bottom: 1rem;
 }
 
 #about-section .intro p {
   font-size: 1.1rem;
   line-height: 1.6;
-  margin: 0.6rem 0;
-}
-
-#about-section .intro a {
-  color: #800020;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-#about-section .intro a:hover {
-  color: #b22222;
-}
-
-/* === Experience Section === */
-.experience-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 15px;
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  margin-bottom: 20px;
-}
-
-.experience-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.company-logo {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-  border-radius: 8px;
-  background: #f9f9f9;
-}
-
-.experience-details h3 {
-  margin: 0;
-  font-size: 1.1rem;
-  color: #800020;
-}
-
-.dates {
-  font-size: 0.9rem;
-  color: #555;
-  margin: 4px 0 8px;
-}
-
-.experience-details ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.experience-details li {
-  margin-bottom: 4px;
-  color: #333;
-}
-
-/* === Skills Section === */
-.skills-wrapper {
-  background: #fff7f5;
-  padding: 2rem 2.5rem;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(178, 34, 34, 0.15);
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-.skill-card {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-  padding: 1.4rem 1.6rem;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.skill-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-}
-
-.skill-card h3 {
-  color: #5e2c04;
-  font-size: 1.2rem;
-  font-weight: 700;
   margin-bottom: 0.8rem;
 }
 
-.skill-card ul {
-  padding-left: 1.2rem;
-  line-height: 1.6;
+/* === Experience Details === */
+.experience-details {
+  flex: 1;
 }
 
-.skill-card ul li {
+.experience-details h3 {
+  color: #800020;
   margin-bottom: 0.4rem;
 }
 
-/* === Projects Section === */
+.experience-details .dates {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.6rem;
+}
+
+.experience-details ul {
+  list-style: disc;
+  padding-left: 1.2rem;
+  color: #333;
+}
+
+.experience-details li {
+  margin-bottom: 0.3rem;
+}
+
+/* === Projects === */
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.8rem;
-  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
 .project-card {
-  background: #fdfdfd;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  flex: 1 1 320px;
+  flex-direction: column;
+  padding: 0;
   overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.12);
 }
 
 .project-card img {
   width: 100%;
-  height: 475px;
-  object-fit: cover;
+  height: 200px;
 }
 
 .project-card h3 {
@@ -331,140 +222,81 @@ h3 {
 .project-card p {
   margin: 0 1rem 1rem;
   font-size: 0.95rem;
-  color: #3a3a3a;
 }
 
 .project-card a {
   display: inline-block;
-  margin: 1rem;
+  margin: 0 1rem 1rem;
   color: #b22222;
-  font-weight: 600;
   text-decoration: none;
+  font-weight: 600;
 }
 
 .project-card a:hover {
   color: #800020;
 }
 
-/* === Certifications Section === */
-.cert-grid {
+/* === Skills / Certifications / Interests === */
+.skills-grid, .cert-grid, .interests-grid {
   display: flex;
-  justify-content: space-between;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
   flex-wrap: wrap;
-}
-
-.cert-card {
-  flex: 1;
-  background: #f9f9f9;
-  border-radius: 12px;
-  padding: 1.5rem;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.cert-card h3 {
-  color: #5e2c04;
-  margin-bottom: 0.5rem;
-  font-size: 1.1rem;
-}
-
-.cert-card p {
-  font-size: 0.95rem;
-  color: #333;
-}
-
-.cert-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-}
-
-/* === Interests Section === */
-.interests-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
 }
 
-.interest-card {
-  border: 1px solid #ddd;
-  padding: 1rem;
-  border-radius: 8px;
-  background: #fff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.skill-card, .cert-card, .interest-card {
+  flex: 1 1 280px;
+  flex-direction: column;
+  padding: 1rem 1.5rem;
 }
 
-.interest-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 30px rgba(178, 34, 34, 0.25);
-}
-
-.interest-card h3 {
+.skill-card h3, .cert-card h3, .interest-card h3 {
   color: #5e2c04;
-  font-weight: 700;
   margin-bottom: 0.6rem;
 }
 
-.interest-card p {
-  font-size: 1rem;
+.skill-card ul, .cert-card p, .interest-card p {
+  font-size: 0.95rem;
   line-height: 1.5;
 }
 
-/* === Education Section === */
+/* === Education === */
 .education-card {
-  display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 15px;
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  margin-bottom: 20px;
+  gap: 1rem;
 }
 
 .education-card img {
   width: 60px;
   height: 60px;
-  object-fit: contain;
 }
 
-/* === Footer / Connect Section === */
+/* === Footer === */
 footer {
   text-align: center;
   padding: 2rem;
   font-size: 0.9rem;
-  color: #211f20;
   background: #fdf5f0;
+  color: #211f20;
 }
 
 /* === Responsive === */
 @media screen and (max-width: 900px) {
-  aside {
-    width: 80px;
-    padding: 1rem 0.5rem;
-  }
+  aside { width: 80px; padding: 1rem 0.5rem; }
+  aside .name { display: none; }
+  aside nav ul li a { padding: 0.5rem 0.3rem; font-size: 0.95rem; }
 
-  aside .name {
-    display: none;
-  }
+  main { padding: 2rem 1.5rem; }
 
-  aside nav ul li a {
-    padding: 0.5rem 0.3rem;
-    font-size: 0.95rem;
-  }
+  #about-section { flex-direction: column; align-items: center; text-align: center; }
+  #about-section .intro { flex: unset; }
 
-  main {
-    padding: 2rem 1.5rem;
-  }
-
-  #about-section {
+  .projects-grid, .skills-grid, .cert-grid, .interests-grid {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
   }
 
-  #about-section .intro {
-    flex: unset;
+  .card, .experience-card, .skill-card, .cert-card, .interest-card, .project-card {
+    flex-direction: column;
+    width: 100%;
   }
 }
