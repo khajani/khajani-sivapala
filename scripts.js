@@ -109,6 +109,7 @@ if (carousel) {
     updateCarousel(newIndex);
   });
 
+  
   dots.forEach((dot, i) => {
     dot.addEventListener('click', () => updateCarousel(i));
   });
