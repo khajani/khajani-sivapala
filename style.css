@@ -1104,3 +1104,24 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* --- Normalize carousel card height to match static project cards --- */
+
+/* Force carousel to use the same vertical ratio as static images */
+#projects-section .carousel {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 12;   /* make it taller to match the other project images */
+  overflow: hidden;
+  border-radius: 8px;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+/* Make carousel images fill the space evenly */
+#projects-section .carousel-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
