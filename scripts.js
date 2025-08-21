@@ -73,3 +73,43 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', checkSection);
   checkSection(); // run immediately in case section is visible on load
 });
+
+const carousel = document.querySelector('.carousel-project .carousel');
+if (carousel) {
+  const images = carousel.querySelectorAll('.carousel-image');
+  const prevBtn = carousel.querySelector('.prev');
+  const nextBtn = carousel.querySelector('.next');
+  const dotsContainer = carousel.querySelector('.carousel-dots');
+
+  let currentIndex = 0;
+
+  // Create dots
+  images.forEach((_, i) => {
+    const dot = document.createElement('span');
+    if (i === 0) dot.classList.add('active');
+    dotsContainer.appendChild(dot);
+  });
+  const dots = dotsContainer.querySelectorAll('span');
+
+  function updateCarousel(index) {
+    images.forEach(img => img.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    images[index].classList.add('active');
+    dots[index].classList.add('active');
+    currentIndex = index;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    let newIndex = (currentIndex - 1 + images.length) % images.length;
+    updateCarousel(newIndex);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    let newIndex = (currentIndex + 1) % images.length;
+    updateCarousel(newIndex);
+  });
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => updateCarousel(i));
+  });
+}
