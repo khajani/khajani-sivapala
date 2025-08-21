@@ -1,250 +1,349 @@
-/* ===== Reset ===== */
+/* =======================
+   Global Styles
+======================= */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
   font-family: 'Lato', sans-serif;
-  scroll-behavior: smooth;
+  line-height: 1.6;
+  background-color: #f9f5f0;
+  color: #333;
   display: flex;
-  min-height: 100vh;
-  background: linear-gradient(to bottom, #211f20, #2a2a2a, #211f20);
-  color: #f6d5a7; /* champagne */
 }
 
-/* ===== Sidebar (Desktop) ===== */
-aside.sidebar {
-  background: #800020; /* burgundy */
+/* =======================
+   Sidebar
+======================= */
+aside {
   width: 250px;
-  color: #f6d5a7;
+  background: #800020;
+  color: #f9f5f0;
+  padding: 2rem 1rem;
+  position: fixed;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 2rem 1rem;
-  position: sticky;
-  top: 0;
-  height: 100vh;
+  justify-content: space-between;
 }
 
-aside.sidebar .name {
-  font-size: 1.6rem;
+aside .name {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 2rem;
 }
 
-aside.sidebar nav ul {
+aside nav ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
 }
 
-aside.sidebar nav ul li {
-  margin-bottom: 1.5rem;
-}
-
-aside.sidebar nav ul li a {
-  color: #f6d5a7;
-  font-weight: 600;
-  font-size: 1.1rem;
-  text-decoration: none;
-  display: block;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  transition: background 0.3s ease;
-}
-
-aside.sidebar nav ul li a:hover,
-aside.sidebar nav ul li a.active {
-  background: #211f20;
-}
-
-/* ===== Main Content ===== */
-main {
-  flex: 1;
-  padding: 2rem;
-}
-
-section {
-  margin-bottom: 3rem;
-}
-
-h2 {
-  color: #800020;
-  border-bottom: 2px solid #800020;
-  display: inline-block;
+aside nav ul li {
   margin-bottom: 1rem;
 }
 
-/* ===== Experience + Projects ===== */
-.experience,
-.projects,
-.skills,
-.certifications,
-.interests {
-  background: #2a2a2a;
-  padding: 1.5rem;
-  border-radius: 10px;
+aside nav ul li a {
+  text-decoration: none;
+  color: #f9f5f0;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+aside nav ul li a:hover,
+aside nav ul li a.active {
+  color: #ffd700;
+}
+
+aside .contact {
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+aside .contact a {
+  text-decoration: none;
+  color: #f9f5f0;
+}
+
+aside .contact a:hover {
+  color: #ffd700;
+}
+
+/* =======================
+   Main Content
+======================= */
+main {
+  margin-left: 250px;
+  padding: 2rem;
+  flex: 1;
+}
+
+/* =======================
+   Banner
+======================= */
+.banner img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
   margin-bottom: 2rem;
 }
 
-.experience-item,
-.project-item {
-  background: #333;
-  padding: 1.2rem;
-  border-radius: 8px;
-  margin-bottom: 1.5rem;
-  transition: transform 0.25s ease;
+/* =======================
+   About Section
+======================= */
+#about-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
 }
 
-.experience-item:hover,
-.project-item:hover {
+#about-section .photo {
+  width: 180px;
+  height: 180px;
+  background: url("images/profile.jpg") center/cover no-repeat;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+#about-section .intro h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: #800020;
+}
+
+#about-section .intro h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+#about-section .intro h4 {
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+  color: #555;
+}
+
+#about-section .intro p {
+  margin-bottom: 0.4rem;
+}
+
+/* =======================
+   Experience
+======================= */
+#experience-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #800020;
+}
+
+.experience-card {
+  display: flex;
+  align-items: flex-start;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.experience-card:hover {
   transform: translateY(-4px);
 }
 
-.experience-item h3,
-.project-item h3 {
-  margin-top: 0;
-  color: #f6d5a7;
+.company-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-right: 1rem;
 }
 
-.experience-item p,
-.project-item p {
-  margin: 0.5rem 0;
+.experience-details h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: #333;
 }
 
-/* ===== Skills ===== */
-.skills ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
+.experience-details ul {
+  padding-left: 1.2rem;
 }
 
-.skills ul li {
-  background: #800020;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  color: #fff;
-  font-weight: 600;
+/* =======================
+   Projects
+======================= */
+.projects-section {
+  margin-top: 3rem;
 }
 
-/* ===== Certifications ===== */
-.certifications ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.projects-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #800020;
 }
 
-.certifications ul li {
-  background: #444;
-  padding: 0.6rem 1rem;
-  border-radius: 4px;
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: #fff;
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 8px;
   margin-bottom: 0.8rem;
-  transition: background 0.25s ease;
 }
 
-.certifications ul li:hover {
-  background: #555;
+/* =======================
+   Certifications
+======================= */
+#certifications .card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-top: 3rem;
 }
 
-/* ===== Interests (Desktop Grid) ===== */
+.cert-grid {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cert-card {
+  flex: 1 1 calc(33% - 1rem);
+  background: #f9f5f0;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+/* =======================
+   Interests
+======================= */
+#interests-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #800020;
+}
+
 .interests-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.2rem;
 }
 
-.interest-item {
-  background: #333;
+.interest-card {
+  background: #fff;
   padding: 1rem;
-  border-radius: 8px;
-  text-align: center;
-  transition: transform 0.25s ease;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.interest-item:hover {
-  transform: translateY(-4px);
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 0.6rem;
 }
 
-.interest-item h3 {
-  color: #5e2c04; /* brown */
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+.carousel img.active {
+  display: block;
+}
+
+/* =======================
+   Connect Section
+======================= */
+#connect h2 {
+  font-family: 'Oswald', sans-serif;
+}
+
+#connect p {
   margin-bottom: 0.5rem;
 }
 
-.interest-item p {
-  margin-top: 0.5rem;
-  line-height: 1.5;
+/* =======================
+   Footer
+======================= */
+footer {
+  margin-top: 3rem;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #555;
 }
 
-/* ===== Mobile Navbar (<=900px) ===== */
+/* =======================
+   Responsive Design
+======================= */
 @media (max-width: 900px) {
-  body {
-    flex-direction: column;
-  }
-
-  aside.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
+  aside {
+    position: static;
     width: 100%;
     height: auto;
-    flex-direction: row;
-    justify-content: flex-start;
+    flex-direction: column;
     align-items: center;
-    padding: 0.5rem 1rem;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    z-index: 1000;
+    text-align: center;
   }
 
-  aside.sidebar .name {
-    display: none;
-  }
-
-  aside.sidebar nav {
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  aside.sidebar nav ul {
+  aside nav ul {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
     gap: 1rem;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  aside.sidebar nav ul li {
-    flex: 0 0 auto;
-  }
-
-  aside.sidebar nav ul li a {
-    font-size: 0.95rem;
-    white-space: nowrap;
+    flex-wrap: wrap;
   }
 
   main {
-    margin-top: 60px;
-    padding: 1.2rem;
+    margin-left: 0;
+    padding: 1rem;
   }
 
-  /* Interests → Horizontal Carousel */
-  .interests-grid {
-    display: flex;
+  #about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cert-grid {
     flex-direction: row;
-    gap: 1rem;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 1rem;
+    gap: 1rem;
   }
 
-  .interest-item {
+  .cert-card {
     flex: 0 0 80%;
-    scroll-snap-align: center;
+  }
+
+  .interests-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow-x: auto;
+    gap: 1rem;
   }
 }
