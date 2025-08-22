@@ -1180,12 +1180,11 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-
-/* Interests section - mobile 2 columns */
+/* Mobile: 2 columns for Interests */
 @media (max-width: 768px) {
   #interests-section .interests-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem; /* optional: adjust spacing between cards */
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important; /* space between cards */
   }
 }
-
