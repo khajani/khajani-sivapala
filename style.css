@@ -1237,3 +1237,36 @@ h1, h2, h3, h4, h5, h6 {
     overflow-y: auto;
   }
 }
+
+/* Mobile Sidebar Nav Fix - 3-row layout, contact links full width, no horizontal scroll */
+@media (max-width: 768px) {
+  aside {
+    width: 90vw;
+    max-width: 340px;
+    padding: 1rem;
+    box-sizing: border-box;
+    overflow-y: auto; /* vertical scroll if needed */
+  }
+
+  aside nav ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columns for 3-row layout */
+    grid-auto-rows: auto;
+    gap: 0.6rem 1rem; /* row gap / column gap */
+    padding: 0;
+    list-style: none;
+    overflow-x: hidden; /* remove horizontal scroll for nav only */
+  }
+
+  aside nav ul li a {
+    text-align: center;
+    white-space: normal; /* allow wrapping */
+    word-wrap: break-word;
+  }
+
+  /* Contact links inside nav span full width */
+  aside nav ul li.contact-link {
+    grid-column: 1 / -1;
+  }
+}
+
