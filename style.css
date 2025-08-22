@@ -1296,7 +1296,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Desktop Sidebar Extra Wide */
 @media (min-width: 769px) {
   aside {
-    width: 610px;       /* extra wide to fit email + emoji comfortably */
+    width: 410px;       /* extra wide to fit email + emoji comfortably */
     padding: 1.2rem;
     box-sizing: border-box;
   }
