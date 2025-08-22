@@ -1281,3 +1281,9 @@ h1, h2, h3, h4, h5, h6 {
     flex: 1 1 100%;
   }
 }
+
+@media (max-width: 768px) {
+  aside {
+    background-color: #800020; /* burgundy, same as desktop */
+  }
+}
