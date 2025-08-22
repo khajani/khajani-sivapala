@@ -1238,35 +1238,46 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Mobile Sidebar Nav Fix - 3-row layout, contact links full width, no horizontal scroll */
+/* Mobile Top Navbar */
 @media (max-width: 768px) {
   aside {
-    width: 90vw;
-    max-width: 340px;
-    padding: 1rem;
+    position: relative;    /* remove fixed/side behavior */
+    width: 100%;           /* full width across top */
+    max-width: 100%;
+    padding: 0.5rem 1rem;
     box-sizing: border-box;
-    overflow-y: auto; /* vertical scroll if needed */
+    height: auto;
+    overflow: visible;
+    background-color: #211f20; /* match your sidebar bg */
   }
 
   aside nav ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 columns for 3-row layout */
-    grid-auto-rows: auto;
-    gap: 0.6rem 1rem; /* row gap / column gap */
+    display: flex;
+    flex-wrap: wrap;       /* allow multiple rows if needed */
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem 1rem;     /* row gap / column gap */
     padding: 0;
+    margin: 0;
     list-style: none;
-    overflow-x: hidden; /* remove horizontal scroll for nav only */
+    width: 100%;
+  }
+
+  aside nav ul li {
+    flex: 1 1 auto;        /* allow each link to expand/shrink */
+    min-width: 90px;       /* prevents links from getting too narrow */
   }
 
   aside nav ul li a {
+    display: block;
     text-align: center;
-    white-space: normal; /* allow wrapping */
+    white-space: normal;
     word-wrap: break-word;
+    padding: 0.4rem 0.6rem;
   }
 
-  /* Contact links inside nav span full width */
+  /* Optional: make contact links span full width in their row */
   aside nav ul li.contact-link {
-    grid-column: 1 / -1;
+    flex: 1 1 100%;
   }
 }
-
