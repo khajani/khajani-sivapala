@@ -1148,30 +1148,34 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+/* === FORCE Projects to 3 columns + widen container (paste at very bottom) === */
 
-/* ===== Projects Section Wide 3-Column Grid ===== */
-#projects-section.card {
-  max-width: 1200px; /* make projects container wider */
-  margin: 0 auto;    /* keep centered */
+/* Widen the projects card container (handles both common markups) */
+#projects-section .card.projects-section,
+.projects-section.card {
+  max-width: 1200px !important;
+  width: 100%;
+  margin: 0 auto;
 }
 
+/* Force 3 columns on desktop, overriding earlier 2-col rules */
 #projects-section .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
-  gap: 24px;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 24px !important;
   align-items: stretch;
 }
 
+/* Ensure each project fills its cell */
 #projects-section .project-card {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 1.5rem;
 }
 
 /* Mobile: single column */
 @media (max-width: 900px) {
   #projects-section .projects-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 }
