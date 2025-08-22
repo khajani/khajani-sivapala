@@ -1292,3 +1292,18 @@ h1, h2, h3, h4, h5, h6 {
 .bold-text {
   font-weight: bold;
 }
+
+
+/* Desktop Sidebar Width */
+@media (min-width: 769px) {
+  aside {
+    width: 260px; /* increase from current width (e.g., 220px) */
+    padding: 1rem; /* optional: adjust inner spacing */
+    box-sizing: border-box;
+  }
+
+  aside nav ul li p {
+    white-space: nowrap; /* keep emoji and text on the same line */
+    margin: 0.3rem 0;    /* optional: spacing adjustment */
+  }
+}
