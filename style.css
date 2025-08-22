@@ -1188,3 +1188,26 @@ h1, h2, h3, h4, h5, h6 {
     gap: 1rem !important; /* space between cards */
   }
 }
+
+
+
+/* Mobile Sidebar Nav Fix */
+@media (max-width: 768px) {
+  aside {
+    width: 90vw; /* keeps sidebar narrower on mobile */
+    max-width: 320px; /* optional cap */
+    overflow-y: auto; /* allows scrolling if content exceeds height */
+  }
+
+  aside nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem; /* spacing between buttons */
+    padding: 0 0.5rem; /* some padding inside */
+  }
+
+  aside nav ul li a {
+    white-space: normal; /* prevents text from being cut off */
+    word-wrap: break-word;
+  }
+}
