@@ -1211,3 +1211,29 @@ h1, h2, h3, h4, h5, h6 {
     word-wrap: break-word;
   }
 }
+
+
+/* Mobile Sidebar - 2-row layout */
+@media (max-width: 768px) {
+  aside nav ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 0.6rem 1rem;                      /* row gap / column gap */
+    padding: 0;
+    list-style: none;
+  }
+
+  aside nav ul li a {
+    text-align: center;    /* center links in each grid cell */
+    white-space: normal;   /* wrap if needed */
+    word-wrap: break-word;
+  }
+
+  aside {
+    width: 90vw;           /* slightly narrower for mobile */
+    max-width: 340px;      /* optional cap */
+    padding: 1rem;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+}
