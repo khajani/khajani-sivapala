@@ -1146,3 +1146,32 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-columns: 1fr;
   }
 }
+
+
+
+/* ===== Projects Section Wide 3-Column Grid ===== */
+#projects-section.card {
+  max-width: 1200px; /* make projects container wider */
+  margin: 0 auto;    /* keep centered */
+}
+
+#projects-section .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+  gap: 24px;
+  align-items: stretch;
+}
+
+#projects-section .project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.5rem;
+}
+
+/* Mobile: single column */
+@media (max-width: 900px) {
+  #projects-section .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
