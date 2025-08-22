@@ -1314,6 +1314,21 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0.3rem 0;
   }
 
+  /* Center only the contact lines in desktop sidebar */
+@media (min-width: 769px) {
+  aside nav ul li p {
+    display: inline-flex;      /* keep emoji + text on one line */
+    align-items: center;       /* vertically center emoji/text */
+    justify-content: center;   /* center horizontally */
+    white-space: nowrap;       /* prevent wrapping */
+    margin: 0.3rem 0;
+  }
+
+  aside nav ul li p a {
+    margin-left: 0.3rem;      /* spacing between emoji and text */
+  }
+}
+
   aside nav ul li p a {
     margin-left: 0.3rem;    /* spacing between emoji and text */
   }
