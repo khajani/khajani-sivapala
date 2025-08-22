@@ -1293,29 +1293,28 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
-/* Desktop Sidebar Fix */
+/* Desktop Sidebar Wider Fix */
 @media (min-width: 769px) {
   aside {
-    width: 280px;       /* increase further for more room */
-    padding: 1rem;
+    width: 320px;       /* wider to fit email + emoji */
+    padding: 1.2rem;    /* extra padding inside */
     box-sizing: border-box;
   }
 
   aside nav ul {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.6rem;
   }
 
-  /* Keep email & links on same line */
   aside nav ul li p {
-    display: inline-flex;   /* inline-flex keeps emoji + text on one line */
-    align-items: center;    /* vertically center emoji with text */
-    white-space: nowrap;    /* prevent wrapping */
+    display: inline-flex;    /* keep emoji + text on one line */
+    align-items: center;     /* vertically center emoji */
+    white-space: nowrap;     /* prevent wrapping */
     margin: 0.3rem 0;
   }
 
   aside nav ul li p a {
-    margin-left: 0.2rem;   /* optional spacing between emoji and text */
+    margin-left: 0.3rem;    /* spacing between emoji and text */
   }
 }
