@@ -1293,11 +1293,11 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
-/* Desktop Sidebar Wider Fix */
+/* Desktop Sidebar Extra Wide */
 @media (min-width: 769px) {
   aside {
-    width: 320px;       /* wider to fit email + emoji */
-    padding: 1.2rem;    /* extra padding inside */
+    width: 400px;       /* extra wide to fit email + emoji comfortably */
+    padding: 1.2rem;
     box-sizing: border-box;
   }
 
