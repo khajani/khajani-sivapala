@@ -1118,3 +1118,31 @@ h1, h2, h3, h4, h5, h6 {
     height: 400px; /* smaller on mobile */
   }
 }
+
+
+
+
+/* ===== Projects Grid: 3 columns desktop, 1 column mobile ===== */
+#projects-section .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+  gap: 24px; /* spacing between cards */
+  align-items: stretch;
+  max-width: 1200px; /* wider than your default 900px card */
+  margin: 0 auto; /* center the grid */
+}
+
+/* Project cards fill their grid cell */
+#projects-section .project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.5rem;
+}
+
+/* Mobile: single column */
+@media (max-width: 900px) {
+  #projects-section .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
