@@ -209,10 +209,18 @@ h1, h2, h3, h4, h5, h6 {
   width: 220px;
   height: 220px;
   border-radius: 50%;
-  background: url('https://media.licdn.com/dms/image/v2/D4E03AQEQC5JdhcAM2g/profile-displayphoto-shrink_400_400/B4EZXRcoqJHUAg-/0/1742975699954?e=1757548800&v=beta&t=TXNtMYuIsPdgZM7v-lTKw1dgxJgduIXWC0BO3uE3BP8') center/cover no-repeat;
-  box-shadow: 0 10px 20px rgba(178, 34, 34, 0.35);
+  overflow: hidden; /* makes sure image stays inside circle */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* softer fade */
   flex-shrink: 0;
 }
+
+#about-section .photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 
 #about-section .intro {
   flex: 1;
@@ -1335,22 +1343,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-
+/* Container for fade effect */
 #about-section .photo {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 260px;   /* adjust to match your existing faded circle */
+  width: 260px;
   height: 260px;
   border-radius: 50%;
-  background: radial-gradient(circle, #ffffff 70%, rgba(255,255,255,0) 100%);
+  background: radial-gradient(circle, #ffffff 70%, rgba(255, 255, 255, 0) 100%);
   box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.2);
+  margin: 0 auto; /* centers the whole thing */
 }
 
+/* Profile image inside */
 #about-section .photo img {
-  width: 220px;   /* slightly smaller so it fits inside the faded frame */
-  height: 220px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  border: none;   /* ⬅ removes the burgundy outline */
+  border: none; /* 🔥 removes burgundy ring */
+  box-shadow: none; /* extra safety */
 }
