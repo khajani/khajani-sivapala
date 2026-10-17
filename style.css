@@ -452,3 +452,25 @@ details ul { margin-top: 0.5rem; }
   .logo { flex-basis: 52px; width: 52px; height: 52px; }
   .section { padding: 3.2rem 0 2.5rem; }
 }
+
+/* ===== v6 overrides (keep at the very bottom of the file) ===== */
+.b-company { margin: 0; font-weight: 800; font-size: 2.1em; line-height: 1.1; letter-spacing: 0.01em; color: #0e113c; }
+.b-title { margin: 0.2em 0 0; font-weight: 600; font-size: 1.1em; line-height: 1.3; color: #3c426e; }
+
+/* long skill names wrap instead of running off the screen */
+.words li { min-width: 0; }
+.w { white-space: normal; }
+.words-left .w { text-align: right; }
+
+/* smooth one-time slide down */
+.badge-wrap {
+  animation: badge-slide 1.8s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
+  will-change: transform, opacity;
+}
+@keyframes badge-slide {
+  from { transform: translateY(-110%); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .badge-wrap { animation: none; }
+}
