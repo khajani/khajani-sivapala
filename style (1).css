@@ -35,7 +35,7 @@ a:focus-visible, summary:focus-visible {
 }
 .wrap { max-width: 1040px; margin: 0 auto; padding: 0 1.5rem; }
 
-/* ==========================================================
+/* =========================================================
    HERO  (background = images/hero-bg.jpg, nothing else baked in)
    ========================================================== */
 .hero {
