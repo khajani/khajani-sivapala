@@ -474,3 +474,9 @@ details ul { margin-top: 0.5rem; }
 @media (prefers-reduced-motion: reduce) {
   .badge-wrap { animation: none; }
 }
+
+/* ===== Logo Zoom & Spacing Adjustments ===== */
+.job .logo {
+  object-fit: cover; /* Zooms/fills the square container */
+  transform: scale(1.35); /* Zooms in slightly; adjust to 1.4 or 1.5 if needed */
+}
