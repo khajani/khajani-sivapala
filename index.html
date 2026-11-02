@@ -15,8 +15,6 @@
 
 <!-- ============================================================
      HERO
-     Background = images/hero-bg.jpg (set in style.css).
-     The badge and words are real text, so edit them freely.
      ============================================================ -->
 <header class="hero">
   <nav class="topbar" aria-label="Main">
@@ -32,20 +30,17 @@
 
   <div class="stage" id="top">
 
-    <!-- LEFT WORDS = technical skills. One <li> per row; the FIRST word in a row sits closest to the badge.
-         Size: w-xl (biggest) / w-lg / w-md / w-sm / w-xs (smallest)
-         Color: (none = white) / c-ice / c-lav / c-mute -->
-<ul class="words words-left" aria-label="Technical skills">
-  <li><span class="w w-xl">SOLIDWORKS</span></li>
-  <li><span class="w w-lg c-ice">FEA</span><span class="w w-xs c-mute">AUTOCAD</span></li>
-  <li><span class="w w-lg c-ice">RAPID PROTOTYPING</span></li>
-  <li><span class="w w-md c-lav">GD&amp;T</span><span class="w w-sm c-mute">DFM/DFA</span></li>
-  <li><span class="w w-md">ROOT CAUSE ANALYSIS</span></li>
-  <li><span class="w w-md">BIOMECHATRONICS</span></li>
-  <li><span class="w w-sm c-lav">3D PRINTING</span><span class="w w-xs c-mute">SOLDERING</span></li>
-</ul>
+    <ul class="words words-left" aria-label="Technical skills">
+      <li><span class="w w-xl">SOLIDWORKS</span></li>
+      <li><span class="w w-lg c-ice">FEA</span><span class="w w-xs c-mute">AUTOCAD</span></li>
+      <li><span class="w w-lg c-ice">RAPID PROTOTYPING</span></li>
+      <li><span class="w w-md c-lav">GD&amp;T</span><span class="w w-sm c-mute">DFM/DFA</span></li>
+      <li><span class="w w-md">ROOT CAUSE ANALYSIS</span></li>
+      <li><span class="w w-md">BIOMECHATRONICS</span></li>
+      <li><span class="w w-sm c-lav">3D PRINTING</span><span class="w w-xs c-mute">SOLDERING</span></li>
+    </ul>
 
-    <!-- THE BADGE -->
+    <!-- THE BADGE (Headshot placed in ID card gap) -->
     <div class="badge-wrap">
       <div class="lanyard" aria-hidden="true"></div>
       <article class="badge" aria-label="Name badge">
@@ -53,23 +48,22 @@
         <span class="slot" aria-hidden="true"></span>
 
         <div class="photo">
-          <img src="portfolio-images/headshot.jpg" alt="Photo of Khajani Sivapala" onerror="this.remove()" />
+          <img src="portfolio-images/Pic.jpg" alt="Photo of Khajani Sivapala" />
         </div>
 
         <h1 class="b-name">Khajani<br />Sivapala</h1>
         <p class="b-role">Mechatronics Engineering<br />University of Waterloo</p>
 
-      <div class="b-current">
-       <p class="b-label">CURRENT POSITION</p>
-       <p class="b-company">Tesla</p>
-       <p class="b-title">Automation Engineering Intern</p>
-      </div>
+        <div class="b-current">
+         <p class="b-label">CURRENT POSITION</p>
+         <p class="b-company">Tesla</p>
+         <p class="b-title">Automation Engineering Intern</p>
+        </div>
 
         <div class="barcode" aria-hidden="true"></div>
       </article>
     </div>
 
-    <!-- RIGHT WORDS = technical skills, same rules -->
     <ul class="words words-right" aria-label="Technical skills">
       <li><span class="w w-xl">ROBOTICS</span><span class="w w-xs c-mute">HMI</span></li>
       <li><span class="w w-lg c-ice">ROBOTIC SYSTEMS</span><span class="w w-xs c-mute">FANUC</span></li>
@@ -85,10 +79,7 @@
 <main>
 
 <!-- ============================================================
-     EXPERIENCE
-     Every role hides its bullets behind "Show more".
-     A company with two roles has two .role-block sections.
-     Dates marked [Month Year] are ones your resume doesn't list: fill in or delete the role.
+     EXPERIENCE (Company Logos Linked Directly)
      ============================================================ -->
 <section class="section" id="experience" aria-labelledby="exp-title">
   <div class="wrap">
@@ -96,7 +87,7 @@
     <h2 id="exp-title">Experience</h2>
 
     <article class="job">
-      <img class="logo" src="portfolio-images/logos/tesla.png" alt="Tesla logo" />
+      <img class="logo" src="portfolio-images/tesla logo (1).jpg" alt="Tesla logo" />
       <div class="job-body">
         <div class="role-block">
           <h3>Automation Engineering Intern</h3>
@@ -114,7 +105,7 @@
     </article>
 
     <article class="job">
-      <img class="logo" src="portfolio-images/logos/watbotics.png" alt="WATbotics logo" />
+      <img class="logo" src="portfolio-images/watbotics logo.png" alt="WATbotics logo" />
       <div class="job-body">
         <div class="role-block">
           <h3>Mechatronics Lead</h3>
@@ -144,7 +135,7 @@
     </article>
 
     <article class="job">
-      <img class="logo" src="portfolio-images/logos/toyota.png" alt="Toyota logo" />
+      <img class="logo" src="portfolio-images/toyota logo.png" alt="Toyota logo" />
       <div class="job-body">
         <div class="role-block">
           <h3>Engineering Analyst (Design &amp; Automation)</h3>
@@ -163,7 +154,7 @@
     </article>
 
     <article class="job">
-      <img class="logo" src="images/cerelia-logo.png" alt="Cérélia logo" />
+      <img class="logo" src="portfolio-images/cerelia-logo.png" alt="Cérélia logo" />
       <div class="job-body">
         <div class="role-block">
           <h3>Maintenance Engineering Intern</h3>
@@ -180,7 +171,6 @@
     </article>
 
     <article class="job">
-      <img class="logo" src="images/shn.png" alt="Scarborough Health Network logo" />
       <div class="job-body">
         <div class="role-block">
           <h3>Medical Administrative Assistant, Biomedical Engineering</h3>
@@ -198,7 +188,7 @@
     </article>
 
     <article class="job">
-      <img class="logo" src="images/uwfe_logo.png" alt="UW Formula Electric logo" />
+      <img class="logo" src="portfolio-images/uwfe_logo.png" alt="UW Formula Electric logo" />
       <div class="job-body">
         <div class="role-block">
           <h3>Aerodynamics General Member</h3>
@@ -228,7 +218,6 @@
     </article>
 
     <article class="job">
-      <img class="logo" src="images/eng-logo.png" alt="Waterloo Engineering Society logo" />
       <div class="job-body">
         <div class="role-block">
           <h3>First Year Representative, Mechatronics Engineering</h3>
@@ -302,7 +291,6 @@
   </article>
 
   <article class="card">
-    <!-- NEEDS AN IMAGE: upload portfolio-images/dotmatic-printer.jpg (the onerror hides the broken icon until then) -->
     <img src="portfolio-images/dotmatic-printer.jpg" alt="DotMatic braille printer" loading="lazy" onerror="this.remove()" />
     <div class="card-body">
       <p class="date">Nov 2024</p>
@@ -314,41 +302,10 @@
   </article>
 
   <article class="card">
-    <!-- NEEDS AN IMAGE: upload portfolio-images/agv-robot.jpg (the onerror hides the broken icon until then) -->
     <img src="portfolio-images/agv-robot.jpg" alt="Automated guided vehicle design" loading="lazy" onerror="this.remove()" />
     <div class="card-body">
       <p class="date">Toyota Mechanical Innovation Challenge</p>
       <p class="tag-row"><span class="tag">Mechanical Design</span><span class="tag">SolidWorks</span><span class="tag">3D Printing</span><span class="tag">DC Motors &amp; Servos</span><span class="tag">Sensors</span></p>
       <h3><a href="https://drive.google.com/REPLACE-agv" target="_blank" rel="noopener noreferrer">AGV Design</a></h3>
       <p>Designed an automated guided vehicle for dual-mode door and box transport with safe warehouse navigation. Modeled and 3D-printed custom grippers in SolidWorks, and built a lift system with Tetrix, DC motors, servos, a PS4 controller, and sensors.</p>
-      <p class="card-links"><span class="open">Photos &amp; videos ↗</span> <a class="code-link" href="https://github.com/khajani/Toyota-Mechanical-Innovation-Challenge-2025" target="_blank" rel="noopener noreferrer">Code on GitHub</a></p>
-    </div>
-  </article>
-
-</div>
-  </div>
-</section>
-
-</main>
-
-<!-- ============================================================
-     FOOTER (slim)
-     ============================================================ -->
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-left">
-      <p class="footer-name">Khajani Sivapala</p>
-      <p class="footer-line">Looking for Spring 2027 internships &nbsp;·&nbsp; &copy; <span id="year">2026</span></p>
-    </div>
-    <ul class="footer-links">
-      <li><a href="mailto:ksivapal@uwaterloo.ca">Email</a></li>
-      <li><a href="https://www.linkedin.com/in/khajani-sivapala/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-      <li><a href="https://github.com/khajani" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-      <li><a href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
-    </ul>
-  </div>
-</footer>
-
-<script src="scripts.js"></script>
-</body>
-</html>
+      <p class="card-links"><span class="open">Photos &amp; videos ↗</span> <a class="code-link" href="
