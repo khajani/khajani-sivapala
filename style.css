@@ -475,8 +475,21 @@ details ul { margin-top: 0.5rem; }
   .badge-wrap { animation: none; }
 }
 
-/* ===== Logo Zoom & Spacing Adjustments ===== */
+
+/* ===== Reset Logo Box & Fit Nicely ===== */
 .job .logo {
-  object-fit: cover; /* Zooms/fills the square container */
-  transform: scale(1.35); /* Zooms in slightly; adjust to 1.4 or 1.5 if needed */
+  flex: 0 0 64px;
+  width: 64px;
+  height: 64px;
+  object-fit: contain; /* Keeps the logo proportions intact without stretching */
+  padding: 4px; /* Adds a tiny breathing room so it doesn't touch the border */
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+/* Specific slight zoom for Tesla and Toyota logos to fill their square boxes better */
+.job img[src*="tesla"], 
+.job img[src*="toyota"] {
+  transform: scale(1.15);
 }
